@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -150,6 +150,86 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/08/30/SQL-basics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/08/30/SQL-basics/" class="post-title-link" itemprop="url">SQL basics</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-08-30 20:21:53 / Modified: 20:34:49" itemprop="dateCreated datePublished" datetime="2021-08-30T20:21:53+09:00">2021-08-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="SQL-Basics"><a href="#SQL-Basics" class="headerlink" title="SQL Basics"></a>SQL Basics</h1><ul>
+<li>when using SQL, begin with <code>select</code> or <code>SELECT</code> with the end <code>;</code>(semi-colon).</li>
+</ul>
+<p>example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select name, no</span><br><span class="line">from info</span><br><span class="line">where no &gt;= 13;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>basic sentence to execute <code>SQL</code> (This sentence is the same as in all RDBMS.)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT columns...</span><br><span class="line">FROM table names</span><br><span class="line">[WHERE condition statement  #using the condition statement here! (with arithmetic operator)</span><br><span class="line">ORDER BY columns... #asc (= default) or desc</span><br><span class="line">LIMIT ...];</span><br><span class="line"></span><br><span class="line">- between: in the range</span><br><span class="line"></span><br><span class="line">if the number is more than 15, less than 24,</span><br><span class="line">write like the following:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>select ~~<br>from ~~<br>where no between 15 and 24;</p>
+<pre><code>
+- in/not in: in = including, not in = not including
+
+- like: when the specific string is included in data
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
