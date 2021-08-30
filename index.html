@@ -184,7 +184,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-08-30 20:21:53 / Modified: 20:34:49" itemprop="dateCreated datePublished" datetime="2021-08-30T20:21:53+09:00">2021-08-30</time>
+      <time title="Created: 2021-08-30 20:21:53 / Modified: 20:36:20" itemprop="dateCreated datePublished" datetime="2021-08-30T20:21:53+09:00">2021-08-30</time>
     </span>
 
   
@@ -206,13 +206,20 @@
 <ul>
 <li>basic sentence to execute <code>SQL</code> (This sentence is the same as in all RDBMS.)</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT columns...</span><br><span class="line">FROM table names</span><br><span class="line">[WHERE condition statement  #using the condition statement here! (with arithmetic operator)</span><br><span class="line">ORDER BY columns... #asc (= default) or desc</span><br><span class="line">LIMIT ...];</span><br><span class="line"></span><br><span class="line">- between: in the range</span><br><span class="line"></span><br><span class="line">if the number is more than 15, less than 24,</span><br><span class="line">write like the following:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>select ~~<br>from ~~<br>where no between 15 and 24;</p>
-<pre><code>
-- in/not in: in = including, not in = not including
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT columns...</span><br><span class="line">FROM table names</span><br><span class="line">[WHERE condition statement  #using the condition statement here! (with arithmetic operator)</span><br><span class="line">ORDER BY columns... #asc (= default) or desc</span><br><span class="line">LIMIT ...];</span><br></pre></td></tr></table></figure>
 
-- like: when the specific string is included in data
-</code></pre>
+<ul>
+<li>between: in the range</li>
+</ul>
+<p>if the number is more than 15, less than 24,<br>write like the following:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select ~~</span><br><span class="line">from ~~</span><br><span class="line">where no between 15 and 24;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>in/not in: in = including, not in = not including</p>
+</li>
+<li><p>like: when the specific string is included in data</p>
+</li>
+</ul>
 
       
     </div>
