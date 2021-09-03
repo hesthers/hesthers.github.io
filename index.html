@@ -190,7 +190,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-09-04 00:09:43" itemprop="dateModified" datetime="2021-09-04T00:09:43+09:00">2021-09-04</time>
+        <time title="Modified: 2021-09-04 00:13:47" itemprop="dateModified" datetime="2021-09-04T00:13:47+09:00">2021-09-04</time>
       </span>
 
   
@@ -205,12 +205,12 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="SQL-REPLICATION"><a href="#SQL-REPLICATION" class="headerlink" title="SQL REPLICATION"></a>SQL REPLICATION</h1><p>I learned about SQL replication today, so I’m going to post this topic today on my blog.</p>
 <ul>
-<li>definition of <code>Replication</code>:</li>
+<li><p>definition of <code>Replication</code>:<br>Imagine about copy. The replication on SQL is the same as copy.</p>
+</li>
+<li><p>the process of <code>Replication</code>:</p>
+</li>
 </ul>
-<p>Imagine about copy. The replication on SQL is the same as copy.</p>
-<ul>
-<li>the process of <code>Replication</code>:<br>First, you have to create each master and slave server on AWS website. You can also create various slave servers.</li>
-</ul>
+<p>First, you have to create each master and slave server on AWS website. You can also create various slave servers.</p>
 <p>Second, using the public IP addresses of master and slave server, connect each server on <code>git bash</code>.<br>Use the command <code>ssh -i ~/.ssh/[key pair name].pem ubuntu@[public IP address]</code>. (You should install <code>ubuntu</code> before.)</p>
 <p>Third, on master and slave server, install <code>MySQL</code> and connect MySQl and server.Create the new account of MySQL on git bash.</p>
 <p>Fourth, on MySQL that connected with master server on git bash, create database.</p>
