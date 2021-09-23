@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -150,6 +150,78 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/17/python_review/Crawling-Practice-feat-Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/09/17/python_review/Crawling-Practice-feat-Python/" class="post-title-link" itemprop="url">Crawling Practice (feat.Python)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-09-17 15:14:38 / Modified: 15:49:01" itemprop="dateCreated datePublished" datetime="2021-09-17T15:14:38+09:00">2021-09-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Crawling-Practice-with-the-topic-Drama"><a href="#Crawling-Practice-with-the-topic-Drama" class="headerlink" title="Crawling Practice with the topic Drama"></a>Crawling Practice with the topic <code>Drama</code></h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">kw = input(&#x27;키워드를 입력하세요 : &#x27;)</span><br><span class="line">url = f&#x27;https://search.naver.com/search.naver?where=nexearch&amp;sm=top_sug.pre&amp;fbm=1&amp;acr=1&amp;acq=%EA%B2%80%EC%9D%80&amp;qdt=0&amp;ie=utf8&amp;query=&#123;kw&#125;&#x27;</span><br><span class="line">response = requests.get(url)</span><br><span class="line">html = BeautifulSoup(response.text, &#x27;html.parser&#x27;)</span><br><span class="line">html.select(&#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line">for txt in html.select(&#x27;a&#x27;):</span><br><span class="line">    if kw in txt.text:</span><br><span class="line">        if (&#x27;cafe&#x27; in txt.attrs[&#x27;href&#x27;]) or (&#x27;blog&#x27; in txt.attrs[&#x27;href&#x27;]):</span><br><span class="line">            print(txt.text, txt.attrs[&#x27;href&#x27;])</span><br><span class="line">        else:</span><br><span class="line">            pass</span><br><span class="line">    else:</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">drama = input(&#x27;드라마 이름을 입력하세요 : &#x27;)</span><br><span class="line">url = f&#x27;https://search.daum.net/search?w=tot&amp;DA=YZR&amp;t__nil_searchbox=btn&amp;sug=&amp;sugo=&amp;sq=&amp;o=&amp;q=&#123;drama&#125;&#x27;</span><br><span class="line">response = requests.get(url)</span><br><span class="line">html = BeautifulSoup(response.text, &#x27;html.parser&#x27;)</span><br><span class="line">drama_summary = html.select(&#x27;dd.cont&#x27;)[0].text</span><br><span class="line">print(f&#x27;드라마 줄거리 : &#123;drama_summary&#125;&#x27;)</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line">print(&#x27;         배역      배우&#x27;)</span><br><span class="line">print(&#x27;      ------------------&#x27;)</span><br><span class="line">for cont in html.select(&#x27;div#tv_casting li&#x27;)[1:]:</span><br><span class="line">    print(cont.text)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>I used the crawling python code to print drama info.</li>
+</ul>
+<ul>
+<li>무단복제 금지(Against unauthorized copies)</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -481,74 +553,6 @@ If you are using Mac Book, you do not have to write ‘utf8’ to encode files.<
 <li><code>Fancy Indexing</code> can be applied to here!!</li>
 </ul>
 <p>To be continued…</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/11/python_review/Numpy-practice-with-python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/09/11/python_review/Numpy-practice-with-python/" class="post-title-link" itemprop="url">Numpy practice with python</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-09-11 18:10:33 / Modified: 18:16:06" itemprop="dateCreated datePublished" datetime="2021-09-11T18:10:33+09:00">2021-09-11</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Practice-questions"><a href="#Practice-questions" class="headerlink" title="Practice questions"></a>Practice questions</h1><p>Q:<br>Make Fibonacci sequence python code with <code>Numpy</code> module.</p>
-<p>I already posted the answer code (my solution!) on my Naver blog.<br>Please refer to this blog after solving this problem.</p>
-<p>You can also utilize defining function in python.</p>
-<p>Solution: <a href = "https://blog.naver.com/221769/222484850867">Blog Link</a></p>
 
       
     </div>
