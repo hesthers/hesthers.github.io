@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,115 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/02/SQL_review/SQL-BACKUP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/09/02/SQL_review/SQL-BACKUP/" class="post-title-link" itemprop="url">SQL BACKUP</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-09-02 17:17:07 / Modified: 17:45:23" itemprop="dateCreated datePublished" datetime="2021-09-02T17:17:07+09:00">2021-09-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="SQL-Backup"><a href="#SQL-Backup" class="headerlink" title="SQL Backup"></a>SQL Backup</h1><ul>
+<li><p>You can back the files or databases up on MySQL using the server.</p>
+</li>
+<li><p>If you delete some data by mistake, you can restore them, but only under the condition that you have to back them up before.</p>
+</li>
+<li><p>types:</p>
+</li>
+</ul>
+<ol>
+<li>depending on <code>the environment</code> of the backup</li>
+</ol>
+<ul>
+<li>hot backup: when executing DB on SQL</li>
+<li>cold backup: when stopping the execution of DB on SQL</li>
+</ul>
+<ol start="2">
+<li>depending on <code>the way</code> to back up</li>
+</ol>
+<ul>
+<li>logical backup: store data by changing into SQL Query, easy to check the errors, use when storing the data is a few amount </li>
+<li>physical backup: take the relatively large size of file, the fast speed of the backup and the restoration, use when storing large amount of data and backing them up as soon as possible</li>
+</ul>
+<ul>
+<li>hot logical backup: </li>
+</ul>
+<ol>
+<li><p>using <code>crontab</code> and shell script, check the logs and times for the backup</p>
+</li>
+<li><p>with <code>cyberduck</code>, upload the files or databases to back up</p>
+</li>
+</ol>
+<ul>
+<li>cold physical backup: </li>
+</ul>
+<ol>
+<li><p>when you have the authorized access before you backing the data up</p>
+</li>
+<li><p>you have to log out the ubuntu account then access to again</p>
+</li>
+<li><p>you have to make the AWS server for the backup first</p>
+</li>
+</ol>
+<ul>
+<li>IF you feel that using the virtual server, it is difficult to back the data up, you can back the data up on SQL program. (<code>Export data</code>)  </li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -458,74 +567,6 @@
 <li>Question: Enter your name and print name with the greeting using function.</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def greeting(n):</span><br><span class="line">    if n.isalpha():</span><br><span class="line">        return &quot;Dear &quot; + name + &quot;, Hello!&quot;</span><br><span class="line">    elif n.isdigit() or n.isalnum():</span><br><span class="line">        print(&#x27;Is it your name?&#x27;)</span><br><span class="line">    </span><br><span class="line">name = str(input(&quot;Please input your name: &quot;))</span><br><span class="line">greeting(name)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/08/27/python_review/python-example-code/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/08/27/python_review/python-example-code/" class="post-title-link" itemprop="url">python example code</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-08-27 21:44:03 / Modified: 22:06:59" itemprop="dateCreated datePublished" datetime="2021-08-27T21:44:03+09:00">2021-08-27</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Python-example-code"><a href="#Python-example-code" class="headerlink" title="Python example code"></a><code>Python</code> example code</h1><p>Practice question for <code>Python</code></p>
-<p>문제: 연필 한 다스는 연필 12개이다. 원하는 만큼의 수를 입력받아 그 수는 연필 몇 다스이고 몇 개인지 출력하기</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pencil = int(input(&#x27;Enter the number of pencils: &#x27;))</span><br><span class="line"></span><br><span class="line">print(&#x27;입력한 연필 수는 %d다스&#x27; % (pencil // 12), end = &#x27;,&#x27;)</span><br><span class="line">print(&#x27; 나머지는 %d개입니다.&#x27; % (pencil % 12))</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
