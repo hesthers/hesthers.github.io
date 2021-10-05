@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,80 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/27/Crawling-without-BeautifulSoup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/09/27/Crawling-without-BeautifulSoup/" class="post-title-link" itemprop="url">Crawling without BeautifulSoup</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-09-27 20:49:30 / Modified: 21:13:32" itemprop="dateCreated datePublished" datetime="2021-09-27T20:49:30+09:00">2021-09-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Crawling-pt-3"><a href="#Crawling-pt-3" class="headerlink" title="Crawling pt.3"></a>Crawling pt.3</h1><p>Today github blog’s topic is about <code>crawling without BeautifulSoup module</code>. Generally, when using crawling technique, I use <code>BeautifulSoup</code> module. Unfortunately, most websites has the informational security problems of the crawling, so the crawling is blocked. To avoid the block of the website, use crawling technique of the dynamic web page. </p>
+<ul>
+<li><p>Use <code>F12</code> key on your keyboard and find <code>the referer webpage address and user agent</code> on the network panel.</p>
+</li>
+<li><p>Write python codes of the crawling the following:</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">url = &#x27;[web address to crawl]&#x27;</span><br><span class="line">info = &#123;</span><br><span class="line">    &#x27;referer&#x27;: &#x27;[main webpage address]&#x27;,</span><br><span class="line">    &#x27;user-agent&#x27;: &#x27;[user agent on the network panel of the developer webpage]&#x27;</span><br><span class="line">&#125;</span><br><span class="line">response = requests.get(url, headers=info)</span><br><span class="line"># response.text</span><br><span class="line"></span><br><span class="line">import json</span><br><span class="line">data = json.loads(response.text)</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+
+<p>You can access the dynamic webpage that is blocked by java script(js).</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -419,87 +493,6 @@
 <p>This is the link: <a href = "http://www.seoulfn.com/news/articleView.html?idxno=432252">News Link</a></p>
 <p><code>Metaverse</code> is one of topics that I have had an interest in. In financial field, especially digital finance, most companies have been interested in this topic.</p>
 <p>If metaverse is boosted in various field, the business would have the new type of market.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/21/TIS/Today-What-I-Studied-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/09/21/TIS/Today-What-I-Studied-2/" class="post-title-link" itemprop="url">Today What I Studied</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-09-21 22:02:05 / Modified: 22:10:00" itemprop="dateCreated datePublished" datetime="2021-09-21T22:02:05+09:00">2021-09-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Today-What-I-Studied"><a href="#Today-What-I-Studied" class="headerlink" title="Today What I Studied"></a>Today What I Studied</h1><p>I studied the national authorized certificate (Big Data Engineer Certificate)</p>
-<ul>
-<li>Solved Pt.3 questions (about 50 questions)</li>
-<li>studied pt.4 Evaluating analysis of the modeling</li>
-</ul>
-<ol>
-<li>confusion matrix</li>
-<li>ROC curve</li>
-<li>standards of the evaluation of analyzing the modeling</li>
-<li>cross validation - Holdout, K-Fold, LOOCV</li>
-<li>parametric significance test</li>
-<li>goodness of fit test</li>
-</ol>
-<p>I also watched online lecture videos about machine learning(linear regression)</p>
-<ul>
-<li>Topic: AirBnB</li>
-</ul>
 
       
     </div>
