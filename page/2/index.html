@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,108 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/10/14/Tableau-pt-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/10/14/Tableau-pt-4/" class="post-title-link" itemprop="url">Tableau pt.4</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-10-14 19:02:07 / Modified: 19:02:48" itemprop="dateCreated datePublished" datetime="2021-10-14T19:02:07+09:00">2021-10-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Tableau-and-prediction-algorithm"><a href="#Tableau-and-prediction-algorithm" class="headerlink" title="Tableau and prediction algorithm"></a>Tableau and prediction algorithm</h1><ul>
+<li>태블로는 스토리텔링에는 굉장히 의미있고 효과적인 도구이나 예측 알고리즘 등에는 적절하지 못하나 예측은 추세 등의 간단한 기법을 활용해서 가능함</li>
+</ul>
+<h2 id="Things-to-know-about-Tableau"><a href="#Things-to-know-about-Tableau" class="headerlink" title="Things to know about Tableau"></a>Things to know about Tableau</h2><ol>
+<li>필터 (Filtering)</li>
+</ol>
+<ul>
+<li>태블로의 본질과 맞닿아 있는 기능 (with 필터 액션)</li>
+<li>스토리텔링이 가능하게 함</li>
+<li>order of operations(태블로 개발자와 유저간의 약속)의 핵심 요소 (significant part of tableau)</li>
+<li>차원필터(Dimensional filter): 가장 많이 사용하게 되는 필터, 테이블(차원) 값의 필터</li>
+<li>단일값 = 하나의 값만 선택, 다중값 = 여러개의 선택지를 제공</li>
+<li>측정값 필터: 통계표시 없으면 데이터 원본에서의 해당 데이터값은 아예 버리는 것 (한 행의 level에서 필터링), 통계표시 (집계 표시)가 있으면 제품의 측정값의 집계 방식으로 필터링</li>
+<li>일반 탭: 원하는 값 선택, 와일드카드, 조건, 상위(정확한 기준을 제시, 이후에도 계속 조건이 유지됨.) 로직을 의미</li>
+<li>independent filter: 서로 영향을 주지 않음. 차원 필터(분류)가 Top N(우선순위가 높은 필터)의 종속 필터이므로 ontext filter를 먼저 설정해줘야함.</li>
+<li>dimensional filter가 context filter로 올려줄 수 있는가.. (예. 지역을 컨텍스트로 설정)</li>
+<li>manually hidden filter: 숨기기 기능을 통해 전월대비 증감율 비율 표현이 가능함. 그러나 이후의 데이터를 업데이트하기 어려움.</li>
+<li>Table Calculation: LAST()라는 함수를 사용하면 테이블이 자동으로 필터링되어서 계산됨.</li>
+</ul>
+<ol start="2">
+<li>이중축 (Double axis) &amp; 결합축 (Combined axis)</li>
+</ol>
+<ul>
+<li>한 행이나 열에 측정값이 두 개인 경우 (축이 두 개가 생성, 왼/오른쪽 혹은 그래프가 두 개가 생성)</li>
+<li>원하는 데이터를 드래그해서 구현된 그래프 왼쪽이나 오른쪽으로 가져다 두면 두 개의 축이 양쪽에서 생성되어 자동으로 그래프를 표현</li>
+<li>축의 스케일은 축 동기화로 기준 맞추어줄 수 있음</li>
+<li>막대 크기를 조절해서 bar in bar 구현 가능하거나 축이 여러 개를 구현해줄 때 사용</li>
+<li>마크카드가 따로따로 되어있는 이중축은 자유도가 높음 (개별 설정이 가능함.) 그러나 결합축인 경우 별도로 구현하기 어려움… 그러나 여러 가지 그래프를 한 번에 표현이 가능함.</li>
+<li> 비율이나 금액 등 단위가 다른 경우 결합축의 이중축으로 구현 혹은 별도로 각각 표현을 해야함.</li>
+</ul>
+<ol start="3">
+<li>도넛차트(Donut Chart)</li>
+</ol>
+<ul>
+<li>파이차트에서 시작하며 두 개의 파이차트를 작업용, 유지용 두 개 생성</li>
+<li>더미 필드에서 화면을 분할 생성해서 복사 = ctrl 키 누르면서 옆으로 드래그</li>
+<li>작업용 필드에서 각도 부분 제거 및 세부정보등 변경 후 크기 조절하고 이중축으로 결합</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -467,72 +569,6 @@
 </blockquote>
 </li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/10/08/Tableau-practice-example-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/10/08/Tableau-practice-example-1/" class="post-title-link" itemprop="url">Tableau practice example</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-10-08 17:18:14 / Modified: 17:21:49" itemprop="dateCreated datePublished" datetime="2021-10-08T17:18:14+09:00">2021-10-08</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Tableau-example"><a href="#Tableau-example" class="headerlink" title="Tableau example"></a>Tableau example</h1><p>Using Tableau tool, I made an example to show the data visualization with the downloaded data: USA COVID-19 death statistics and world indicator data.</p>
-<p>This is the link of my portfolio.: <a href = "https://public.tableau.com/app/profile/heeseosohn/viz/worldstatistics/1_1">Tableau link</a> </p>
 
       
     </div>
