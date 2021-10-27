@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,80 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/18/python_review/Python-Crawling-Practice-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/09/18/python_review/Python-Crawling-Practice-2/" class="post-title-link" itemprop="url">Python Crawling Practice.2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-09-18 21:25:21 / Modified: 21:31:30" itemprop="dateCreated datePublished" datetime="2021-09-18T21:25:21+09:00">2021-09-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Crawling-Practice-pt-2"><a href="#Crawling-Practice-pt-2" class="headerlink" title="Crawling Practice pt.2"></a>Crawling Practice pt.2</h1><p>오늘은 아주아주 재미있는 주제로 도전해보려고 한다… 바로바로 !!!!! 크롤링이다!!</p>
+<p>이번에는 주제 단어를 입력해서 포털 사이트를 연결해서 관련 주제에 대한 정보들을 불러오는 걸 해볼 생각이다. (크롤링 수업 때 배운 내용과 코드를 활용해 반복문으로 바꿔서 추가로 해봤다.)</p>
+<p>주제는 드라마다… 드라마 제목을 입력받아 관련 정보를 출력하고 리스트 등에 저장해서 이걸 분석해볼 생각이다.. (사실 정보관련 해서 문제 발생을 방지하기 위해 이 포스팅을 복제하거나 하는 그런 건 방지할 필요가 있을 것 같다… 윤리적인 부분 포함해서 이 포스팅으로 개인적인 이익을 얻거나 하는 일은 전혀 없다!!!!)</p>
+<p>크롤링하기 전에 당연히 BeautifulSoup 패키지가 있어야하고 크롤링 준비를 위한 코드들을 확인해야한다..</p>
+<p>이번에 해볼 분석은 우선 드라마 이름을 입력하면 해당 드라마의 줄거리와 배역 정보를 출력하고 이에 대한 관련된 키워드들이 포함된 네이버 카페, 블로그의 링크를 뽑아보려고 한다. 단, 드라마는 10개만 저장해서 뽑을 생각이다. 이 정보들을 전부 csv파일에 저장할 생각이다. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">import requests </span><br><span class="line">from bs4 import BeautifulSoup </span><br><span class="line">import time</span><br><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">cnt = 0</span><br><span class="line">drama_nm = []</span><br><span class="line">drama_txt = []</span><br><span class="line">drama_info = []</span><br><span class="line">drama_link = []</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    cnt += 1</span><br><span class="line"></span><br><span class="line">    drama = input(&#x27;드라마 이름을 입력하세요 : &#x27;)</span><br><span class="line">    drama_nm.append(drama)</span><br><span class="line"></span><br><span class="line">    url = f&#x27;https://search.daum.net/search?w=tot&amp;DA=YZR&amp;t__nil_searchbox=btn&amp;sug=&amp;sugo=&amp;sq=&amp;o=&amp;q=&#123;drama&#125;&#x27;</span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    html = BeautifulSoup(response.text, &#x27;html.parser&#x27;)</span><br><span class="line">    time.sleep(2)</span><br><span class="line"></span><br><span class="line">    drama_summary = html.select(&#x27;dd.cont&#x27;)[0].text</span><br><span class="line">    drama_info.append(drama_summary)</span><br><span class="line"></span><br><span class="line">    print(f&#x27;드라마 줄거리 : &#123;drama_summary&#125;&#x27;)</span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line">    print(&#x27;         배역      배우&#x27;)</span><br><span class="line">    print(&#x27;      ------------------&#x27;)</span><br><span class="line">    for cont in html.select(&#x27;div#tv_casting li&#x27;)[1:]:</span><br><span class="line">        drama_info.append(cont.text)</span><br><span class="line">        print(cont.text)</span><br><span class="line">        print()</span><br><span class="line"></span><br><span class="line">    url1 = f&#x27;https://search.naver.com/search.naver?where=nexearch&amp;sm=top_sug.pre&amp;fbm=1&amp;acr=1&amp;acq=%EA%B2%80%EC%9D%80&amp;qdt=0&amp;ie=utf8&amp;query=&#123;drama&#125;&#x27;</span><br><span class="line">    res = requests.get(url1)</span><br><span class="line">    html1 = BeautifulSoup(res.text, &#x27;html.parser&#x27;)</span><br><span class="line">    html1.select(&#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line">    for txt in html1.select(&#x27;a&#x27;):</span><br><span class="line">        if drama in txt.text:</span><br><span class="line">            if (&#x27;cafe&#x27; in txt.attrs[&#x27;href&#x27;]) or (&#x27;blog&#x27; in txt.attrs[&#x27;href&#x27;]):</span><br><span class="line">                drama_txt.append(txt.text)</span><br><span class="line">                drama_link.append(txt.attrs[&#x27;href&#x27;])</span><br><span class="line">                print(f&quot;&#123;txt.text&#125;: 링크 =&gt; &#123;txt.attrs[&#x27;href&#x27;]&#125;&quot;)</span><br><span class="line">            else:</span><br><span class="line">                pass</span><br><span class="line">        else:</span><br><span class="line">            pass</span><br><span class="line"></span><br><span class="line">    time.sleep(5)</span><br><span class="line">    dr_l = &#123;&#x27;drama_nm&#x27;: drama_nm, &#x27;drama_txt&#x27;: drama_txt, &#x27;drama_info&#x27;: drama_info, &#x27;drama_link&#x27;: drama_link&#125;</span><br><span class="line">    for l, k in zip(dr_l.values(), dr_l.keys()):</span><br><span class="line">        dr = pd.DataFrame(l)</span><br><span class="line">        dr.to_csv(f&#x27;&#123;k&#125;.csv&#x27;, index=False, encoding = &#x27;utf8&#x27;)</span><br><span class="line"></span><br><span class="line">    if cnt &gt; 10:</span><br><span class="line">        break</span><br><span class="line">print()</span><br><span class="line">time.sleep(2)</span><br><span class="line">print(drama_nm)</span><br><span class="line">print()</span><br><span class="line">print(drama_info)</span><br><span class="line">print()</span><br><span class="line">print(drama_txt)</span><br><span class="line">print()</span><br><span class="line">print(drama_link)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Against unauthorized copy and deployment.</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -480,74 +554,6 @@ If you are using Mac Book, you do not have to write ‘utf8’ to encode files.<
 <li><code>Fancy Indexing</code> can be applied to here!!</li>
 </ul>
 <p>To be continued…</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/11/python_review/Numpy-practice-with-python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/09/11/python_review/Numpy-practice-with-python/" class="post-title-link" itemprop="url">Numpy practice with python</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-09-11 18:10:33 / Modified: 18:16:06" itemprop="dateCreated datePublished" datetime="2021-09-11T18:10:33+09:00">2021-09-11</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Practice-questions"><a href="#Practice-questions" class="headerlink" title="Practice questions"></a>Practice questions</h1><p>Q:<br>Make Fibonacci sequence python code with <code>Numpy</code> module.</p>
-<p>I already posted the answer code (my solution!) on my Naver blog.<br>Please refer to this blog after solving this problem.</p>
-<p>You can also utilize defining function in python.</p>
-<p>Solution: <a href = "https://blog.naver.com/221769/222484850867">Blog Link</a></p>
 
       
     </div>
