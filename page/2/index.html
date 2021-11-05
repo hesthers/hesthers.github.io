@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-count">62</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,78 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/10/31/EDA-1st/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/10/31/EDA-1st/" class="post-title-link" itemprop="url">EDA 1st</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-10-31 21:15:48 / Modified: 21:21:39" itemprop="dateCreated datePublished" datetime="2021-10-31T21:15:48+09:00">2021-10-31</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="After-preprocessing-the-missing-values"><a href="#After-preprocessing-the-missing-values" class="headerlink" title="After preprocessing the missing values"></a>After preprocessing the missing values</h1><p>The next step is EDA after preprocessing the missing values in DataFrame.</p>
+<p>Figuring out the lowest correlation, then dropping the columns that are less correlated.</p>
+<p>The following codes are for EDA.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">movie_train.corr()</span><br><span class="line">sns.heatmap(data = movie_train.corr(), annot=True)</span><br><span class="line"></span><br><span class="line">movie_train.corr()[movie_train.corr() &gt;= 0.3]</span><br><span class="line"></span><br><span class="line">movie_train.drop(columns = &#x27;num_actor&#x27;, inplace=True)</span><br><span class="line">sns.heatmap(data = movie_train.corr(), annot=True)</span><br><span class="line"></span><br><span class="line">col_mt = movie_train.columns.difference([&#x27;num_staff&#x27;])</span><br><span class="line">movie_train[col_mt].corr()</span><br><span class="line">sns.pairplot(movie_train[col_mt])</span><br><span class="line"></span><br><span class="line">### Title, distributor, genre, release_time, screening_rat, director</span><br><span class="line">distributor = movie_train.distributor.value_counts().sort_values(ascending=True)</span><br><span class="line">distributor = distributor[distributor &gt; 2]</span><br><span class="line">distributor_name = distributor.index.tolist()</span><br><span class="line">distributor_cnt = distributor.values.tolist()</span><br><span class="line"></span><br><span class="line">plt.rc(&#x27;font&#x27;, family = &quot;Malgun Gothic&quot;)</span><br><span class="line">fig=plt.figure(figsize = (15,10))</span><br><span class="line">ax = fig.add_subplot(1,1,1)</span><br><span class="line">sns.barplot(distributor_name, distributor_cnt, data = movie_train)</span><br><span class="line">plt.xlabel(&#x27;배급사&#x27;, fontsize = 15)</span><br><span class="line">plt.title(&#x27;영화 배급사 수&#x27;, fontsize = 20)</span><br><span class="line">ax.set_xticklabels(distributor_name, rotation=75)</span><br><span class="line">plt.show()</span><br><span class="line"> #------------------</span><br><span class="line">genre = movie_train.genre.value_counts().sort_values(ascending=True)</span><br><span class="line">genre = genre[genre &gt; 1]</span><br><span class="line">genre_name = genre.index.tolist()</span><br><span class="line">genre_cnt = genre.values.tolist()</span><br><span class="line"></span><br><span class="line">plt.rc(&#x27;font&#x27;, family = &quot;Malgun Gothic&quot;)</span><br><span class="line">fig=plt.figure(figsize = (15,10))</span><br><span class="line">ax = fig.add_subplot(1,1,1)</span><br><span class="line">sns.barplot(genre_name, genre_cnt, data = movie_train)</span><br><span class="line">plt.xlabel(&#x27;장르&#x27;, fontsize = 15)</span><br><span class="line">plt.title(&#x27;장르별 영화 수&#x27;, fontsize = 20)</span><br><span class="line">ax.set_xticklabels(genre_name, rotation=75)</span><br><span class="line">plt.show()</span><br><span class="line"> #--------------------</span><br><span class="line">rate = movie_train.screening_rat.value_counts().sort_values(ascending=True)</span><br><span class="line">rate = rate[rate &gt; 1]</span><br><span class="line">rate_name = rate.index.tolist()</span><br><span class="line">rate_cnt = rate.values.tolist()</span><br><span class="line"></span><br><span class="line">plt.rc(&#x27;font&#x27;, family = &quot;Malgun Gothic&quot;)</span><br><span class="line">fig=plt.figure(figsize = (15,10))</span><br><span class="line">ax = fig.add_subplot(1,1,1)</span><br><span class="line">sns.barplot(rate_name, rate_cnt, data = movie_train)</span><br><span class="line">plt.xlabel(&#x27;등급&#x27;, fontsize = 15)</span><br><span class="line">plt.title(&#x27;등급별 영화 수&#x27;, fontsize = 20)</span><br><span class="line">ax.set_xticklabels(rate_name, rotation=75)</span><br><span class="line">plt.show()</span><br><span class="line"> #----------------------</span><br><span class="line">director = movie_train.director.value_counts().sort_values(ascending=True)</span><br><span class="line">director = director[director &gt; 1]</span><br><span class="line">director_nm = director.index.tolist()</span><br><span class="line">director_cnt = director.values.tolist()</span><br><span class="line"></span><br><span class="line">plt.rc(&#x27;font&#x27;, family = &quot;Malgun Gothic&quot;)</span><br><span class="line">fig=plt.figure(figsize = (15,10))</span><br><span class="line">ax = fig.add_subplot(1,1,1)</span><br><span class="line">sns.barplot(director_nm, director_cnt, data = movie_train)</span><br><span class="line">plt.xlabel(&#x27;감독명&#x27;, fontsize = 15)</span><br><span class="line">plt.title(&#x27;감독별 영화 수&#x27;, fontsize = 20)</span><br><span class="line">ax.set_xticklabels(director_nm, rotation=75)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>I added the visualization codes about the nominal data.</p>
+<p>I am not done yet!</p>
+<p>The codes are just the first step of EDA.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -450,103 +522,6 @@
 </ul>
 </blockquote>
 </li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/10/26/basic-statistics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/10/26/basic-statistics/" class="post-title-link" itemprop="url">basic statistics</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-10-26 23:24:59 / Modified: 23:40:29" itemprop="dateCreated datePublished" datetime="2021-10-26T23:24:59+09:00">2021-10-26</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h1><h2 id="concepts"><a href="#concepts" class="headerlink" title="concepts"></a>concepts</h2><ol>
-<li>central tendency</li>
-</ol>
-<ul>
-<li>mean(average): dividing the sum of data by the count of the data</li>
-<li>median: 50% of a quantile or the data in the middle of the whole data</li>
-<li>mode: the frequent count of data</li>
-<li>quantile: 25%, 50%, 75% of the whole data</li>
-</ul>
-<ol start="2">
-<li>measurement of distribution</li>
-</ol>
-<ul>
-<li>variance: how widely the whole data distribute</li>
-<li>std(standard deviation): the square root of variance</li>
-</ul>
-<ol start="3">
-<li>coefficient</li>
-</ol>
-<ul>
-<li>correlation coefficient: the size of the relation between two variances / range must be within [-1, 1].<br>the degree of the change to one variance as another one also changes</li>
-<li>covariance: the degree of how far both two variances are distant from each mean value / when one variance is in faraway point from its mean, how far another variance is distant from its mean</li>
-</ul>
-<ol start="4">
-<li>regression</li>
-</ol>
-<ul>
-<li>Linear regression =&gt; regressional coefficient (the size that the independent variance impacts the dependent variance)<blockquote>
-<p>important: minimizing the errors of data</p>
-</blockquote>
-</li>
-<li>for the prediction</li>
 </ul>
 
       
