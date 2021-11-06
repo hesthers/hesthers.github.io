@@ -27,13 +27,13 @@
 <meta property="og:site_name" content="blog for python &amp; note">
 <meta property="og:description" content="EDA pt.21234567891011121314151617181920df &#x3D; pd.pivot_table(data &#x3D; movie_train, columns&#x3D;&amp;#x27;screening_rat&amp;#x27;, index &#x3D; &amp;#x27;genre&amp;#x27;, values&#x3D; [&amp;#x27;director&amp;#x27;], aggfunc&#x3D;len, )df_rate &#x3D; [i[">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://drive.google.com/uc?export=view&id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8/graph_1.png">
-<meta property="og:image" content="https://drive.google.com/uc?export=view&id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8/graph_2.png">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&id=1B-ArRRaXAjC_buB0H1eXgiuQKhThXan3">
 <meta property="article:published_time" content="2021-11-06T13:45:15.000Z">
-<meta property="article:modified_time" content="2021-11-06T13:56:25.711Z">
+<meta property="article:modified_time" content="2021-11-06T14:00:57.892Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=view&id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8/graph_1.png">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=view&id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8">
 
 
 <link rel="canonical" href="https://hesthers.github.io/archives/2021/11/06/EDA-2/">
@@ -195,7 +195,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-06 22:45:15 / Modified: 22:56:25" itemprop="dateCreated datePublished" datetime="2021-11-06T22:45:15+09:00">2021-11-06</time>
+      <time title="Created: 2021-11-06 22:45:15 / Modified: 23:00:57" itemprop="dateCreated datePublished" datetime="2021-11-06T22:45:15+09:00">2021-11-06</time>
     </span>
 
   
@@ -210,8 +210,8 @@
     <div class="post-body" itemprop="articleBody">
         <h1 id="EDA-pt-2"><a href="#EDA-pt-2" class="headerlink" title="EDA pt.2"></a>EDA pt.2</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">df = pd.pivot_table(data = movie_train, columns=&#x27;screening_rat&#x27;, index = &#x27;genre&#x27;, values= [&#x27;director&#x27;], aggfunc=len, )</span><br><span class="line">df_rate = [i[1] for i in df.columns]</span><br><span class="line"></span><br><span class="line">reset_df = pd.DataFrame(df.values, columns = sorted(movie_train.screening_rat.unique()))</span><br><span class="line">reset_df.fillna(0, inplace=True)</span><br><span class="line">reset_df[&#x27;index&#x27;] = sorted(movie_train.genre.unique())</span><br><span class="line">reset_df = reset_df.set_index(reset_df[&#x27;index&#x27;], drop=True)</span><br><span class="line">reset_df.drop(columns = &#x27;index&#x27;, inplace=True, axis=1)</span><br><span class="line"></span><br><span class="line">from matplotlib import font_manager, rc</span><br><span class="line">rc(&#x27;font&#x27;, family = &#x27;Malgun Gothic&#x27;)</span><br><span class="line">plt.figure(figsize = (20 , 16))</span><br><span class="line">sns.histplot(data = reset_df.T, multiple=&#x27;dodge&#x27;, bins = 3)</span><br><span class="line">plt.xlim([0, 65])</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;] = False</span><br><span class="line">plt.figure(figsize = (12 , 8))</span><br><span class="line">sns.kdeplot(data = reset_df.T, multiple=&#x27;layer&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://drive.google.com/uc?export=view&id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8/graph_1.png" alt="image_1"></p>
-<p><img src="https://drive.google.com/uc?export=view&id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8/graph_2.png" alt="image_2"></p>
+<p><img src="https://drive.google.com/uc?export=view&id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8" alt="image_1"></p>
+<p><img src="https://drive.google.com/uc?export=view&id=1B-ArRRaXAjC_buB0H1eXgiuQKhThXan3" alt="image_2"></p>
 
     </div>
 
