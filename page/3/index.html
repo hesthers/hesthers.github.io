@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,77 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/10/30/practice-machine-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/10/30/practice-machine-learning/" class="post-title-link" itemprop="url">practice machine learning</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-10-30 22:34:57 / Modified: 22:49:35" itemprop="dateCreated datePublished" datetime="2021-10-30T22:34:57+09:00">2021-10-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>This post is for a series of practice for machine learning.</p>
+<p>I used movie data in order to practice the machine learning by preparing for the big data certificate test.</p>
+<p>The python code below is just to preprocess the data. (Today I will post only codes of preprocessed training data.)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"># import modules &amp; files</span><br><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import seaborn as sns</span><br><span class="line">from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder</span><br><span class="line"></span><br><span class="line">pd.set_option(&#x27;display.max_columns&#x27;, 30)</span><br><span class="line"></span><br><span class="line">movie_train = pd.read_csv(&#x27;./movies_train.csv&#x27;, encoding = &#x27;utf8&#x27;)</span><br><span class="line"></span><br><span class="line">movie_train.head(2)</span><br><span class="line"></span><br><span class="line">movie_train.info()</span><br><span class="line"></span><br><span class="line">sns.heatmap(data = movie_train.corr(), annot=True)</span><br><span class="line"></span><br><span class="line">movie_train.corr()[movie_train.corr() &gt;= 0.3]</span><br><span class="line"></span><br><span class="line">########## Figuring out missing value</span><br><span class="line">movie_train[movie_train.dir_prev_bfnum.isnull()]</span><br><span class="line">movie_train.dir_prev_bfnum.isnull().sum()</span><br><span class="line">movie_train.isnull().sum()[movie_train.isnull().sum() &lt;= len(movie_train) * 0.7]</span><br><span class="line"></span><br><span class="line">movie_train.director.value_counts()</span><br><span class="line"></span><br><span class="line">idx_dir_bfn = [n for n in movie_train[&#x27;director&#x27;].values]</span><br><span class="line">null_idx_dir_bfn = [movie_train[[&#x27;director&#x27;, &#x27;dir_prev_bfnum&#x27;]][movie_train[&#x27;dir_prev_bfnum&#x27;].isnull()].values[m][0] for m in range(movie_train[&#x27;dir_prev_bfnum&#x27;].isnull().sum())]</span><br><span class="line">nn_idx_dir_bfn = [movie_train[[&#x27;director&#x27;, &#x27;dir_prev_bfnum&#x27;]][movie_train[&#x27;dir_prev_bfnum&#x27;].notnull()].values[m][0] for m in range(movie_train[&#x27;dir_prev_bfnum&#x27;].notnull().sum())]</span><br><span class="line"></span><br><span class="line">len(movie_train[&#x27;director&#x27;][movie_train[&#x27;dir_prev_bfnum&#x27;].isnull()])</span><br><span class="line">len(set(idx_dir_bfn))</span><br><span class="line">len(movie_train[&#x27;director&#x27;][movie_train[&#x27;dir_prev_bfnum&#x27;].notnull()].unique())</span><br><span class="line"></span><br><span class="line">dir_nm = []</span><br><span class="line">for j in nn_idx_dir_bfn:</span><br><span class="line">    for i in null_idx_dir_bfn:</span><br><span class="line">        if i not in j:</span><br><span class="line">            pass</span><br><span class="line"></span><br><span class="line">        elif i in j:</span><br><span class="line">            dir_nm.append(i)</span><br><span class="line"></span><br><span class="line">dir_nm = set(dir_nm)</span><br><span class="line"></span><br><span class="line">bf_num = [movie_train[&#x27;dir_prev_bfnum&#x27;][movie_train.director == n].values for n in dir_nm]</span><br><span class="line">df = pd.DataFrame(bf_num)</span><br><span class="line">df.drop(columns = [4, 5, 6], inplace=True, axis=1)</span><br><span class="line">df[&#x27;dir_nm&#x27;] = dir_nm</span><br><span class="line">df</span><br><span class="line"></span><br><span class="line">df.fillna(0, inplace=True)</span><br><span class="line">zero_cnt = [list(df.iloc[i, 0:4].values).count(0) for i in range(0,len(df))]</span><br><span class="line"></span><br><span class="line">tot_bfnum = []</span><br><span class="line">df_mean = []</span><br><span class="line">for i in range(0,len(df)):</span><br><span class="line">        if list(df.iloc[i, 0:4].values).count(0) == 1:</span><br><span class="line">            tot_bfnum = np.delete(df.iloc[i, 0:4].values, list(df.iloc[i, 0:4].values).index(0))</span><br><span class="line">            df_mean.append(np.mean(tot_bfnum))</span><br><span class="line"></span><br><span class="line">        elif list(df.iloc[i, 0:4].values).count(0) == 2:</span><br><span class="line">            tot_bfnum = np.delete(df.iloc[i, 0:4].values, list(df.iloc[i, 0:4].values).index(0))</span><br><span class="line">            tot_bfnum = np.delete(tot_bfnum, list(tot_bfnum).index(0))</span><br><span class="line">            df_mean.append(np.mean(tot_bfnum))</span><br><span class="line"></span><br><span class="line">        elif list(df.iloc[i, 0:4].values).count(0) == 3:</span><br><span class="line">            tot_bfnum = np.delete(df.iloc[i, 0:4].values, list(df.iloc[i, 0:4].values).index(0))</span><br><span class="line">            tot_bfnum = np.delete(tot_bfnum, list(tot_bfnum).index(0))</span><br><span class="line">            tot_bfnum = np.delete(tot_bfnum, list(tot_bfnum).index(0))</span><br><span class="line">            for i in list(tot_bfnum):</span><br><span class="line">                df_mean.append(i)</span><br><span class="line"></span><br><span class="line">df[&#x27;mean_bfnum&#x27;] = df_mean</span><br><span class="line"></span><br><span class="line">dir_bfnum_dict = &#123;nm : num for nm, num in zip(df[&#x27;dir_nm&#x27;], df[&#x27;mean_bfnum&#x27;])&#125;</span><br><span class="line"></span><br><span class="line">mt = pd.merge(movie_train, df[[&#x27;dir_nm&#x27;, &#x27;mean_bfnum&#x27;]], how = &#x27;outer&#x27;, left_on = &#x27;director&#x27;, right_on = &#x27;dir_nm&#x27;)</span><br><span class="line"></span><br><span class="line">for n in dir_nm:</span><br><span class="line">    movie_train[&#x27;dir_prev_bfnum&#x27;][(movie_train.director == n) &amp; (movie_train[&#x27;dir_prev_bfnum&#x27;].isnull())] = movie_train[&#x27;dir_prev_bfnum&#x27;][(movie_train.director == n) &amp; (movie_train[&#x27;dir_prev_bfnum&#x27;].isnull())].apply(lambda x:dir_bfnum_dict.get(n))</span><br><span class="line"></span><br><span class="line">movie_train.info()</span><br><span class="line">movie_train.fillna(0, inplace=True)</span><br></pre></td></tr></table></figure>
+
+<p>I filled the missing values by mean of each director’s the number of previous cinema audiences.</p>
+<p>Please do not copy codes for commercial purpose. (The copyright of data and the question owned by Dacon)</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -495,76 +566,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/10/25/when-you-need-the-breaktime/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/10/25/when-you-need-the-breaktime/" class="post-title-link" itemprop="url">when you need the breaktime</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-10-25 14:44:43 / Modified: 15:17:14" itemprop="dateCreated datePublished" datetime="2021-10-25T14:44:43+09:00">2021-10-25</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Sometimes, everyone needs some breaktime. When you have in trouble, you might want to give up everything, but I think everyday is beautiful!</p>
-<p>You deserve to be loved.</p>
-<p><a href = "https://www.youtube.com/watch?v=lnJ95tNtl08">Anne-Marie Beautiful</a></p>
-<p>你敢有勇气，别放弃自己。你可以爱自己，能让自身够珍贵吧。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="https://hesthers.github.io/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="https://hesthers.github.io/">1</a><a class="page-number" href="https://hesthers.github.io/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="https://hesthers.github.io/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="https://hesthers.github.io/page/13/">13</a><a class="extend next" rel="next" href="https://hesthers.github.io/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="https://hesthers.github.io/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="https://hesthers.github.io/">1</a><a class="page-number" href="https://hesthers.github.io/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="https://hesthers.github.io/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="https://hesthers.github.io/page/14/">14</a><a class="extend next" rel="next" href="https://hesthers.github.io/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
