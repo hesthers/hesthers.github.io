@@ -20,15 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="Regression model and regulationThis post is about linear regression and regulation part. Summary of this post     Linear Ridge Lasso Elastic Net      hypo  wx + b     cost 오차항 오차항 + L2 Norm 오차항 + L1 N">
+<meta name="description" content="Regression model and regulationThis post is about linear regression and regulation part.  전체적인 경향을 판단할 수 있는 지표 혹은 수치는 weight의 크기라 할 수 있다. (the index to identify overall tendency is the size of weight">
 <meta property="og:type" content="article">
 <meta property="og:title" content="machine learning pt.2">
 <meta property="og:url" content="https://hesthers.github.io/archives/2021/11/11/machine-learning-pt-2/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="Regression model and regulationThis post is about linear regression and regulation part. Summary of this post     Linear Ridge Lasso Elastic Net      hypo  wx + b     cost 오차항 오차항 + L2 Norm 오차항 + L1 N">
+<meta property="og:description" content="Regression model and regulationThis post is about linear regression and regulation part.  전체적인 경향을 판단할 수 있는 지표 혹은 수치는 weight의 크기라 할 수 있다. (the index to identify overall tendency is the size of weight">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-11T12:01:19.000Z">
-<meta property="article:modified_time" content="2021-11-11T12:16:44.913Z">
+<meta property="article:modified_time" content="2021-11-11T12:59:42.046Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 
@@ -108,7 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Regression-model-and-regulation"><span class="nav-number">1.</span> <span class="nav-text">Regression model and regulation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-of-this-post"><span class="nav-number">1.1.</span> <span class="nav-text">Summary of this post</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#L1-norm-and-L2-norm-regulation"><span class="nav-number">1.1.1.</span> <span class="nav-text">L1 norm and L2 norm regulation</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Regression-model-and-regulation"><span class="nav-number">1.</span> <span class="nav-text">Regression model and regulation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-of-this-post"><span class="nav-number">1.1.</span> <span class="nav-text">Summary of this post</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#L1-norm-and-L2-norm-regulation-%E2%80%94-for-model-handling"><span class="nav-number">1.1.1.</span> <span class="nav-text">L1 norm and L2 norm regulation — for model handling</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Regression"><span class="nav-number">1.2.</span> <span class="nav-text">Linear Regression</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -192,7 +192,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-11 21:01:19 / Modified: 21:16:44" itemprop="dateCreated datePublished" datetime="2021-11-11T21:01:19+09:00">2021-11-11</time>
+      <time title="Created: 2021-11-11 21:01:19 / Modified: 21:59:42" itemprop="dateCreated datePublished" datetime="2021-11-11T21:01:19+09:00">2021-11-11</time>
     </span>
 
   
@@ -206,6 +206,11 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="Regression-model-and-regulation"><a href="#Regression-model-and-regulation" class="headerlink" title="Regression model and regulation"></a>Regression model and regulation</h1><p>This post is about linear regression and regulation part.</p>
+<ul>
+<li>전체적인 경향을 판단할 수 있는 지표 혹은 수치는 weight의 크기라 할 수 있다. (the index to identify overall tendency is <code>the size of weight</code> because the overfitting occurs if the data of training test is lessened.)</li>
+<li>using the value of weight, repeat the training of the machine.</li>
+<li>the regulation to restrain the modeling complexity </li>
+</ul>
 <h2 id="Summary-of-this-post"><a href="#Summary-of-this-post" class="headerlink" title="Summary of this post"></a>Summary of this post</h2><div class="table-container">
 <table>
 <thead>
@@ -220,10 +225,7 @@
 <tbody>
 <tr>
 <td>hypo</td>
-<td style="text-align:center"></td>
-<td style="text-align:right">wx + b</td>
-<td style="text-align:right"></td>
-<td style="text-align:right"></td>
+<td style="text-align:center">wx + b       </td>
 </tr>
 <tr>
 <td>cost</td>
@@ -235,7 +237,16 @@
 </tbody>
 </table>
 </div>
-<h3 id="L1-norm-and-L2-norm-regulation"><a href="#L1-norm-and-L2-norm-regulation" class="headerlink" title="L1 norm and L2 norm regulation"></a>L1 norm and L2 norm regulation</h3>
+<h3 id="L1-norm-and-L2-norm-regulation-—-for-model-handling"><a href="#L1-norm-and-L2-norm-regulation-—-for-model-handling" class="headerlink" title="L1 norm and L2 norm regulation — for model handling"></a>L1 norm and L2 norm regulation — for model handling</h3><p>L1 Norm = $\displaystyle \sum |w|$<br>L2 Norm = $\displaystyle \sum w^2$</p>
+<h2 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2><ul>
+<li>relatively simple model</li>
+<li>the hypothesis of linear regression (for the correlation between X and Y) =&gt; wx + b</li>
+<li><code>미지수가 많은 경우, 해가 무수히 많다.</code>라는 말은 새로운 데이터가 입력되었을 때 무엇인지 정확하게 예측하기 어렵다와 같은 말.<blockquote>
+<p>학습데이터는 잘 예측하지만 새로운 데이터가 추가되면 예측도가 떨어지는 것이므로 overfitting이 발생하기 쉽다.<br>when the number of <code>weight</code> in linear regression, the regulation is necessary.<br>the more the number of weight is added, the more complex the model.</p>
+</blockquote>
+</li>
+</ul>
+
     </div>
 
     
