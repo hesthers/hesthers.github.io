@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="TABLEAUDashboard  제목을 텍스트 컨테이너로 작성하면 일부 공간을 차지하여 작성됨.  데이터를 집계해서 전체 정보를 요약해서 보여주므로 전체 현황을 보여주는 데 특화되어 있으나 구체적인 사항에 있어서는 약점이 있을 수 있음. 필터 액션: 깔때기 표시를 누르면 해당년도 등 기준에 따른 내용을 자세하게 보여줌. 필터 동작에서도 설정 가능함.  Sc">
+<meta name="description" content="TABLEAUDashboard 제목을 텍스트 컨테이너로 작성하면 일부 공간을 차지하여 작성됨. 데이터를 집계해서 전체 정보를 요약해서 보여주므로 전체 현황을 보여주는 데 특화되어 있으나 구체적인 사항에 있어서는 약점이 있을 수 있음. 필터 액션: 깔때기 표시를 누르면 해당년도 등 기준에 따른 내용을 자세하게 보여줌. 필터 동작에서도 설정 가능함.  Scat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tableau pt.3">
 <meta property="og:url" content="https://hesthers.github.io/archives/2021/10/13/Tableau-pt-3/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="TABLEAUDashboard  제목을 텍스트 컨테이너로 작성하면 일부 공간을 차지하여 작성됨.  데이터를 집계해서 전체 정보를 요약해서 보여주므로 전체 현황을 보여주는 데 특화되어 있으나 구체적인 사항에 있어서는 약점이 있을 수 있음. 필터 액션: 깔때기 표시를 누르면 해당년도 등 기준에 따른 내용을 자세하게 보여줌. 필터 동작에서도 설정 가능함.  Sc">
+<meta property="og:description" content="TABLEAUDashboard 제목을 텍스트 컨테이너로 작성하면 일부 공간을 차지하여 작성됨. 데이터를 집계해서 전체 정보를 요약해서 보여주므로 전체 현황을 보여주는 데 특화되어 있으나 구체적인 사항에 있어서는 약점이 있을 수 있음. 필터 액션: 깔때기 표시를 누르면 해당년도 등 기준에 따른 내용을 자세하게 보여줌. 필터 동작에서도 설정 가능함.  Scat">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-13T11:40:44.000Z">
 <meta property="article:modified_time" content="2021-10-13T11:54:49.805Z">
@@ -207,21 +207,18 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="TABLEAU"><a href="#TABLEAU" class="headerlink" title="TABLEAU"></a><code>TABLEAU</code></h1><h2 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h2><ul>
-<li> 제목을 텍스트 컨테이너로 작성하면 일부 공간을 차지하여 작성됨.</li>
-<li> 데이터를 집계해서 전체 정보를 요약해서 보여주므로 전체 현황을 보여주는 데 특화되어 있으나 구체적인 사항에 있어서는 약점이 있을 수 있음.</li>
+<li>제목을 텍스트 컨테이너로 작성하면 일부 공간을 차지하여 작성됨.</li>
+<li>데이터를 집계해서 전체 정보를 요약해서 보여주므로 전체 현황을 보여주는 데 특화되어 있으나 구체적인 사항에 있어서는 약점이 있을 수 있음.</li>
 <li>필터 액션: 깔때기 표시를 누르면 해당년도 등 기준에 따른 내용을 자세하게 보여줌. 필터 동작에서도 설정 가능함.</li>
 </ul>
 <h2 id="Scatter-plot-amp-Histogram-amp-Boxplot"><a href="#Scatter-plot-amp-Histogram-amp-Boxplot" class="headerlink" title="Scatter plot &amp; Histogram &amp; Boxplot"></a>Scatter plot &amp; Histogram &amp; Boxplot</h2><ul>
-<li><p> 산점도: 2개의 측정값의 관계 (correlation)를 나타내는 차트</p>
-</li>
-<li><p>측정값 두 개를 같이 올리게 되면 각 측정값의 한 개만 나오게 됨. (총 합계)</p>
-</li>
-<li><p> 회귀선의 기울기: x축이 한 unit 증가할 때 y축의 증감량</p>
+<li>산점도: 2개의 측정값의 관계 (correlation)를 나타내는 차트</li>
+<li>측정값 두 개를 같이 올리게 되면 각 측정값의 한 개만 나오게 됨. (총 합계)</li>
+<li><p>회귀선의 기울기: x축이 한 unit 증가할 때 y축의 증감량</p>
 </li>
 <li><p>측정값의 분포를 살펴볼 때 박스플롯 사용</p>
 </li>
-<li><p>해당 측정값의 구간차원을 생성하여  막대그래프 형성되며 불연속형 데이터로 자동 생성됨. 불연속형 데이터를 연속형으로 만들면 히스토그램으로 만들 수 있음</p>
-</li>
+<li>해당 측정값의 구간차원을 생성하여  막대그래프 형성되며 불연속형 데이터로 자동 생성됨. 불연속형 데이터를 연속형으로 만들면 히스토그램으로 만들 수 있음</li>
 </ul>
 <h2 id="Map-Geographic-graph"><a href="#Map-Geographic-graph" class="headerlink" title="Map (Geographic graph)"></a>Map (Geographic graph)</h2><ul>
 <li>GIS: geographical info system</li>
@@ -231,8 +228,8 @@
 <li>지리 경계 정보는 어디에서 가져올 것인가… 만약 지역 명칭만 정확하게 가지고 있다면 태블로에서 빌려와서 사용이 가능함.<br>단, 읍면동 단위와 같은 자세한 지역명칭의 경우 개인이 직접 가져와야 함.</li>
 <li>텍스트 (혹은 문자열 데이터): 공간적 의미를 가지는 텍스트이나 지리적 역할을 부여함으로써 지도 상에 위치 등을 표시할 수 있음<br>e.g. 강원도(Kang-won), 경기도(Kyung-ki), …</li>
 <li>풀네임으로 되어있지 않은 데이터인 경우에도 지리적 역할을 부여함으로써 지도 인식이 가능함. 공식 지역명칭이 아닌 경우 (호남, 영남.. 등) 만들기 탭의 해당 원본 데이터를 기준으로 지리적 역할 부여해주어서 생성 가능함.</li>
-<li> County or City would be duplicated, so no mark on a map, unless it is uploaded with the states.</li>
-<li> If geographical data has both longtitude and latitude information, it could be represented on a map, but before you should change the string type of data into float (real number) type.</li>
+<li>County or City would be duplicated, so no mark on a map, unless it is uploaded with the states.</li>
+<li>If geographical data has both longtitude and latitude information, it could be represented on a map, but before you should change the string type of data into float (real number) type.</li>
 </ul>
 
     </div>
@@ -302,6 +299,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="https://hesthers.github.io/js/third-party/math/mathjax.js"></script>
 
 
 

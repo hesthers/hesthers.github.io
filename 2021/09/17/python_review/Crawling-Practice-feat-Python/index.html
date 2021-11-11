@@ -206,7 +206,6 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="Crawling-Practice-with-the-topic-Drama"><a href="#Crawling-Practice-with-the-topic-Drama" class="headerlink" title="Crawling Practice with the topic Drama"></a>Crawling Practice with the topic <code>Drama</code></h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">kw = input(&#x27;키워드를 입력하세요 : &#x27;)</span><br><span class="line">url = f&#x27;https://search.naver.com/search.naver?where=nexearch&amp;sm=top_sug.pre&amp;fbm=1&amp;acr=1&amp;acq=%EA%B2%80%EC%9D%80&amp;qdt=0&amp;ie=utf8&amp;query=&#123;kw&#125;&#x27;</span><br><span class="line">response = requests.get(url)</span><br><span class="line">html = BeautifulSoup(response.text, &#x27;html.parser&#x27;)</span><br><span class="line">html.select(&#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line">for txt in html.select(&#x27;a&#x27;):</span><br><span class="line">    if kw in txt.text:</span><br><span class="line">        if (&#x27;cafe&#x27; in txt.attrs[&#x27;href&#x27;]) or (&#x27;blog&#x27; in txt.attrs[&#x27;href&#x27;]):</span><br><span class="line">            print(txt.text, txt.attrs[&#x27;href&#x27;])</span><br><span class="line">        else:</span><br><span class="line">            pass</span><br><span class="line">    else:</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">drama = input(&#x27;드라마 이름을 입력하세요 : &#x27;)</span><br><span class="line">url = f&#x27;https://search.daum.net/search?w=tot&amp;DA=YZR&amp;t__nil_searchbox=btn&amp;sug=&amp;sugo=&amp;sq=&amp;o=&amp;q=&#123;drama&#125;&#x27;</span><br><span class="line">response = requests.get(url)</span><br><span class="line">html = BeautifulSoup(response.text, &#x27;html.parser&#x27;)</span><br><span class="line">drama_summary = html.select(&#x27;dd.cont&#x27;)[0].text</span><br><span class="line">print(f&#x27;드라마 줄거리 : &#123;drama_summary&#125;&#x27;)</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line">print(&#x27;         배역      배우&#x27;)</span><br><span class="line">print(&#x27;      ------------------&#x27;)</span><br><span class="line">for cont in html.select(&#x27;div#tv_casting li&#x27;)[1:]:</span><br><span class="line">    print(cont.text)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>I used the crawling python code to print drama info.</li>
 </ul>
@@ -278,6 +277,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="https://hesthers.github.io/js/third-party/math/mathjax.js"></script>
 
 
 

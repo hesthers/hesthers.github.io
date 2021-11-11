@@ -202,7 +202,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="Crawling-Practice-with-the-topic-Drama"><a href="#Crawling-Practice-with-the-topic-Drama" class="headerlink" title="Crawling Practice with the topic Drama"></a>Crawling Practice with the topic <code>Drama</code></h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">kw = input(&#x27;키워드를 입력하세요 : &#x27;)</span><br><span class="line">url = f&#x27;https://search.naver.com/search.naver?where=nexearch&amp;sm=top_sug.pre&amp;fbm=1&amp;acr=1&amp;acq=%EA%B2%80%EC%9D%80&amp;qdt=0&amp;ie=utf8&amp;query=&#123;kw&#125;&#x27;</span><br><span class="line">response = requests.get(url)</span><br><span class="line">html = BeautifulSoup(response.text, &#x27;html.parser&#x27;)</span><br><span class="line">html.select(&#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line">for txt in html.select(&#x27;a&#x27;):</span><br><span class="line">    if kw in txt.text:</span><br><span class="line">        if (&#x27;cafe&#x27; in txt.attrs[&#x27;href&#x27;]) or (&#x27;blog&#x27; in txt.attrs[&#x27;href&#x27;]):</span><br><span class="line">            print(txt.text, txt.attrs[&#x27;href&#x27;])</span><br><span class="line">        else:</span><br><span class="line">            pass</span><br><span class="line">    else:</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">drama = input(&#x27;드라마 이름을 입력하세요 : &#x27;)</span><br><span class="line">url = f&#x27;https://search.daum.net/search?w=tot&amp;DA=YZR&amp;t__nil_searchbox=btn&amp;sug=&amp;sugo=&amp;sq=&amp;o=&amp;q=&#123;drama&#125;&#x27;</span><br><span class="line">response = requests.get(url)</span><br><span class="line">html = BeautifulSoup(response.text, &#x27;html.parser&#x27;)</span><br><span class="line">drama_summary = html.select(&#x27;dd.cont&#x27;)[0].text</span><br><span class="line">print(f&#x27;드라마 줄거리 : &#123;drama_summary&#125;&#x27;)</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line">print(&#x27;         배역      배우&#x27;)</span><br><span class="line">print(&#x27;      ------------------&#x27;)</span><br><span class="line">for cont in html.select(&#x27;div#tv_casting li&#x27;)[1:]:</span><br><span class="line">    print(cont.text)</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>I used the crawling python code to print drama info.</li>
 </ul>
@@ -273,9 +272,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="VISUALIZATION"><a href="#VISUALIZATION" class="headerlink" title="VISUALIZATION"></a>VISUALIZATION</h1><p>Python has provided various visualization tools. You can draw various graphs in python.<br>Before you draw graphs or plots, you have to import modules for visualization.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import seaborn as sns</span><br></pre></td></tr></table></figure>
-
+          <h1 id="VISUALIZATION"><a href="#VISUALIZATION" class="headerlink" title="VISUALIZATION"></a>VISUALIZATION</h1><p>Python has provided various visualization tools. You can draw various graphs in python.<br>Before you draw graphs or plots, you have to import modules for visualization.<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import seaborn as sns</span><br></pre></td></tr></table></figure></p>
 <h2 id="Difference-between-matplotlib-and-seaborn"><a href="#Difference-between-matplotlib-and-seaborn" class="headerlink" title="Difference between matplotlib and seaborn"></a>Difference between <code>matplotlib and seaborn</code></h2><p>Matplotlib is not much aesthetic as much as seaborn module. If you want to make your graphs more beautiful, I recommend you would use seaborn module.<br>Moreover, you also use much more various graphs that matplotlib module does not provide.</p>
 <h2 id="TYPES-of-graphs"><a href="#TYPES-of-graphs" class="headerlink" title="TYPES of graphs"></a>TYPES of graphs</h2><ol>
 <li>Line Plot</li>
@@ -287,7 +284,7 @@
 <ul>
 <li>Extra graphs that seaborn module provides</li>
 </ul>
-<ol start="5">
+<ol>
 <li>countplot</li>
 <li>distplot</li>
 <li>jointplot</li>
@@ -469,7 +466,7 @@
 <li>one of data type in python</li>
 <li>table format</li>
 <li>provides various statistical, visualization functions</li>
-<li>used to read and save data as files – support various file format (e.g. csv, xlsx …)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pd.read_csv(&#x27;./[file_name]&#x27;, encoding = &#x27;utf8&#x27;)</span><br><span class="line"></span><br><span class="line">pd.to_csv(&#x27;./[file_name]&#x27;, encoding = &#x27;utf8&#x27;, index = False)</span><br></pre></td></tr></table></figure>
+<li>used to read and save data as files — support various file format (e.g. csv, xlsx …)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pd.read_csv(&#x27;./[file_name]&#x27;, encoding = &#x27;utf8&#x27;)</span><br><span class="line"></span><br><span class="line">pd.to_csv(&#x27;./[file_name]&#x27;, encoding = &#x27;utf8&#x27;, index = False)</span><br></pre></td></tr></table></figure>
 If you are using Mac Book, you do not have to write ‘utf8’ to encode files.</li>
 </ul>
 <h3 id="Indexing-Slicing-data"><a href="#Indexing-Slicing-data" class="headerlink" title="Indexing, Slicing data"></a>Indexing, Slicing data</h3><ul>
@@ -603,6 +600,12 @@ If you are using Mac Book, you do not have to write ‘utf8’ to encode files.<
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="https://hesthers.github.io/js/third-party/math/mathjax.js"></script>
 
 
 

@@ -208,27 +208,26 @@
 </li>
 <li><p>조인 (Join):<br>the combined data is added next to the new column<br>Combine the table physically<br>Be careful when joining the data in each table are the same 100% (How to join the tables??)</p>
 </li>
-<li><p><b> 방향 </b> 중요함.</p>
-</li>
-<li><p><b>조인의 조건</b> 잘 맞춰주기</p>
-</li>
-<li><p>각 데이터 테이블의 공통적인 데이터를 가져올 것인가.</p>
-</li>
+<li><b> 방향 </b> 중요함.</li>
+<li><b>조인의 조건</b> 잘 맞춰주기</li>
+<li>각 데이터 테이블의 공통적인 데이터를 가져올 것인가.</li>
 </ul>
 <blockquote>
 <p>참고사항:<br>관계: 느슨한 형태로 결합, 방향은 태블로가 알아서 잡아줌. (방향 자동 설정) 조건만 설정)<br>블렌딩: 제약이 많으나 유용한 기능이며 따로 구분되어 있는 시트를 하나의 시트 위에 두 개의 원본소스를 같이 사용할 때 조건을 잡아주는 것, 연산을 통해서 개별 시각화를 만들 수 있으나 조인처럼 강력하게 물리적으로 결합되거나 병합이 일어나는 것은 아님.</p>
 </blockquote>
 <ul>
-<li><p> 지도상에서 읍면동인 경우 외부에서 지리경계 정보를 가져와야 함. (shp 파일 = 공간정보 파일)</p>
+<li><p>지도상에서 읍면동인 경우 외부에서 지리경계 정보를 가져와야 함. (shp 파일 = 공간정보 파일)</p>
 </li>
 <li><p>엑셀 데이터 원본의 필드명을 인식못하는 경우 데이터 해석기 사용하면 됨. 자동으로 데이터 처리됨.</p>
 </li>
-<li><p>change the data type because the join cannot occur when the type is dfferent from another one.</p>
-</li>
-<li><p>차원과 측정값의 경계가 모호하는 경우 태블로에서 사용하기 애매한 데이터 형이므로 피벗으로 테이블 형태를 변경하기</p>
-</li>
-<li><p>연도와 분기 순서가 뒤섞여있는 경우 날짜형으로 변환 (예. Q1 – 2018)<br><code>RIGHT([Date], 4) + &quot;-&quot; + IF LEFT([Date],2) = &quot;Q1&quot; THEN &quot;01-01&quot; ELSEIF LEFT([Date],2) = &quot;Q2&quot; THEN &quot;04-01&quot; ELSEIF LEFT([Date],2) = &quot;Q3&quot; THEN &quot;07-01&quot; ELSE &quot;10-01&quot; END</code></p>
-</li>
+<li>change the data type because the join cannot occur when the type is dfferent from another one.</li>
+<li>차원과 측정값의 경계가 모호하는 경우 태블로에서 사용하기 애매한 데이터 형이므로 피벗으로 테이블 형태를 변경하기</li>
+<li>연도와 분기 순서가 뒤섞여있는 경우 날짜형으로 변환 (예. Q1 – 2018)<br><code>RIGHT([Date], 4) + &quot;-&quot; +
+IF LEFT([Date],2) = &quot;Q1&quot; THEN &quot;01-01&quot;
+ELSEIF LEFT([Date],2) = &quot;Q2&quot; THEN &quot;04-01&quot;
+ELSEIF LEFT([Date],2) = &quot;Q3&quot; THEN &quot;07-01&quot;
+ELSE &quot;10-01&quot;
+END</code></li>
 </ul>
 
       
@@ -527,7 +526,7 @@
 <li>manually hidden filter: 숨기기 기능을 통해 전월대비 증감율 비율 표현이 가능함. 그러나 이후의 데이터를 업데이트하기 어려움.</li>
 <li>Table Calculation: LAST()라는 함수를 사용하면 테이블이 자동으로 필터링되어서 계산됨.</li>
 </ul>
-<ol start="2">
+<ol>
 <li>이중축 (Double axis) &amp; 결합축 (Combined axis)</li>
 </ol>
 <ul>
@@ -536,9 +535,9 @@
 <li>축의 스케일은 축 동기화로 기준 맞추어줄 수 있음</li>
 <li>막대 크기를 조절해서 bar in bar 구현 가능하거나 축이 여러 개를 구현해줄 때 사용</li>
 <li>마크카드가 따로따로 되어있는 이중축은 자유도가 높음 (개별 설정이 가능함.) 그러나 결합축인 경우 별도로 구현하기 어려움… 그러나 여러 가지 그래프를 한 번에 표현이 가능함.</li>
-<li> 비율이나 금액 등 단위가 다른 경우 결합축의 이중축으로 구현 혹은 별도로 각각 표현을 해야함.</li>
+<li>비율이나 금액 등 단위가 다른 경우 결합축의 이중축으로 구현 혹은 별도로 각각 표현을 해야함.</li>
 </ul>
-<ol start="3">
+<ol>
 <li>도넛차트(Donut Chart)</li>
 </ol>
 <ul>
@@ -601,6 +600,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="https://hesthers.github.io/js/third-party/math/mathjax.js"></script>
 
 
 

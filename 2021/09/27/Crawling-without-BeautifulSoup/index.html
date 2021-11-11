@@ -213,7 +213,6 @@
 </li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">url = &#x27;[web address to crawl]&#x27;</span><br><span class="line">info = &#123;</span><br><span class="line">    &#x27;referer&#x27;: &#x27;[main webpage address]&#x27;,</span><br><span class="line">    &#x27;user-agent&#x27;: &#x27;[user agent on the network panel of the developer webpage]&#x27;</span><br><span class="line">&#125;</span><br><span class="line">response = requests.get(url, headers=info)</span><br><span class="line"># response.text</span><br><span class="line"></span><br><span class="line">import json</span><br><span class="line">data = json.loads(response.text)</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
-
 <p>You can access the dynamic webpage that is blocked by java script(js).</p>
 
     </div>
@@ -280,6 +279,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="https://hesthers.github.io/js/third-party/math/mathjax.js"></script>
 
 
 
