@@ -186,8 +186,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-11-11 21:01:19" itemprop="dateCreated datePublished" datetime="2021-11-11T21:01:19+09:00">2021-11-11</time>
+      <time title="Created: 2021-11-11 21:01:19 / Modified: 21:16:44" itemprop="dateCreated datePublished" datetime="2021-11-11T21:01:19+09:00">2021-11-11</time>
     </span>
 
   
@@ -200,7 +201,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <h1 id="Regression-model-and-regulation"><a href="#Regression-model-and-regulation" class="headerlink" title="Regression model and regulation"></a>Regression model and regulation</h1><p>This post is about linear regression and regulation part.</p>
+<h2 id="Summary-of-this-post"><a href="#Summary-of-this-post" class="headerlink" title="Summary of this post"></a>Summary of this post</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"><code>Linear</code></th>
+<th style="text-align:right"><code>Ridge</code></th>
+<th style="text-align:right"><code>Lasso</code></th>
+<th style="text-align:right"><code>Elastic Net</code> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hypo</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">wx + b</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>cost</td>
+<td style="text-align:center">오차항</td>
+<td style="text-align:right">오차항 + L2 Norm</td>
+<td style="text-align:right">오차항 + L1 Norm</td>
+<td style="text-align:right">오차항 + L1 Norm + L2 Norm</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="L1-norm-and-L2-norm-regulation"><a href="#L1-norm-and-L2-norm-regulation" class="headerlink" title="L1 norm and L2 norm regulation"></a>L1 norm and L2 norm regulation</h3>
       
     </div>
 
@@ -257,7 +288,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-11-11 21:03:34" itemprop="dateModified" datetime="2021-11-11T21:03:34+09:00">2021-11-11</time>
+        <time title="Modified: 2021-11-11 21:20:36" itemprop="dateModified" datetime="2021-11-11T21:20:36+09:00">2021-11-11</time>
       </span>
 
   
@@ -278,7 +309,7 @@
 <h2 id="purpose-of-machine-learning"><a href="#purpose-of-machine-learning" class="headerlink" title="purpose of machine learning"></a>purpose of machine learning</h2><ul>
 <li>finding the good (or optimized hypothesis) that the cost (or error) is low</li>
 <li>but, before entering the data, the user has to first design the specific hypothesis when the user does not know about the formula.</li>
-<li>to avoid the overfitting, regulation for the machine learning (by lessening the size of the weight) is needed.<br>argmin =<br>\begin{matrix}<br>min &amp; cost \\ weight(= \theta) &amp; \\<br>\end{matrix} </li>
+<li>to avoid the overfitting, regulation for the machine learning (by lessening the size of the weight) is needed.<br>argmin = <script type="math/tex; mode=display">\begin{matrix} min & cost \\ weight(= \theta) & \end{matrix}</script></li>
 </ul>
 <h2 id="How-to-train-the-machine"><a href="#How-to-train-the-machine" class="headerlink" title="How to train the machine?"></a>How to train the machine?</h2><ul>
 <li>calculate the value of <code>cost</code> (with the prediction using the first hypothesis set by the user) and then, differentiate the value of cost to find the slope.</li>

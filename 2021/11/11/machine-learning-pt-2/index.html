@@ -20,15 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="python, git&#x2F;github, data analysis, chinese">
+<meta name="description" content="Regression model and regulationThis post is about linear regression and regulation part. Summary of this post     Linear Ridge Lasso Elastic Net      hypo  wx + b     cost 오차항 오차항 + L2 Norm 오차항 + L1 N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="machine learning pt.2">
 <meta property="og:url" content="https://hesthers.github.io/archives/2021/11/11/machine-learning-pt-2/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="python, git&#x2F;github, data analysis, chinese">
+<meta property="og:description" content="Regression model and regulationThis post is about linear regression and regulation part. Summary of this post     Linear Ridge Lasso Elastic Net      hypo  wx + b     cost 오차항 오차항 + L2 Norm 오차항 + L1 N">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-11T12:01:19.000Z">
-<meta property="article:modified_time" content="2021-11-11T12:01:19.772Z">
+<meta property="article:modified_time" content="2021-11-11T12:16:44.913Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 
@@ -95,7 +95,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -108,6 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Regression-model-and-regulation"><span class="nav-number">1.</span> <span class="nav-text">Regression model and regulation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-of-this-post"><span class="nav-number">1.1.</span> <span class="nav-text">Summary of this post</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#L1-norm-and-L2-norm-regulation"><span class="nav-number">1.1.1.</span> <span class="nav-text">L1 norm and L2 norm regulation</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -189,8 +190,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-11-11 21:01:19" itemprop="dateCreated datePublished" datetime="2021-11-11T21:01:19+09:00">2021-11-11</time>
+      <time title="Created: 2021-11-11 21:01:19 / Modified: 21:16:44" itemprop="dateCreated datePublished" datetime="2021-11-11T21:01:19+09:00">2021-11-11</time>
     </span>
 
   
@@ -203,7 +205,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        
+        <h1 id="Regression-model-and-regulation"><a href="#Regression-model-and-regulation" class="headerlink" title="Regression model and regulation"></a>Regression model and regulation</h1><p>This post is about linear regression and regulation part.</p>
+<h2 id="Summary-of-this-post"><a href="#Summary-of-this-post" class="headerlink" title="Summary of this post"></a>Summary of this post</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"><code>Linear</code></th>
+<th style="text-align:right"><code>Ridge</code></th>
+<th style="text-align:right"><code>Lasso</code></th>
+<th style="text-align:right"><code>Elastic Net</code> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hypo</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">wx + b</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>cost</td>
+<td style="text-align:center">오차항</td>
+<td style="text-align:right">오차항 + L2 Norm</td>
+<td style="text-align:right">오차항 + L1 Norm</td>
+<td style="text-align:right">오차항 + L1 Norm + L2 Norm</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="L1-norm-and-L2-norm-regulation"><a href="#L1-norm-and-L2-norm-regulation" class="headerlink" title="L1 norm and L2 norm regulation"></a>L1 norm and L2 norm regulation</h3>
     </div>
 
     
