@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-12 21:23:04 / Modified: 21:51:49" itemprop="dateCreated datePublished" datetime="2021-11-12T21:23:04+09:00">2021-11-12</time>
+      <time title="Created: 2021-11-12 21:23:04 / Modified: 21:56:27" itemprop="dateCreated datePublished" datetime="2021-11-12T21:23:04+09:00">2021-11-12</time>
     </span>
 
   
@@ -203,14 +203,14 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="Machine-learning-pt-3"><a href="#Machine-learning-pt-3" class="headerlink" title="Machine learning pt.3"></a>Machine learning pt.3</h1><h2 id="The-reason-why-the-regulation-in-linear-regression-is-necessary"><a href="#The-reason-why-the-regulation-in-linear-regression-is-necessary" class="headerlink" title="The reason why the regulation in linear regression is necessary"></a>The reason why the regulation in linear regression is necessary</h2><ul>
 <li>when the weights are too many in linear regression, <b>the sizes of the weights</b> are also bigger.</li>
-<li>so, the model would be complicated, and then the possibility of overfitting would occur.</li>
+<li>so, <I>the model would be complicated, and then the possibility of overfitting would occur.</I></li>
 <li>To restrain this modeling complexity, the regulation is needed.</li>
 </ul>
 <h2 id="The-regulation"><a href="#The-regulation" class="headerlink" title="The regulation"></a>The regulation</h2><p>Please refer to a table on the previous post about comparison of ridge, lasso, elastic net.</p>
 <ul>
 <li>However, too much regulation can lead to the underfitting of the data.</li>
-<li>Lasso (L1 nrom) regulation: if a feature would be not 0 value even though the user imposes the lasso to give a penalty, the feature must be a significant feature. (a role of <code>feature selection</code> to eliminate many of features)</li>
-<li>formula for <code>Elastic Net</code>‘s cost function:<br>weight(error) + \textbf{ \lambda_{1}} \times \sum |w| + \textbf{ \lambda_{2}} \times \sum w^2 = weight(error) + \textbf{ \lambda}(\textbf{ l_{l ratio}} \sum |w| + \textbf{ (1 - l_{l ratio})} \sum w^2)</li>
+<li><b>Lasso (L1 norm) regulation</b>: if a feature would be not 0 value even though the user imposes the lasso to give a penalty, the feature must be a significant feature. (a role of <code>feature selection</code> to eliminate many of features)</li>
+<li>formula for <code>Elastic Net</code>‘s cost function:<script type="math/tex; mode=display">weight(error) + \textbf{ \lambda_{1}} \times \sum |w| + \textbf{ \lambda_{2}} \times \sum w^2 = weight(error) + \textbf{ \lambda}(\textbf{ l_{l ratio}} \sum |w| + \textbf{ (1 - l_{l ratio})} \sum w^2)</script></li>
 </ul>
 <h2 id="Multi-linear-regression"><a href="#Multi-linear-regression" class="headerlink" title="Multi-linear regression"></a>Multi-linear regression</h2><ul>
 <li>A kind of linear regression that has some features, not only one feature.</li>
