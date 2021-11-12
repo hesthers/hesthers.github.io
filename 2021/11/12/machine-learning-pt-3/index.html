@@ -20,27 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="SQL REPLICATIONI learned about SQL replication today, so I’m going to post this topic today on my blog.  definition of Replication:Imagine about copy. The replication on SQL is the same as copy.  the">
+<meta name="description" content="Machine learning pt.3The reason why the regulation in linear regression is necessary when the weights are too many in linear regression, the sizes of the weights are also bigger. so, the model would b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL replication">
-<meta property="og:url" content="https://hesthers.github.io/archives/2021/09/03/SQL_review/SQL-replication/index.html">
+<meta property="og:title" content="machine learning pt.3">
+<meta property="og:url" content="https://hesthers.github.io/archives/2021/11/12/machine-learning-pt-3/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="SQL REPLICATIONI learned about SQL replication today, so I’m going to post this topic today on my blog.  definition of Replication:Imagine about copy. The replication on SQL is the same as copy.  the">
+<meta property="og:description" content="Machine learning pt.3The reason why the regulation in linear regression is necessary when the weights are too many in linear regression, the sizes of the weights are also bigger. so, the model would b">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-09-03T14:49:18.000Z">
-<meta property="article:modified_time" content="2021-09-03T15:16:39.330Z">
+<meta property="article:published_time" content="2021-11-12T12:23:04.000Z">
+<meta property="article:modified_time" content="2021-11-12T12:51:49.270Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://hesthers.github.io/archives/2021/09/03/SQL_review/SQL-replication/">
+<link rel="canonical" href="https://hesthers.github.io/archives/2021/11/12/machine-learning-pt-3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/09/03/SQL_review/SQL-replication/","path":"2021/09/03/SQL_review/SQL-replication/","title":"SQL replication"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/11/12/machine-learning-pt-3/","path":"2021/11/12/machine-learning-pt-3/","title":"machine learning pt.3"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>SQL replication | blog for python & note</title>
+<title>machine learning pt.3 | blog for python & note</title>
   
 
 
@@ -108,7 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-REPLICATION"><span class="nav-number">1.</span> <span class="nav-text">SQL REPLICATION</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Machine-learning-pt-3"><span class="nav-number">1.</span> <span class="nav-text">Machine learning pt.3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-reason-why-the-regulation-in-linear-regression-is-necessary"><span class="nav-number">1.1.</span> <span class="nav-text">The reason why the regulation in linear regression is necessary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-regulation"><span class="nav-number">1.2.</span> <span class="nav-text">The regulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-linear-regression"><span class="nav-number">1.3.</span> <span class="nav-text">Multi-linear regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#types-of-Linear-Classification-model"><span class="nav-number">1.4.</span> <span class="nav-text">types of Linear Classification model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SPOILER-of-the-next-post"><span class="nav-number">1.4.1.</span> <span class="nav-text">SPOILER of the next post!!</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,7 +167,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/03/SQL_review/SQL-replication/">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/12/machine-learning-pt-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
@@ -180,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          SQL replication
+          machine learning pt.3
         </h1>
 
         <div class="post-meta-container">
@@ -190,16 +190,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-09-03 23:49:18" itemprop="dateCreated datePublished" datetime="2021-09-03T23:49:18+09:00">2021-09-03</time>
+      <time title="Created: 2021-11-12 21:23:04 / Modified: 21:51:49" itemprop="dateCreated datePublished" datetime="2021-11-12T21:23:04+09:00">2021-11-12</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-09-04 00:16:39" itemprop="dateModified" datetime="2021-09-04T00:16:39+09:00">2021-09-04</time>
-      </span>
 
   
 </div>
@@ -211,22 +205,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="SQL-REPLICATION"><a href="#SQL-REPLICATION" class="headerlink" title="SQL REPLICATION"></a>SQL REPLICATION</h1><p>I learned about SQL replication today, so I’m going to post this topic today on my blog.</p>
-<ul>
-<li><p>definition of <code>Replication</code>:<br>Imagine about copy. The replication on SQL is the same as copy.</p>
-</li>
-<li><p>the process of <code>Replication</code>:</p>
-</li>
+        <h1 id="Machine-learning-pt-3"><a href="#Machine-learning-pt-3" class="headerlink" title="Machine learning pt.3"></a>Machine learning pt.3</h1><h2 id="The-reason-why-the-regulation-in-linear-regression-is-necessary"><a href="#The-reason-why-the-regulation-in-linear-regression-is-necessary" class="headerlink" title="The reason why the regulation in linear regression is necessary"></a>The reason why the regulation in linear regression is necessary</h2><ul>
+<li>when the weights are too many in linear regression, <b>the sizes of the weights</b> are also bigger.</li>
+<li>so, the model would be complicated, and then the possibility of overfitting would occur.</li>
+<li>To restrain this modeling complexity, the regulation is needed.</li>
 </ul>
-<p>First, you have to create each master and slave server on AWS website. You can also create various slave servers.</p>
-<p>Second, using the public IP addresses of master and slave server, connect each server on <code>git bash</code>.<br>Use the command <code>ssh -i ~/.ssh/[key pair name].pem ubuntu@[public IP address]</code>. (You should install <code>ubuntu</code> before.)</p>
-<p>Third, on master and slave server, install <code>MySQL</code> and connect MySQl and server.Create the new account of MySQL on git bash.</p>
-<p>Fourth, on MySQL that connected with master server on git bash, create database.</p>
-<p>Fifth, come back MySQL program and create new connections with master and slave servers.</p>
-<p>Sixth, on the master DB connection of MySQL, type some queries to connect with the slave DB connection.</p>
-<p>Seventh, insert some data on the master DB.</p>
-<p>Eighth, check if the replication is successful on the slave DB connection.</p>
-<p>If you see the <code>yes</code> on the slave status, you succeed!!!!! You’re done!</p>
+<h2 id="The-regulation"><a href="#The-regulation" class="headerlink" title="The regulation"></a>The regulation</h2><p>Please refer to a table on the previous post about comparison of ridge, lasso, elastic net.</p>
+<ul>
+<li>However, too much regulation can lead to the underfitting of the data.</li>
+<li>Lasso (L1 nrom) regulation: if a feature would be not 0 value even though the user imposes the lasso to give a penalty, the feature must be a significant feature. (a role of <code>feature selection</code> to eliminate many of features)</li>
+<li>formula for <code>Elastic Net</code>‘s cost function:<br>weight(error) + \textbf{ \lambda_{1}} \times \sum |w| + \textbf{ \lambda_{2}} \times \sum w^2 = weight(error) + \textbf{ \lambda}(\textbf{ l_{l ratio}} \sum |w| + \textbf{ (1 - l_{l ratio})} \sum w^2)</li>
+</ul>
+<h2 id="Multi-linear-regression"><a href="#Multi-linear-regression" class="headerlink" title="Multi-linear regression"></a>Multi-linear regression</h2><ul>
+<li>A kind of linear regression that has some features, not only one feature.</li>
+<li>Through the value of weight, it is possible to identify with the influence of each of X features.</li>
+</ul>
+<h2 id="types-of-Linear-Classification-model"><a href="#types-of-Linear-Classification-model" class="headerlink" title="types of Linear Classification model"></a>types of Linear Classification model</h2><ul>
+<li>Logistic regression</li>
+<li>SVM (Support Vector Machine)</li>
+</ul>
+<h3 id="SPOILER-of-the-next-post"><a href="#SPOILER-of-the-next-post" class="headerlink" title="SPOILER of the next post!!"></a>SPOILER of the next post!!</h3><p>It would be continued regarding about Linear Classification models. It would also be about python codes for machine learning with some explanation!</p>
 
     </div>
 
@@ -240,14 +238,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/09/02/SQL_review/SQL-BACKUP/" rel="prev" title="SQL BACKUP">
-                  <i class="fa fa-chevron-left"></i> SQL BACKUP
+                <a href="https://hesthers.github.io/2021/11/11/machine-learning-pt-2/" rel="prev" title="machine learning pt.2">
+                  <i class="fa fa-chevron-left"></i> machine learning pt.2
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/09/04/list-of-my-blog/" rel="next" title="list of my blog">
-                  list of my blog <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
