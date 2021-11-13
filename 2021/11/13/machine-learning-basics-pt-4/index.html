@@ -20,17 +20,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge      아무리 모델링을 해도 규제항이 0에 가까워지지 않음 모델링을 하다보면 규제항0이 되는 값들이 존재함.   기울기(G) &#x3D; $\displaystyle 오차’ + w $ 기울기(G) &#x3D;  $\displaystyle 오차’">
+<meta name="description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge      아무리 모델링을 해도 규제항이 0에 가까워지지 않음 모델링을 하다보면 규제항0이 되는 값들이 존재함.   $\displaystyle 기울기(G) &#x3D; 오차’ + w $ $\displaystyle 기울기(G) &#x3D; 오차’ +">
 <meta property="og:type" content="article">
 <meta property="og:title" content="machine learning basics pt.4">
 <meta property="og:url" content="https://hesthers.github.io/archives/2021/11/13/machine-learning-basics-pt-4/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge      아무리 모델링을 해도 규제항이 0에 가까워지지 않음 모델링을 하다보면 규제항0이 되는 값들이 존재함.   기울기(G) &#x3D; $\displaystyle 오차’ + w $ 기울기(G) &#x3D;  $\displaystyle 오차’">
+<meta property="og:description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge      아무리 모델링을 해도 규제항이 0에 가까워지지 않음 모델링을 하다보면 규제항0이 되는 값들이 존재함.   $\displaystyle 기울기(G) &#x3D; 오차’ + w $ $\displaystyle 기울기(G) &#x3D; 오차’ +">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy">
 <meta property="article:published_time" content="2021-11-13T11:59:41.000Z">
-<meta property="article:modified_time" content="2021-11-13T13:02:35.562Z">
+<meta property="article:modified_time" content="2021-11-13T13:09:03.904Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy">
 
 
 <link rel="canonical" href="https://hesthers.github.io/archives/2021/11/13/machine-learning-basics-pt-4/">
@@ -192,7 +194,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-13 20:59:41 / Modified: 22:02:35" itemprop="dateCreated datePublished" datetime="2021-11-13T20:59:41+09:00">2021-11-13</time>
+      <time title="Created: 2021-11-13 20:59:41 / Modified: 22:09:03" itemprop="dateCreated datePublished" datetime="2021-11-13T20:59:41+09:00">2021-11-13</time>
     </span>
 
   
@@ -219,10 +221,10 @@
 <td style="text-align:center">모델링을 하다보면 규제항0이 되는 값들이 존재함.</td>
 </tr>
 <tr>
-<td>기울기(G) = $\displaystyle 오차’ +</td>
+<td>$\displaystyle 기울기(G) = 오차’ +</td>
 <td style="text-align:center">w</td>
 <td>$</td>
-<td>기울기(G) =  $\displaystyle 오차’ + C $</td>
+<td>$\displaystyle 기울기(G) = 오차’ + C$</td>
 </tr>
 <tr>
 <td>$\displaystyle W_{t} - a(오차’ +</td>
@@ -247,9 +249,9 @@
 <ul>
 <li>예측값 = 확률값</li>
 <li>0과 1로 구성된 데이터 값들을 가지고 집단을 구분짓는 경계선(=&gt; wx = 0)을 찾아 특정 카테고리 값을 예측하는 기법.</li>
-<li>hypothesis: $\displaystyle \left.\frac{1}{1+e^(-wx)}\right$</li>
+<li>hypothesis: $\displaystyle \begin{equation} \frac{1}{1+e^(-wx)}\end{equation}$</li>
 <li>cost: <I>절댓값의 오차</I>는 로지스틱 회귀분석에서 의미가 없다. (아무리 최적화를 위해 cost가 낮아지는 방향으로 가중치를 업데이트해도 cost값이 낮기 때문에 학습이 잘 되지 않기 때문.) 그래서 로그함수를 cost 함수로 이용함.<blockquote>
-<p>Local Minimum problem<br>! <a target="_blank" rel="noopener" href="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy">image</a></p>
+<p>Local Minimum problem<br><img src="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy" alt="image"></p>
 <ul>
 <li>local minimum이 많은 데이터의 경우 학습이 잘 안되어 underfit이 발생할 확률이 높다. 그래서 복잡한 모델인 경우 underfit에 취약한 경우이므로vanishing gradient(기울기 소실) 문제를 만날 수 있다. (cost값을 미분해서 weight값을 업데이트 해나가기 때문임.)</li>
 <li>Adam optimizer와 같은 모델들을 이를 해결하기 위한 방법으로 발전했다.</li>
@@ -264,9 +266,14 @@
 <ul>
 <li>Linear SVM의 경우, 비확률적 선형 모형</li>
 <li>로지스틱의 선형 경계선 (wx = 0)은 그대로 이용하면서 hypothesis의 함수를 다른 즉, 비확률적 선형 모형으로 구해야함.</li>
-<li>hypothesis: $\displystyle [\begin{cases}<br>  1       &amp; \quad (x \geq 0)\\\\<br>  0       &amp; \quad (x &lt; 0)<br>\end{cases} ]$</li>
+<li>hypothesis: $\displystyle \begin{cases}<br>  1       &amp; \quad (x \geq 0)\\\\<br>  0       &amp; \quad (x &lt; 0)<br>\end{cases}$</li>
 <li>데이터가 경계선과 인접할수록 overfitting의 우려가 있기 때문에 데이터와의 거리를 최대한 확보하면서 경계선을 그리는 것이 좋다.<blockquote>
-<p>마진 최대화하며 학습<br>cost = C (오차허용률) <em> 오차 + 마진의 역수항 (1 / 마진 = 규제항 </em> (1/2))<br>라쏘 규제항을 이용하는 경우: $\displaystyle \begin{equation} 오차 + \cfrac{1}{\cfrac{2}{\sum |w|}} \end{equation} \\\\ = 오차 + \frac{1}{2} \times \sum |w|$<br>오차허용률: 허용률 값이 크면 오차 허용을 안하기 때문에 오차값은 작아지고 마진의 역수값이 커지게 되는데 마진은 작은 값을 갖게 되기 때문에 overfitting이 발생할 수 있다. 그래서 오차가 커지더라도 오차허용률 값을 줄여서 오차허용을 어느 정도 해주는 것이 좋음.</p>
+<ul>
+<li>마진 최대화하며 학습 </li>
+<li>cost = C (오차허용률) <em> 오차 + 마진의 역수항 (1 / 마진 = 규제항 </em> (1/2))</li>
+<li>라쏘 규제항을 이용하는 경우: $\displaystyle \begin{equation} 오차 + \cfrac{1}{\cfrac{2}{\sum |w|}} \end{equation} \\\\ = 오차 + \frac{1}{2} \times \sum |w|$</li>
+<li>오차허용률: 허용률 값이 크면 오차 허용을 안하기 때문에 오차값은 작아지고 마진의 역수값이 커지게 되는데 마진은 작은 값을 갖게 되기 때문에 overfitting이 발생할 수 있다. 그래서 오차가 커지더라도 오차허용률 값을 줄여서 오차허용을 어느 정도 해주는 것이 좋음.</li>
+</ul>
 </blockquote>
 </li>
 </ul>
