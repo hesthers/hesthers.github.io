@@ -20,16 +20,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge      아무리 모델링을 해도 규제항이 0에 가까워지지 않음 모델링을 하다보면 규제항0이 되는 값들이 존재함.   $ \begin{equation} 기울기(G) &#x3D; ( 오차’ + {\textstyle w }) \end{equat">
+<meta name="description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge      아무리 모델링을 해도 규제항이 0에 가까워지지 않음 모델링을 하다보면 규제항0이 되는 값들이 존재함.   $\displaystyle 기울기(G) &#x3D; \textrm{( 오차’ + w )}$ $\displaystyle 기울">
 <meta property="og:type" content="article">
 <meta property="og:title" content="machine learning basics pt.4">
 <meta property="og:url" content="https://hesthers.github.io/archives/2021/11/13/machine-learning-basics-pt-4/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge      아무리 모델링을 해도 규제항이 0에 가까워지지 않음 모델링을 하다보면 규제항0이 되는 값들이 존재함.   $ \begin{equation} 기울기(G) &#x3D; ( 오차’ + {\textstyle w }) \end{equat">
+<meta property="og:description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge      아무리 모델링을 해도 규제항이 0에 가까워지지 않음 모델링을 하다보면 규제항0이 되는 값들이 존재함.   $\displaystyle 기울기(G) &#x3D; \textrm{( 오차’ + w )}$ $\displaystyle 기울">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy">
 <meta property="article:published_time" content="2021-11-13T11:59:41.000Z">
-<meta property="article:modified_time" content="2021-11-13T13:28:45.361Z">
+<meta property="article:modified_time" content="2021-11-13T13:32:33.490Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy">
@@ -194,7 +194,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-13 20:59:41 / Modified: 22:28:45" itemprop="dateCreated datePublished" datetime="2021-11-13T20:59:41+09:00">2021-11-13</time>
+      <time title="Created: 2021-11-13 20:59:41 / Modified: 22:32:33" itemprop="dateCreated datePublished" datetime="2021-11-13T20:59:41+09:00">2021-11-13</time>
     </span>
 
   
@@ -221,15 +221,15 @@
 <td style="text-align:center">모델링을 하다보면 규제항0이 되는 값들이 존재함.</td>
 </tr>
 <tr>
-<td>$ \begin{equation} 기울기(G) = ( 오차’ + {\textstyle</td>
+<td>$\displaystyle 기울기(G) = \textrm{( 오차’ +</td>
 <td style="text-align:center">w</td>
-<td>}) \end{equation} $</td>
+<td>)}$</td>
 <td>$\displaystyle 기울기(G) = 오차’ + C$</td>
 </tr>
 <tr>
-<td>$ \begin{equation} W_{t} - a( 오차’ + {\textstyle</td>
+<td>$\textrm{W_{t} - a( 오차’ +</td>
 <td style="text-align:center">w</td>
-<td>}) \end{equation} $</td>
+<td>)}$</td>
 <td>$\displaystyle W_{t} - a(오차’ + C)$</td>
 </tr>
 <tr>
