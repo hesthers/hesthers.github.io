@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-13 20:59:41 / Modified: 22:09:03" itemprop="dateCreated datePublished" datetime="2021-11-13T20:59:41+09:00">2021-11-13</time>
+      <time title="Created: 2021-11-13 20:59:41 / Modified: 22:14:49" itemprop="dateCreated datePublished" datetime="2021-11-13T20:59:41+09:00">2021-11-13</time>
     </span>
 
   
@@ -215,15 +215,15 @@
 <td style="text-align:center">모델링을 하다보면 규제항0이 되는 값들이 존재함.</td>
 </tr>
 <tr>
-<td>$\displaystyle 기울기(G) = 오차’ +</td>
+<td>$\displaystyle 기울기(G) = ( 오차’ + $\displaystyle</td>
 <td style="text-align:center">w</td>
-<td>$</td>
+<td>$ )$</td>
 <td>$\displaystyle 기울기(G) = 오차’ + C$</td>
 </tr>
 <tr>
-<td>$\displaystyle W_{t} - a(오차’ +</td>
+<td>$\displaystyle W_{t} - a( 오차’ + $\displaystyle</td>
 <td style="text-align:center">w</td>
-<td>)$</td>
+<td>$ )$</td>
 <td>$\displaystyle W_{t} - a(오차’ + C)$</td>
 </tr>
 <tr>
@@ -243,7 +243,7 @@
 <ul>
 <li>예측값 = 확률값</li>
 <li>0과 1로 구성된 데이터 값들을 가지고 집단을 구분짓는 경계선(=&gt; wx = 0)을 찾아 특정 카테고리 값을 예측하는 기법.</li>
-<li>hypothesis: $\displaystyle \begin{equation} \frac{1}{1+e^(-wx)}\end{equation}$</li>
+<li>hypothesis: $\displaystyle \begin{equation} \frac{1}{(1+e^{-wx})}\end{equation}$</li>
 <li>cost: <I>절댓값의 오차</I>는 로지스틱 회귀분석에서 의미가 없다. (아무리 최적화를 위해 cost가 낮아지는 방향으로 가중치를 업데이트해도 cost값이 낮기 때문에 학습이 잘 되지 않기 때문.) 그래서 로그함수를 cost 함수로 이용함.<blockquote>
 <p>Local Minimum problem<br><img src="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy" alt="image"></p>
 <ul>
@@ -260,7 +260,7 @@
 <ul>
 <li>Linear SVM의 경우, 비확률적 선형 모형</li>
 <li>로지스틱의 선형 경계선 (wx = 0)은 그대로 이용하면서 hypothesis의 함수를 다른 즉, 비확률적 선형 모형으로 구해야함.</li>
-<li>hypothesis: $\displystyle \begin{cases}<br>  1       &amp; \quad (x \geq 0)\\\\<br>  0       &amp; \quad (x &lt; 0)<br>\end{cases}$</li>
+<li>hypothesis: $\begin{cases}<br>  1       &amp; \quad (x \geq 0)\\\\<br>  0       &amp; \quad (x &lt; 0)<br>\end{cases}$</li>
 <li>데이터가 경계선과 인접할수록 overfitting의 우려가 있기 때문에 데이터와의 거리를 최대한 확보하면서 경계선을 그리는 것이 좋다.<blockquote>
 <ul>
 <li>마진 최대화하며 학습 </li>
