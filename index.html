@@ -186,10 +186,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-11-15 17:26:11 / Modified: 23:56:18" itemprop="dateCreated datePublished" datetime="2021-11-15T17:26:11+09:00">2021-11-15</time>
+      <time title="Created: 2021-11-15 17:26:11" itemprop="dateCreated datePublished" datetime="2021-11-15T17:26:11+09:00">2021-11-15</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-11-16 00:17:43" itemprop="dateModified" datetime="2021-11-16T00:17:43+09:00">2021-11-16</time>
+      </span>
 
   
 </div>
@@ -243,10 +249,8 @@
 </blockquote>
 <h2 id="Regulation-of-Classification-model"><a href="#Regulation-of-Classification-model" class="headerlink" title="Regulation of Classification model"></a>Regulation of Classification model</h2><ul>
 <li>the case when regulation is necessary: when the number of weight is a lot in order to restrain overfitting problem (the model is complicated = reinforcement of regulation = lowering C)</li>
-<li><p><code>cost</code> function formula of classification model =<br>$\displaystyle error + \frac{1}{C} \times \vert w \vert = \\\\ </p>
-<pre><code>         C(error +  \frac&#123;1&#125;&#123;C&#125; \times \vert w \vert) = \\\\ 
-     C \times error + \vert w \vert$
-</code></pre><blockquote>
+<li><p><code>cost</code> function formula of classification model =<br>$\displaystyle error + \frac{1}{C} \times \vert w \vert = \\\\<br>C(error +  \frac{1}{C} \times \vert w \vert) = \\\\<br>C \times error + \vert w \vert$</p>
+<blockquote>
 <p>C = the rate of error tolerance</p>
 </blockquote>
 </li>
