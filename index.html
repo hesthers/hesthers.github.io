@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-15 17:26:11 / Modified: 21:06:41" itemprop="dateCreated datePublished" datetime="2021-11-15T17:26:11+09:00">2021-11-15</time>
+      <time title="Created: 2021-11-15 17:26:11 / Modified: 21:11:00" itemprop="dateCreated datePublished" datetime="2021-11-15T17:26:11+09:00">2021-11-15</time>
     </span>
 
   
@@ -212,16 +212,39 @@
 <p>the case when the accuracy score is high but is not able to ensure the performance<br>Example: The test kit of the accuracy is 99%. Do you trust this score? IF the data is imbalanced, it is difficult to predict accurately the data. (Lower modeling performance)</p>
 </blockquote>
 </li>
-<li><p>Confusion Matrix<br>|| (Real) Positive | (Real) Negative |<br>|:—-:|:—-:|:—-:|<br>| (Prediction) Positive | TP | FP |<br>| (Prediction) Negative | FN | TN |</p>
+<li><p><code>Confusion Matrix</code></p>
 </li>
 </ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">(Real) Positive</th>
+<th style="text-align:center">(Real) Negative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">(Prediction) Positive</td>
+<td style="text-align:center">TP</td>
+<td style="text-align:center">FP</td>
+</tr>
+<tr>
+<td style="text-align:center">(Prediction) Negative</td>
+<td style="text-align:center">FN</td>
+<td style="text-align:center">TN</td>
+</tr>
+</tbody>
+</table>
+</div>
 <blockquote>
-<p>Precision(정밀도, evaluation as prediction = positive)  = $\displaystyle \frac{TP}{(TP + FP)}$<br>Recall(재현율, evaluation as real = positive) = $\displaystyle \frac{TP}{(TP + FN)}$</p>
+<p><code>Precision</code>(정밀도, evaluation as prediction = positive)  = $\displaystyle \frac{TP}{(TP + FP)}$<br><code>Recall</code>(재현율, evaluation as real = positive) = $\displaystyle \frac{TP}{(TP + FN)}$</p>
 </blockquote>
 <h2 id="Regulation-of-Classification-model"><a href="#Regulation-of-Classification-model" class="headerlink" title="Regulation of Classification model"></a>Regulation of Classification model</h2><ul>
 <li>the case when regulation is necessary: when the number of weight is a lot in order to restrain overfitting problem (the model is complicated = reinforcement of regulation = lowering C)</li>
-<li><p><code>cost</code> function formula of classification model = $\displaystyle + \frac{1}{C} \times \vert w \vert = C(error +  \frac{1}{C} \times \vert w \vert) = C \times error + \vert w \vert$</p>
-<blockquote>
+<li><p><code>cost</code> function formula of classification model = </p>
+<script type="math/tex; mode=display">\displaystyle + \frac{1}{C} \times \vert w \vert = C(error +  \frac{1}{C} \times \vert w \vert) = C \times error + \vert w \vert</script><blockquote>
 <p>C = the rate of error tolerance</p>
 </blockquote>
 </li>
@@ -233,12 +256,43 @@
 <li>set parameter through kernel to impose the non-linearity</li>
 <li>margin = $\displaystyle \frac{1}{C}$</li>
 <li>To maximize the margin, allow the error by lessening the value of C to lower overfitting problem and the error</li>
-<li>Hard SVM (perform the modeling without allowing the error at all) vs Soft SVM (select the optimized margin with allowing the error and selecting the data that is in the margin)<br>|| prediction value | error | range of error |<br>|:—-:|:—-:|:—-:|:—-:|<br>| Logistic Regression | $\displaystyle \frac{1}{(1 + e^{-wx}}$ (the value of probability) | log loss | 0 &lt; n &lt; \infty |<br>| SVM | $[ \begin{cases} 1 \\ 0 \end{cases} ]$ | hinge loss | 0 \leq n \infty |</li>
-<li>Kernel: change non-linear coordinates into linear coordinates<br>$\displaystyle \implies$ MLP classifier (using rbf formula and various ways, find the linear relation) $\displaystyle \rightarrow$ Deep learning and NN(Neural Network)<br>Perceptron: 비선형성이 굉장히 복잡한 경우 층을 쌓아가면서 비선형성 문제를 풀릴수 있도록 해줌.</li>
+<li>Hard SVM (perform the modeling without allowing the error at all) vs Soft SVM (select the optimized margin with allowing the error and selecting the data that is in the margin)</li>
 </ul>
 </blockquote>
 </li>
 </ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">prediction value</th>
+<th style="text-align:center">error</th>
+<th style="text-align:center">range of error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Logistic Regression</td>
+<td style="text-align:center">$\displaystyle \frac{1}{(1 + e^{-wx})}$ (the value of probability)</td>
+<td style="text-align:center">log loss</td>
+<td style="text-align:center">$displaystyle 0 &lt; n &lt; \infty$</td>
+</tr>
+<tr>
+<td style="text-align:center">SVM</td>
+<td style="text-align:center">$\displaystyle \begin{cases} 1 \\ 0 \end{cases}$</td>
+<td style="text-align:center">hinge loss</td>
+<td style="text-align:center">$\displaystyle 0 \leq n \infty$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<ul>
+<li>Kernel: change non-linear coordinates into linear coordinates<br>$\displaystyle \implies$ MLP classifier (using rbf formula and various ways, find the linear relation) $\displaystyle \rightarrow$ Deep learning and NN(Neural Network)</li>
+<li>Perceptron: 비선형성이 굉장히 복잡한 경우 층을 쌓아가면서 비선형성 문제를 풀릴수 있도록 해줌.</li>
+</ul>
+</blockquote>
 
       
     </div>
