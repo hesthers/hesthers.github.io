@@ -28,7 +28,7 @@
 <meta property="og:description" content="Machine Learning BasicsLinear Classification Model Metrics Different from linear regression, Logistics regression and SVM needs the metrics to test their performance. the metrics of Linear Regression">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-15T08:26:11.000Z">
-<meta property="article:modified_time" content="2021-11-15T14:43:39.701Z">
+<meta property="article:modified_time" content="2021-11-15T14:56:18.242Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 
@@ -192,7 +192,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-15 17:26:11 / Modified: 23:43:39" itemprop="dateCreated datePublished" datetime="2021-11-15T17:26:11+09:00">2021-11-15</time>
+      <time title="Created: 2021-11-15 17:26:11 / Modified: 23:56:18" itemprop="dateCreated datePublished" datetime="2021-11-15T17:26:11+09:00">2021-11-15</time>
     </span>
 
   
@@ -247,8 +247,10 @@
 </blockquote>
 <h2 id="Regulation-of-Classification-model"><a href="#Regulation-of-Classification-model" class="headerlink" title="Regulation of Classification model"></a>Regulation of Classification model</h2><ul>
 <li>the case when regulation is necessary: when the number of weight is a lot in order to restrain overfitting problem (the model is complicated = reinforcement of regulation = lowering C)</li>
-<li><p><code>cost</code> function formula of classification model = $\displaystyle + \frac{1}{C} \times \vert w \vert = \\\\ C(error +  \frac{1}{C} \times \vert w \vert) = \\\\ C \times error + \vert w \vert$</p>
-<blockquote>
+<li><p><code>cost</code> function formula of classification model =<br>$\displaystyle error + \frac{1}{C} \times \vert w \vert = \\\\ </p>
+<pre><code>         C(error +  \frac&#123;1&#125;&#123;C&#125; \times \vert w \vert) = \\\\ 
+     C \times error + \vert w \vert$
+</code></pre><blockquote>
 <p>C = the rate of error tolerance</p>
 </blockquote>
 </li>
