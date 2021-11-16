@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-16 17:12:41 / Modified: 22:16:30" itemprop="dateCreated datePublished" datetime="2021-11-16T17:12:41+09:00">2021-11-16</time>
+      <time title="Created: 2021-11-16 17:12:41 / Modified: 22:17:53" itemprop="dateCreated datePublished" datetime="2021-11-16T17:12:41+09:00">2021-11-16</time>
     </span>
 
   
@@ -216,24 +216,31 @@
 </ol>
 <ul>
 <li>summary:<blockquote>
-<p>Decision Tree is simple when the depth of question is low, vice versa. However, the degree of training for the training data is high but for the test data is not.<br>Decision Tree is explainable that the reason is obvious about the result of prediction (how it classifies the data using which criteria)<br>Decision Tree can be used as the Regressional model. Variance is the error of<br>decision tree regressor.<br>the value of entropy is large when the labels are even.</p>
+<p>Decision Tree is simple when the depth of question is low, vice versa. However, the degree of training for the training data is high but for the test data is not.</p>
 </blockquote>
 </li>
 </ul>
+<blockquote>
+<p>Decision Tree is explainable that the reason is obvious about the result of prediction (how it classifies the data using which criteria)</p>
+<p>Decision Tree can be used as the Regressional model. Variance is the error of<br>decision tree regressor. </p>
+<p>the value of entropy is large when the labels are even.</p>
+</blockquote>
 <ol>
 <li>Ensemble</li>
 </ol>
 <ul>
-<li><p>Bagging(Bootstrap Aggregating)</p>
-<blockquote>
+<li>Bagging(Bootstrap Aggregating)<blockquote>
 <p><code>Bootstrap</code> means <code>extracting the copy data from the original data</code>.<br><code>Aggregating</code> means <code>extracting the results from the different models with the majority vote</code>.<br>example: The results from three different models are the following:<br>  A: X with 0.4 probability, B: O with 0.9 probability, C: X with 0.3 probability<br>  Average probability is about 0.5. The result ratio is 2:1 = X:O.<br>  Q: Which result of models is correct?<br>Like above an example, you can choose soft or hard voting method in Bagging.<br>When extracting the copy data, extract it with sampling with replacement (random sampling).</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
 <ul>
 <li>Random Forest: combining various decision tree models with reinforcing the generalization by training the models independently and voting the one of the results, but underfitting problem often occurs.</li>
 </ul>
 </blockquote>
-</li>
-<li><p>Boosting</p>
-<blockquote>
+<ul>
+<li>Boosting<blockquote>
 <p>Adaboost / GBM / XGBoost / Light GBM<br>  the way to train is the same as Bagging, but the process of training is different.<br>  one model is trained first and then after the results of modeling are identified, imposing the weights on the wrong prediction and start training the next model (repeating these process)<br>  As influenced by the previous model training, the models are not independent.<br>The models of boosting are different from the performance. The performance of Light GBM is the fastest model in the training.</p>
 </blockquote>
 </li>
