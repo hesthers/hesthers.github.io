@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,90 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/12/machine-learning-pt-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/11/12/machine-learning-pt-3/" class="post-title-link" itemprop="url">machine learning pt.3</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-11-12 21:23:04 / Modified: 22:12:18" itemprop="dateCreated datePublished" datetime="2021-11-12T21:23:04+09:00">2021-11-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Machine-learning-pt-3"><a href="#Machine-learning-pt-3" class="headerlink" title="Machine learning pt.3"></a>Machine learning pt.3</h1><h2 id="The-reason-why-the-regulation-in-linear-regression-is-necessary"><a href="#The-reason-why-the-regulation-in-linear-regression-is-necessary" class="headerlink" title="The reason why the regulation in linear regression is necessary"></a>The reason why the regulation in linear regression is necessary</h2><ul>
+<li>when the weights are too many in linear regression, <b>the sizes of the weights</b> are also bigger.</li>
+<li>so, <I>the model would be complicated, and then the possibility of overfitting would occur.</I></li>
+<li>To restrain this modeling complexity, the regulation is needed.</li>
+</ul>
+<h2 id="The-regulation"><a href="#The-regulation" class="headerlink" title="The regulation"></a>The regulation</h2><p>Please refer to a table on the previous post about comparison of ridge, lasso, elastic net.</p>
+<ul>
+<li>However, too much regulation can lead to the underfitting of the data.</li>
+<li><b>Lasso (L1 norm) regulation</b>: if a feature would be not 0 value even though the user imposes the lasso to give a penalty, the feature must be a significant feature. (a role of <code>feature selection</code> to eliminate many of features)</li>
+<li>formula for <code>Elastic Net</code>‘s cost function:<br>$\displaystyle weight(error) + \lambda 1 \times \sum |w| + \lambda 2 \times \sum w^2 \\\\<br>= weight(error) + \lambda(l_{l ratio} \sum |w| + (1 - l_{l ratio}) \sum w^2)$</li>
+</ul>
+<h2 id="Multi-linear-regression"><a href="#Multi-linear-regression" class="headerlink" title="Multi-linear regression"></a>Multi-linear regression</h2><ul>
+<li>A kind of linear regression that has some features, not only one feature.</li>
+<li>Through the value of weight, it is possible to identify with the influence of each of X features.</li>
+</ul>
+<h2 id="types-of-Linear-Classification-model"><a href="#types-of-Linear-Classification-model" class="headerlink" title="types of Linear Classification model"></a>types of Linear Classification model</h2><ul>
+<li>Logistic regression</li>
+<li>SVM (Support Vector Machine)</li>
+</ul>
+<h3 id="SPOILER-of-the-next-post"><a href="#SPOILER-of-the-next-post" class="headerlink" title="SPOILER of the next post!!"></a>SPOILER of the next post!!</h3><p>It would be continued regarding about Linear Classification models. It would also be about python codes for machine learning with some explanation!</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -488,73 +572,6 @@
 <li><p>최종적으로 이용해도 될만한 컬럼들은 <code>box_off_num, dir_prve_bfnum, dir_prev_num, num_staff, screening_rat (onehot encoding columns), time</code>이다. (물론 회귀분석에서 다중공선성 여부로 전체 컬럼들을 가지고 다시 확인할 생각이다.)<br>(The columns that are able to utilize are ultimately  <code>box_off_num, dir_prve_bfnum, dir_prev_num, num_staff, screening_rat (onehot encoding columns), time</code>. (Of course, I also recheck the total columns with multicollinearity later in Linear regression modeling.)</p>
 </li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/07/practice-coding-website/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/11/07/practice-coding-website/" class="post-title-link" itemprop="url">practice coding website</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-11-07 22:35:58 / Modified: 22:39:51" itemprop="dateCreated datePublished" datetime="2021-11-07T22:35:58+09:00">2021-11-07</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>I recommend this website to practice coding with various language.<br>만약 코딩 연습하고 싶다면 아래의 웹사이트에서 해보는 것을 추천한다. 물론 일반 주피터노트북, 아니콘다 등 실행환경과는 약간 다르기 때문에 처음 사용하면 불편함을 느낄 수 있으나 익숙해지면 괜찮은 것 같다.</p>
-<p><a href = "https://level.goorm.io/?_ga=2.215648597.394978536.1636199528-444198507.1634960437">Groom IDE</a></p>
-<p>This website is for korean, but you can change the different language, English and Japanese.</p>
 
       
     </div>

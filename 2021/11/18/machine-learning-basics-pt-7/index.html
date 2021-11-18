@@ -20,29 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge     모델링을 하다보면 규제항0이 되는 값들이 존재함 아무리 모델링을 해도 규제항이 0에 가까워지지 않음   $\displaystyle 기울기(G) &#x3D; 오차’ + C$ $\displaystyle 기울기(G) &#x3D; ( 오차’ +">
+<meta name="description" content="MACHINE LEARNING KNN (K-Nearest Neighbors) 좌표 공간을 기준으로 해당 데이터에서 가장 가까운 데이터의 라벨을 확인하고 해당 라벨로 예측하는 기법K 값에 따라서 학습 결과가 달라짐.    Clustering unsupervised learning분류 모델인 classification과 비슷해보이나 비교하는 것은 무의미함. 비">
 <meta property="og:type" content="article">
-<meta property="og:title" content="machine learning basics pt.4">
-<meta property="og:url" content="https://hesthers.github.io/archives/2021/11/13/machine-learning-basics-pt-4/index.html">
+<meta property="og:title" content="machine learning basics pt.7">
+<meta property="og:url" content="https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="Machine Learning basics pt.4comparison of Lasso and Ridge    Lasso Ridge     모델링을 하다보면 규제항0이 되는 값들이 존재함 아무리 모델링을 해도 규제항이 0에 가까워지지 않음   $\displaystyle 기울기(G) &#x3D; 오차’ + C$ $\displaystyle 기울기(G) &#x3D; ( 오차’ +">
+<meta property="og:description" content="MACHINE LEARNING KNN (K-Nearest Neighbors) 좌표 공간을 기준으로 해당 데이터에서 가장 가까운 데이터의 라벨을 확인하고 해당 라벨로 예측하는 기법K 값에 따라서 학습 결과가 달라짐.    Clustering unsupervised learning분류 모델인 classification과 비슷해보이나 비교하는 것은 무의미함. 비">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy">
-<meta property="article:published_time" content="2021-11-13T11:59:41.000Z">
-<meta property="article:modified_time" content="2021-11-13T14:24:54.485Z">
+<meta property="article:published_time" content="2021-11-18T08:10:22.000Z">
+<meta property="article:modified_time" content="2021-11-18T08:40:54.491Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy">
 
 
-<link rel="canonical" href="https://hesthers.github.io/archives/2021/11/13/machine-learning-basics-pt-4/">
+<link rel="canonical" href="https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/11/13/machine-learning-basics-pt-4/","path":"2021/11/13/machine-learning-basics-pt-4/","title":"machine learning basics pt.4"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/","path":"2021/11/18/machine-learning-basics-pt-7/","title":"machine learning basics pt.7"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>machine learning basics pt.4 | blog for python & note</title>
+<title>machine learning basics pt.7 | blog for python & note</title>
   
 
 
@@ -110,7 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Machine-Learning-basics-pt-4"><span class="nav-number">1.</span> <span class="nav-text">Machine Learning basics pt.4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#comparison-of-Lasso-and-Ridge"><span class="nav-number">1.1.</span> <span class="nav-text">comparison of Lasso and Ridge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Classfication-Model"><span class="nav-number">1.2.</span> <span class="nav-text">Linear Classfication Model</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MACHINE-LEARNING"><span class="nav-number">1.</span> <span class="nav-text">MACHINE LEARNING</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Clustering"><span class="nav-number">1.1.</span> <span class="nav-text">Clustering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-transformation-model"><span class="nav-number">1.2.</span> <span class="nav-text">Unsupervised transformation model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extra-info-about-MACHINE-LEARNING"><span class="nav-number">1.3.</span> <span class="nav-text">Extra info about MACHINE LEARNING</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -169,7 +167,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/13/machine-learning-basics-pt-4/">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
@@ -182,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          machine learning basics pt.4
+          machine learning basics pt.7
         </h1>
 
         <div class="post-meta-container">
@@ -194,7 +192,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-13 20:59:41 / Modified: 23:24:54" itemprop="dateCreated datePublished" datetime="2021-11-13T20:59:41+09:00">2021-11-13</time>
+      <time title="Created: 2021-11-18 17:10:22 / Modified: 17:40:54" itemprop="dateCreated datePublished" datetime="2021-11-18T17:10:22+09:00">2021-11-18</time>
     </span>
 
   
@@ -207,68 +205,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Machine-Learning-basics-pt-4"><a href="#Machine-Learning-basics-pt-4" class="headerlink" title="Machine Learning basics pt.4"></a>Machine Learning basics pt.4</h1><h2 id="comparison-of-Lasso-and-Ridge"><a href="#comparison-of-Lasso-and-Ridge" class="headerlink" title="comparison of Lasso and Ridge"></a>comparison of Lasso and Ridge</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><code>Lasso</code></th>
-<th style="text-align:center"><code>Ridge</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">모델링을 하다보면 규제항0이 되는 값들이 존재함</td>
-<td style="text-align:center">아무리 모델링을 해도 규제항이 0에 가까워지지 않음</td>
-</tr>
-<tr>
-<td style="text-align:center">$\displaystyle 기울기(G) = 오차’ + C$</td>
-<td style="text-align:center">$\displaystyle 기울기(G) = ( 오차’ + \vert w \vert )$</td>
-</tr>
-<tr>
-<td style="text-align:center">$\displaystyle W_{t} - a(오차’ + C)$</td>
-<td style="text-align:center">$\displaystyle W_{t} - a( 오차’ + \vert w \vert )$</td>
-</tr>
-<tr>
-<td style="text-align:center">피처가 많은 경우 (= weight가 많은 경우)에 강하게 규제를 걸어야할 때 피처선택을 위해 사용</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="Linear-Classfication-Model"><a href="#Linear-Classfication-Model" class="headerlink" title="Linear Classfication Model"></a>Linear Classfication Model</h2><ul>
-<li>classification: 확률/비확률적 모형 &amp; 선형/비선형적 모형</li>
-<li><b><code>확률적으로 분류한다</code></b> = <I><code>분류 경계선을 기준으로 데이터 확률값으로 예측한다.</code></I></li>
+        <h1 id="MACHINE-LEARNING"><a href="#MACHINE-LEARNING" class="headerlink" title="MACHINE LEARNING"></a>MACHINE LEARNING</h1><ul>
+<li>KNN (K-Nearest Neighbors)<blockquote>
+<p>좌표 공간을 기준으로 해당 데이터에서 가장 가까운 데이터의 라벨을 확인하고 해당 라벨로 예측하는 기법<br>K 값에 따라서 학습 결과가 달라짐.</p>
+</blockquote>
+</li>
 </ul>
-<ol>
-<li>Logistic (= 확률적 예측한다) Regression (= 선형적 모형)</li>
+<h2 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h2><blockquote>
+<p>unsupervised learning<br>분류 모델인 classification과 비슷해보이나 비교하는 것은 무의미함. 비지도학습 자체로 모델링 기법으로 바라봐야함.</p>
+<ul>
+<li>x값이 비슷한 그룹들끼리 grouping하는 기법. </li>
+<li>X와 Y의 라벨 혹은 관계를 구분/파악하기 위한 학습방식이 아니라 비슷한 X끼리 라벨을 분류하기 위한 기법</li>
+<li>비슷한 군집들끼리 분석해서 학습시키는 기법으로 inertia value를 기준으로 k값 선별(k의 값 = 변곡점)</li>
+<li>모델 기법:<ol>
+<li>K-Means</li>
 </ol>
+</li>
+<li>각 군집의 중심값 (혹은 초깃값)을 랜덤으로 설정 및 계산하고 모델 학습 시작.</li>
+<li>임의의 k개 초깃값 선별해서 학습하는 기법.</li>
+<li>Expectation: 각각의 군집에서 가장 가까운 군집과 중심을 찾아서 군집화로 분류하는 과정</li>
+<li>Maximization: 중심값을 업데이트 하는 과정<br>summary: k개의 임의의 중심값을 업데이트하는 과정을 반복하면서 최적의 군집 중심값을 찾아가는 기법</li>
+</ul>
+</blockquote>
+<ol>
+<li>K-Means ++<blockquote>
 <ul>
-<li>예측값 = 확률값</li>
-<li>0과 1로 구성된 데이터 값들을 가지고 집단을 구분짓는 경계선(=&gt; wx = 0)을 찾아 특정 카테고리 값을 예측하는 기법.</li>
-<li>hypothesis: $\displaystyle \begin{equation} \frac{1}{(1+e^{-wx})}\end{equation}$</li>
-<li>cost: <I>절댓값의 오차</I>는 로지스틱 회귀분석에서 의미가 없다. (아무리 최적화를 위해 cost가 낮아지는 방향으로 가중치를 업데이트해도 cost값이 낮기 때문에 학습이 잘 되지 않기 때문.) 그래서 로그함수를 cost 함수로 이용함.<blockquote>
-<p>Local Minimum problem<br><img src="https://drive.google.com/uc?export=view&amp;id=10XxaWgb-Ibc2_U4Kh23FOniE-4mgW_vy" alt="image"></p>
-<ul>
-<li>local minimum이 많은 데이터의 경우 학습이 잘 안되어 underfit이 발생할 확률이 높다. 그래서 복잡한 모델인 경우 underfit에 취약한 경우이므로vanishing gradient(기울기 소실) 문제를 만날 수 있다. (cost값을 미분해서 weight값을 업데이트 해나가기 때문임.)</li>
-<li>Adam optimizer와 같은 모델들을 이를 해결하기 위한 방법으로 발전했다.</li>
+<li>임의로 아닌 처음부터 군집간의 거리가 가장 많이 떨어져있는 상태에서 초깃값을 찾는 학습과정을 선택하는 기법</li>
+<li>초기에 군집을 하나만 랜덤으로 선택</li>
+<li>첫번째 초깃값과 가장 먼 거리의 데이터를 중심으로 이 때의 거리를 확률값으로 판단해서 학습.</li>
 </ul>
 </blockquote>
 </li>
-<li>다중 분류의 경우는 소프트맥스 함수를 이용해 해결하고 경계선을 기준으로 확률적으로 예측한 값들을 각각 계산한 뒤 최종적으로 큰 확률값을 갖는 카테고리의 값으로 예측함.</li>
-</ul>
-<ol>
-<li>SVM (Support Vector Machine)</li>
 </ol>
+<h2 id="Unsupervised-transformation-model"><a href="#Unsupervised-transformation-model" class="headerlink" title="Unsupervised transformation model"></a>Unsupervised transformation model</h2><blockquote>
+<p>Dimensional Reduction problem: PCA (Principle Component Analysis)<br>차원 축소가 필요한 이유: 차원의 저주 문제</p>
 <ul>
-<li>Linear SVM의 경우, 비확률적 선형 모형</li>
-<li>로지스틱의 선형 경계선 (wx = 0)은 그대로 이용하면서 hypothesis의 함수를 다른 즉, 비확률적 선형 모형으로 구해야함.</li>
-<li>hypothesis: $\begin{cases}<br>  1       &amp; \quad (x \geq 0)\\\\<br>  0       &amp; \quad (x &lt; 0)<br>\end{cases}$</li>
-<li>데이터가 경계선과 인접할수록 overfitting의 우려가 있기 때문에 데이터와의 거리를 최대한 확보하면서 경계선을 그리는 것이 좋다.<blockquote>
-<ul>
-<li>마진 최대화하며 학습 </li>
-<li>cost = C (오차허용률) x 오차 + 마진의 역수항 (1 / 마진 = 규제항 x (1/2))</li>
-<li>라쏘 규제항을 이용하는 경우: $\displaystyle \begin{equation} 오차 + \cfrac{1}{\cfrac{2}{\sum |w|}} \end{equation} \\\\ = 오차 + \frac{1}{2} \times \sum |w|$</li>
-<li>오차허용률: 허용률 값이 크면 오차 허용을 안하기 때문에 오차값은 작아지고 마진의 역수값이 커지게 되는데 마진은 작은 값을 갖게 되기 때문에 overfitting이 발생할 수 있다. 그래서 오차가 커지더라도 오차허용률 값을 줄여서 오차허용을 어느 정도 해주는 것이 좋음.</li>
+<li>데이터 학습에 도움되지 않은 정보들이 너무 많으면 오히려 학습에 방해가 됨.</li>
+<li>x 피처 데이터들의 분포가 전체적으로 잘 퍼져있어서 보여줄 수 있는 경우 데이터의 특성을 잘 설명해준다고 해석할 수 있음.<br>주성분들은 제 1주성분을 제외한 나머지 주성분들은 제1주성분과 수직으로 관계가 존재함. 수직의 관계는 서로 상관관계가 없다는 것을 의미함. (수직인 직선을 그래프를 통해 찾을 때 기울기 곱이 -1임을 생각해본다면 도움되지 않을까??)<br>PC: 기존의 피쳐들로 성분을 select하는 것이 아닌 새로운 성분을 만들어 내서 차원을 축소하는 기법.<br>PCA code 중 n_components의 값으로 주성분의 개수를 선택해서 모델링<br>1st component 가 가장 우선적인 성분으로 모델에서 가장 영향력이 큰 성분이라 할 수 있기 때문에 성분들 중 제거해야하는 경우라면 첫번째 주성분을 살려야함.<br>전처리할 때 자주 쓰이는 기법으로 비지도학습은 주로 지도학습 모델링을 support할 때 사용함.<br>PCA는 여러 피처들의 조합을 통해 차원을 줄였기 때문에 학습결과가 좋게 나오는 편임.</li>
 </ul>
+</blockquote>
+<h2 id="Extra-info-about-MACHINE-LEARNING"><a href="#Extra-info-about-MACHINE-LEARNING" class="headerlink" title="Extra info about MACHINE LEARNING"></a>Extra info about MACHINE LEARNING</h2><ul>
+<li>Grid Search<blockquote>
+<p>파라미터 후보들을 사용자가 지정해주면 알아서 최적의 파라미터 값을 찾아주는 방법<br>딕셔너리 형태로 입력해서 학습</p>
 </blockquote>
 </li>
 </ul>
@@ -285,14 +263,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/11/12/machine-learning-pt-3/" rel="prev" title="machine learning pt.3">
-                  <i class="fa fa-chevron-left"></i> machine learning pt.3
+                <a href="https://hesthers.github.io/2021/11/17/Design-Thinking-with-Figma/" rel="prev" title="Design Thinking with Figma">
+                  <i class="fa fa-chevron-left"></i> Design Thinking with Figma
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/11/15/machine-learning-basics-pt-5/" rel="next" title="machine learning basics pt.5">
-                  machine learning basics pt.5 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
