@@ -20,27 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="This post is just for self note. 빅분기 시험이 곧 다가왔다. 1주일하고 2일?? 총 9일 정도 남았다. 그래서 과목별 중요하다고 느끼는 주제들만 살짝 적어볼까 싶다. 사실은 적을 주제가 딱히 없어서다.. 너무 영어로만 포스팅을 적다보니 한글로도 적어보고 싶었다. 1과목: 데이터 아키텍처(특히 HDFS 부분들), SW 수집기술, 개">
+<meta name="description" content="Regular Expression 123import rere.findall(정규표현식으로 찾을 대상 (object that you want to find as the regular expression), document or variable name)re.sub(regular expression, the letters that you would replac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Just for note">
-<meta property="og:url" content="https://hesthers.github.io/archives/2021/09/23/Just-for-note/index.html">
+<meta property="og:title" content="regular expression in python">
+<meta property="og:url" content="https://hesthers.github.io/archives/2021/11/19/regular-expression-in-python/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="This post is just for self note. 빅분기 시험이 곧 다가왔다. 1주일하고 2일?? 총 9일 정도 남았다. 그래서 과목별 중요하다고 느끼는 주제들만 살짝 적어볼까 싶다. 사실은 적을 주제가 딱히 없어서다.. 너무 영어로만 포스팅을 적다보니 한글로도 적어보고 싶었다. 1과목: 데이터 아키텍처(특히 HDFS 부분들), SW 수집기술, 개">
+<meta property="og:description" content="Regular Expression 123import rere.findall(정규표현식으로 찾을 대상 (object that you want to find as the regular expression), document or variable name)re.sub(regular expression, the letters that you would replac">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-09-23T10:02:23.000Z">
-<meta property="article:modified_time" content="2021-09-23T10:12:27.357Z">
+<meta property="article:published_time" content="2021-11-19T09:11:46.000Z">
+<meta property="article:modified_time" content="2021-11-19T10:51:06.549Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://hesthers.github.io/archives/2021/09/23/Just-for-note/">
+<link rel="canonical" href="https://hesthers.github.io/archives/2021/11/19/regular-expression-in-python/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/09/23/Just-for-note/","path":"2021/09/23/Just-for-note/","title":"Just for note"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/11/19/regular-expression-in-python/","path":"2021/11/19/regular-expression-in-python/","title":"regular expression in python"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Just for note | blog for python & note</title>
+<title>regular expression in python | blog for python & note</title>
   
 
 
@@ -95,7 +95,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -108,6 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Regular-Expression"><span class="nav-number">1.</span> <span class="nav-text">Regular Expression</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,7 +167,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/23/Just-for-note/">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/19/regular-expression-in-python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
@@ -179,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Just for note
+          regular expression in python
         </h1>
 
         <div class="post-meta-container">
@@ -191,7 +192,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-09-23 19:02:23 / Modified: 19:12:27" itemprop="dateCreated datePublished" datetime="2021-09-23T19:02:23+09:00">2021-09-23</time>
+      <time title="Created: 2021-11-19 18:11:46 / Modified: 19:51:06" itemprop="dateCreated datePublished" datetime="2021-11-19T18:11:46+09:00">2021-11-19</time>
     </span>
 
   
@@ -204,12 +205,32 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>This post is just for self note.</p>
-<p>빅분기 시험이 곧 다가왔다. 1주일하고 2일?? 총 9일 정도 남았다. 그래서 과목별 중요하다고 느끼는 주제들만 살짝 적어볼까 싶다. 사실은 적을 주제가 딱히 없어서다.. 너무 영어로만 포스팅을 적다보니 한글로도 적어보고 싶었다.</p>
-<p>1과목: 데이터 아키텍처(특히 HDFS 부분들), SW 수집기술, 개인정보 및 비식별화, 사회적인 IT관련 이슈들, 데이터 거버넌스</p>
-<p>2과목: 기술, 추론 통계 파트, 파생변수, 확률 계산, EDA, 데이터 분류</p>
-<p>3과목: 분석기법들 (인공신경망, 회귀분석, SVM, 비정형데이터, 시계열, 앙상블 기법, 랜덤포레스트, 군집분석)</p>
-<p>4과목: 평가지표(confusion matrix), 교차 검증, 적합도 검정, 모델 선정 및 평가, 시각화 (종류 및 특징들), 분석 결과 활용, 비즈니스 기여도 평가 (평가기법 부분), 분석모형 모니터링 및 리모델링 구분</p>
+        <h1 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h1><ul>
+<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">re.findall(정규표현식으로 찾을 대상 (object that you want to find as the regular expression), document or variable name)</span><br><span class="line">re.sub(regular expression, the letters that you would replace, document or variable name)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>어떤 문자 하나 찾기: ‘.’ (마침표 등의 점이 아닌 정규표현식에서 문자 한 개를 의미)</li>
+<li>특정 문자(x) 1개 미만 (예. abacbabacb 중에서 c가 등장한 횟수가 1회 미만인 경우): ‘x?’</li>
+<li>특정 문자(x) 1회 이상 등장한 경우: ‘x+’</li>
+<li>특정 문자(x) 0회 이상 등장한 경우: ‘x*’</li>
+<li>원하는 것들중 하나를 선택: ‘[원하는 문자들]’ (단, 나열할 때 구분자는 생략)</li>
+<li>원하지 않는 것들을 제외한 나머지 중에서 하나: ‘<sup><a href="#fn_원하지 않는 문자들" id="reffn_원하지 않는 문자들">원하지 않는 문자들</a></sup>‘</li>
+<li>하나의 묶음을 표시할 때 혹은 묶음 안에 있는 것만을 나타낼 때: ‘(대상 문자)’ </li>
+<li>회피 용법:<br>1) 찾고자 하는 대상이 특수 기호인 경우: </li>
+</ol>
+<ul>
+<li>해당 글 안에서 ‘?, +’등의 문자를 찾고 싶은 경우 – re.findall(‘\?(특수문자)’, docs)<br>2) space, tab, enter를 찾고 싶은 경우: ‘\s’, ‘\t’, ‘\n’</li>
+</ul>
+<ol>
+<li>어떤 문자열을 찾고 싶은 경우 (길이 제한이 없음) </li>
+</ol>
+<ul>
+<li>최대한 길게 찾고 싶을 때: ‘.+’</li>
+</ul>
+<ol>
+<li>최대한 짧게 여러 번 찾고 싶을 때: ‘.+?’</li>
+</ol>
 
     </div>
 
@@ -223,14 +244,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/09/22/Interesting-News-Article/" rel="prev" title="Interesting News Article">
-                  <i class="fa fa-chevron-left"></i> Interesting News Article
+                <a href="https://hesthers.github.io/2021/11/18/machine-learning-basics-pt-7/" rel="prev" title="machine learning basics pt.7">
+                  <i class="fa fa-chevron-left"></i> machine learning basics pt.7
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/09/24/TIS/Today-What-I-Studied/" rel="next" title="Today What I Studied">
-                  Today What I Studied <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
