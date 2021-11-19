@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-19 18:11:46 / Modified: 22:45:39" itemprop="dateCreated datePublished" datetime="2021-11-19T18:11:46+09:00">2021-11-19</time>
+      <time title="Created: 2021-11-19 18:11:46 / Modified: 22:50:11" itemprop="dateCreated datePublished" datetime="2021-11-19T18:11:46+09:00">2021-11-19</time>
     </span>
 
   
@@ -213,19 +213,22 @@
 <li>원하는 것들중 하나를 선택: <code>[원하는 문자들]</code> (단, 나열할 때 구분자는 생략)</li>
 <li>원하지 않는 것들을 제외한 나머지 중에서 하나: <code>[^원하지 않는 문자들]</code></li>
 <li>하나의 묶음을 표시할 때 혹은 묶음 안에 있는 것만을 나타낼 때: <code>(대상 문자)</code> </li>
-<li>회피 용법:<br>1) 찾고자 하는 대상이 특수 기호인 경우: </li>
-</ol>
+<li><p>회피 용법:<br>1) 찾고자 하는 대상이 특수 기호인 경우: </p>
+<blockquote>
 <ul>
 <li>해당 글 안에서 ‘?, +’등의 문자를 찾고 싶은 경우 – <code>re.findall(&#39;\(특수문자)&#39;, docs)</code><br>2) space, tab, enter를 찾고 싶은 경우: <code>\s</code>, <code>\t</code>, <code>\n</code></li>
 </ul>
-<ol>
-<li>어떤 문자열을 찾고 싶은 경우 (길이 제한이 없음) </li>
-</ol>
+</blockquote>
+</li>
+<li><p>어떤 문자열을 찾고 싶은 경우 (길이 제한이 없음) </p>
+<blockquote>
 <ul>
 <li>최대한 길게 찾고 싶을 때: <code>.+</code></li>
 </ul>
-<ol>
-<li>최대한 짧게 여러 번 찾고 싶을 때: <code>.+?</code></li>
+</blockquote>
+</li>
+<li><p>최대한 짧게 여러 번 찾고 싶을 때: <code>.+?</code></p>
+</li>
 </ol>
 
       
