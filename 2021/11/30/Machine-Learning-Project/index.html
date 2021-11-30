@@ -20,27 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="MACHINE LEARNING KNN (K-Nearest Neighbors) 좌표 공간을 기준으로 해당 데이터에서 가장 가까운 데이터의 라벨을 확인하고 해당 라벨로 예측하는 기법K 값에 따라서 학습 결과가 달라짐.    Clustering unsupervised learning   분류 모델인 classification과 비슷해보이나 비교하는 것은 무의미함">
+<meta name="description" content="2nd Feedback 유동량을 고려할 수 있는 다른 요인들을 찾아보기 고려할 수 있는 1차 피쳐들을 확인하기 다른 보조 지표가 있으면 그것을 활용해볼것. 보조지표로서의 가치가 있는 데이터의 확보 가능성 확인하기 어디로 설정해야 가장 fit한지.. 이를테면 머무는 시간 고려하기 동일 시간대에 몰리는 전기차 수 대비 충전소 수 값 &#x3D;&gt; 임계값 수치화할">
 <meta property="og:type" content="article">
-<meta property="og:title" content="machine learning basics pt.7">
-<meta property="og:url" content="https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/index.html">
+<meta property="og:title" content="Machine Learning Project">
+<meta property="og:url" content="https://hesthers.github.io/archives/2021/11/30/Machine-Learning-Project/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="MACHINE LEARNING KNN (K-Nearest Neighbors) 좌표 공간을 기준으로 해당 데이터에서 가장 가까운 데이터의 라벨을 확인하고 해당 라벨로 예측하는 기법K 값에 따라서 학습 결과가 달라짐.    Clustering unsupervised learning   분류 모델인 classification과 비슷해보이나 비교하는 것은 무의미함">
+<meta property="og:description" content="2nd Feedback 유동량을 고려할 수 있는 다른 요인들을 찾아보기 고려할 수 있는 1차 피쳐들을 확인하기 다른 보조 지표가 있으면 그것을 활용해볼것. 보조지표로서의 가치가 있는 데이터의 확보 가능성 확인하기 어디로 설정해야 가장 fit한지.. 이를테면 머무는 시간 고려하기 동일 시간대에 몰리는 전기차 수 대비 충전소 수 값 &#x3D;&gt; 임계값 수치화할">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-18T08:10:22.000Z">
-<meta property="article:modified_time" content="2021-11-18T08:54:00.256Z">
+<meta property="article:published_time" content="2021-11-30T11:39:19.000Z">
+<meta property="article:modified_time" content="2021-11-30T11:57:50.075Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/">
+<link rel="canonical" href="https://hesthers.github.io/archives/2021/11/30/Machine-Learning-Project/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/","path":"2021/11/18/machine-learning-basics-pt-7/","title":"machine learning basics pt.7"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/11/30/Machine-Learning-Project/","path":"2021/11/30/Machine-Learning-Project/","title":"Machine Learning Project"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>machine learning basics pt.7 | blog for python & note</title>
+<title>Machine Learning Project | blog for python & note</title>
   
 
 
@@ -108,7 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MACHINE-LEARNING"><span class="nav-number">1.</span> <span class="nav-text">MACHINE LEARNING</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Clustering"><span class="nav-number">1.1.</span> <span class="nav-text">Clustering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-transformation-model"><span class="nav-number">1.2.</span> <span class="nav-text">Unsupervised transformation model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extra-info-about-MACHINE-LEARNING"><span class="nav-number">1.3.</span> <span class="nav-text">Extra info about MACHINE LEARNING</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2nd-Feedback"><span class="nav-number">1.</span> <span class="nav-text">2nd Feedback</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,7 +167,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/30/Machine-Learning-Project/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
@@ -180,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          machine learning basics pt.7
+          Machine Learning Project
         </h1>
 
         <div class="post-meta-container">
@@ -192,7 +192,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-11-18 17:10:22 / Modified: 17:54:00" itemprop="dateCreated datePublished" datetime="2021-11-18T17:10:22+09:00">2021-11-18</time>
+      <time title="Created: 2021-11-30 20:39:19 / Modified: 20:57:50" itemprop="dateCreated datePublished" datetime="2021-11-30T20:39:19+09:00">2021-11-30</time>
     </span>
 
   
@@ -205,55 +205,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="MACHINE-LEARNING"><a href="#MACHINE-LEARNING" class="headerlink" title="MACHINE LEARNING"></a>MACHINE LEARNING</h1><ul>
-<li>KNN (K-Nearest Neighbors)<blockquote>
-<p>좌표 공간을 기준으로 해당 데이터에서 가장 가까운 데이터의 라벨을 확인하고 해당 라벨로 예측하는 기법<br>K 값에 따라서 학습 결과가 달라짐.</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h2><blockquote>
-<p>unsupervised learning </p>
-<blockquote>
-<p>분류 모델인 classification과 비슷해보이나 비교하는 것은 무의미함. 비지도학습 자체로 모델링 기법으로 바라봐야함.</p>
-<ul>
-<li>x값이 비슷한 그룹들끼리 grouping하는 기법. </li>
-<li>X와 Y의 라벨 혹은 관계를 구분/파악하기 위한 학습방식이 아니라 비슷한 X끼리 라벨을 분류하기 위한 기법</li>
-<li>비슷한 군집들끼리 분석해서 학습시키는 기법으로 inertia value를 기준으로 k값 선별(k의 값 = 변곡점)</li>
-</ul>
-</blockquote>
-</blockquote>
-<pre><code>1. K-Means
-  - 각 군집의 중심값 (혹은 초깃값)을 랜덤으로 설정 및 계산하고 모델 학습 시작.
-  - 임의의 k개 초깃값 선별해서 학습하는 기법.
-  - Expectation: 각각의 군집에서 가장 가까운 군집과 중심을 찾아서 군집화로 분류하는 과정
-  - Maximization: 중심값을 업데이트 하는 과정
-   summary: k개의 임의의 중심값을 업데이트하는 과정을 반복하면서 최적의 군집 중심값을 찾아가는 기법
-
-2. K-Means ++
-  - 임의로 아닌 처음부터 군집간의 거리가 가장 많이 떨어져있는 상태에서 초깃값을 찾는 학습과정을 선택하는 기법
-  - 초기에 군집을 하나만 랜덤으로 선택
-  - 첫번째 초깃값과 가장 먼 거리의 데이터를 중심으로 이 때의 거리를 확률값으로 판단해서 학습.
-</code></pre><h2 id="Unsupervised-transformation-model"><a href="#Unsupervised-transformation-model" class="headerlink" title="Unsupervised transformation model"></a>Unsupervised transformation model</h2><blockquote>
-<p>Dimensional Reduction problem: PCA (Principle Component Analysis)</p>
-<blockquote>
-<p>차원 축소가 필요한 이유: 차원의 저주 문제</p>
-<ul>
-<li>데이터 학습에 도움되지 않은 정보들이 너무 많으면 오히려 학습에 방해가 됨.</li>
-<li>x 피처 데이터들의 분포가 전체적으로 잘 퍼져있어서 보여줄 수 있는 경우 데이터의 특성을 잘 설명해준다고 해석할 수 있음.</li>
-<li>주성분들은 제 1주성분을 제외한 나머지 주성분들은 제1주성분과 수직으로 관계가 존재함. 수직의 관계는 서로 상관관계가 없다는 것을 의미함. (수직인 직선을 그래프를 통해 찾을 때 기울기 곱이 -1임을 생각해본다면 도움되지 않을까??)</li>
-<li>PC: 기존의 피쳐들로 성분을 select하는 것이 아닌 새로운 성분을 만들어 내서 차원을 축소하는 기법.</li>
-<li>PCA code 중 n_components의 값으로 주성분의 개수를 선택해서 모델링</li>
-<li>1st component 가 가장 우선적인 성분으로 모델에서 가장 영향력이 큰 성분이라 할 수 있기 때문에 성분들 중 제거해야하는 경우라면 첫번째 주성분을 살려야함.</li>
-<li>전처리할 때 자주 쓰이는 기법으로 비지도학습은 주로 지도학습 모델링을 support할 때 사용함.</li>
-<li>PCA는 여러 피처들의 조합을 통해 차원을 줄였기 때문에 학습결과가 좋게 나오는 편임.</li>
-</ul>
-</blockquote>
-</blockquote>
-<h2 id="Extra-info-about-MACHINE-LEARNING"><a href="#Extra-info-about-MACHINE-LEARNING" class="headerlink" title="Extra info about MACHINE LEARNING"></a>Extra info about MACHINE LEARNING</h2><ul>
-<li>Grid Search<blockquote>
-<p>파라미터 후보들을 사용자가 지정해주면 알아서 최적의 파라미터 값을 찾아주는 방법<br>딕셔너리 형태로 입력해서 학습</p>
-</blockquote>
-</li>
+        <h1 id="2nd-Feedback"><a href="#2nd-Feedback" class="headerlink" title="2nd Feedback"></a>2nd Feedback</h1><ul>
+<li>유동량을 고려할 수 있는 다른 요인들을 찾아보기</li>
+<li>고려할 수 있는 1차 피쳐들을 확인하기</li>
+<li>다른 보조 지표가 있으면 그것을 활용해볼것. 보조지표로서의 가치가 있는 데이터의 확보 가능성 확인하기</li>
+<li>어디로 설정해야 가장 fit한지.. 이를테면 머무는 시간 고려하기</li>
+<li>동일 시간대에 몰리는 전기차 수 대비 충전소 수 값 =&gt; 임계값</li>
+<li>수치화할 수 있는 데이터가 몇 안되므로 정성적으로 갈 수 밖에 없어보임.</li>
+<li>교통량 대신 할 수 있는 데이터: 충전소 수 =&gt; 격자별 충전소 수 &amp; 상가 수 (기존 충전소는 배제..)</li>
+<li>격자별 필요한 충전소 수를 예측. 예측값을 뽑고 기존 충전소 수를 비교(기존 개수가 포화일 때 더이상 추가 설치가 필요가 없기 때문)</li>
+<li>평점이 비슷한 경우나 차이가 큰 경우도 있기 때문에  스케일링이 필요함.</li>
+<li>평점으로 유동량 예측해야 하므로 사람이 몰릴 수 있는 지역 쪽에 가중치를 좀 더 부여</li>
+<li>사람들이 몰리는 곳이나 오래된 지점들에는 가중치를 더 많이 부여</li>
+<li>0점을 상점으로 주는 경우 마이너스값을 가중치로 부여 (리뷰 평점으로 줄 때)</li>
+<li>관광 명소 데이터를 요인으로 고려해볼 수 있고 충전을 많이 할 수 있는 곳은 명소나 숙박 업소 주변(머물수 있는 시간 기준으로 판단가능함.)</li>
 </ul>
 
     </div>
@@ -268,14 +233,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/11/17/Design-Thinking-with-Figma/" rel="prev" title="Design Thinking with Figma">
-                  <i class="fa fa-chevron-left"></i> Design Thinking with Figma
+                <a href="https://hesthers.github.io/2021/11/29/project-process-day7/" rel="prev" title="project process day7">
+                  <i class="fa fa-chevron-left"></i> project process day7
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/11/19/regular-expression-in-python/" rel="next" title="regular expression in python">
-                  regular expression in python <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
