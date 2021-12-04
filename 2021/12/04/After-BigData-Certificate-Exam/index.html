@@ -20,27 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="Fancy Indexing (Masking) of Python Through bool type of array, indexing the multidimensional array When extracting some data samples that are needed for the data analysis You will use this method a lo">
+<meta name="description" content="빅분기 실기 시험 후오늘 빅분기 실기 시험을 봤다.. 일단은 나쁘지 않았다. 전체적으로 충분히 도전해볼만한 문제들이였던 것 같다. 물론 단답형이랑 작업형 1유형 1번 문제가 고민을 좀 많이 했던 문제였다.  작업형 2유형 문제는 분류 문제였고 머신러닝으로 xgboost, 랜덤 포레스트, 그래디언트 부스팅, 로지스틱 회귀 모형을 썼는데 그래디언트 부스팅이 성">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pandas (pt.2)">
-<meta property="og:url" content="https://hesthers.github.io/archives/2021/09/14/python_review/Pandas-pt-2/index.html">
+<meta property="og:title" content="After BigData Certificate Exam">
+<meta property="og:url" content="https://hesthers.github.io/archives/2021/12/04/After-BigData-Certificate-Exam/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="Fancy Indexing (Masking) of Python Through bool type of array, indexing the multidimensional array When extracting some data samples that are needed for the data analysis You will use this method a lo">
+<meta property="og:description" content="빅분기 실기 시험 후오늘 빅분기 실기 시험을 봤다.. 일단은 나쁘지 않았다. 전체적으로 충분히 도전해볼만한 문제들이였던 것 같다. 물론 단답형이랑 작업형 1유형 1번 문제가 고민을 좀 많이 했던 문제였다.  작업형 2유형 문제는 분류 문제였고 머신러닝으로 xgboost, 랜덤 포레스트, 그래디언트 부스팅, 로지스틱 회귀 모형을 썼는데 그래디언트 부스팅이 성">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-09-14T07:57:15.000Z">
-<meta property="article:modified_time" content="2021-09-14T08:56:24.158Z">
+<meta property="article:published_time" content="2021-12-04T14:02:20.000Z">
+<meta property="article:modified_time" content="2021-12-04T14:37:28.051Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://hesthers.github.io/archives/2021/09/14/python_review/Pandas-pt-2/">
+<link rel="canonical" href="https://hesthers.github.io/archives/2021/12/04/After-BigData-Certificate-Exam/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/09/14/python_review/Pandas-pt-2/","path":"2021/09/14/python_review/Pandas-pt-2/","title":"Pandas (pt.2)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/12/04/After-BigData-Certificate-Exam/","path":"2021/12/04/After-BigData-Certificate-Exam/","title":"After BigData Certificate Exam"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Pandas (pt.2) | blog for python & note</title>
+<title>After BigData Certificate Exam | blog for python & note</title>
   
 
 
@@ -108,7 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fancy-Indexing-Masking-of-Python"><span class="nav-number">1.</span> <span class="nav-text">Fancy Indexing (Masking) of Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Combining-two-tables"><span class="nav-number">2.</span> <span class="nav-text">Combining two tables</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Editing-Indexes-Columns"><span class="nav-number">3.</span> <span class="nav-text">Editing Indexes&#x2F;Columns</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Sampling-and-Analysis"><span class="nav-number">4.</span> <span class="nav-text">Data Sampling and Analysis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas-with-the-high-quality-analysis"><span class="nav-number">5.</span> <span class="nav-text">Pandas with the high-quality analysis</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%B9%85%EB%B6%84%EA%B8%B0-%EC%8B%A4%EA%B8%B0-%EC%8B%9C%ED%97%98-%ED%9B%84"><span class="nav-number">1.</span> <span class="nav-text">빅분기 실기 시험 후</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,7 +167,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/14/python_review/Pandas-pt-2/">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/12/04/After-BigData-Certificate-Exam/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
@@ -180,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Pandas (pt.2)
+          After BigData Certificate Exam
         </h1>
 
         <div class="post-meta-container">
@@ -192,7 +192,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-09-14 16:57:15 / Modified: 17:56:24" itemprop="dateCreated datePublished" datetime="2021-09-14T16:57:15+09:00">2021-09-14</time>
+      <time title="Created: 2021-12-04 23:02:20 / Modified: 23:37:28" itemprop="dateCreated datePublished" datetime="2021-12-04T23:02:20+09:00">2021-12-04</time>
     </span>
 
   
@@ -205,38 +205,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Fancy-Indexing-Masking-of-Python"><a href="#Fancy-Indexing-Masking-of-Python" class="headerlink" title="Fancy Indexing (Masking) of Python"></a>Fancy Indexing (Masking) of Python</h1><ul>
-<li>Through bool type of array, indexing the multidimensional array</li>
-<li>When extracting some data samples that are needed for the data analysis</li>
-<li>You will use this method a lot for data analysis</li>
-</ul>
-<h1 id="Combining-two-tables"><a href="#Combining-two-tables" class="headerlink" title="Combining two tables"></a>Combining two tables</h1><ul>
-<li>use the code <code>merge</code> or <code>concat</code> and create the pivot table</li>
-<li>based on the <code>key</code>, merge tables (SQL: <code>Join</code>)</li>
-</ul>
-<ol>
-<li>inner/outer join</li>
-<li>left_on/right_on: the different key names</li>
-<li>left/right</li>
-</ol>
-<ul>
-<li>concat: just combine two tables based on <code>axis</code> (axis = 0: concat based on the rows / axis = 1: concat based on the columns)</li>
-</ul>
-<h1 id="Editing-Indexes-Columns"><a href="#Editing-Indexes-Columns" class="headerlink" title="Editing Indexes/Columns"></a>Editing Indexes/Columns</h1><ul>
-<li>Editing Indexes: use the code <code>.reset_index(drop = True(or False), inplace = True(or False))</code></li>
-<li>Editing Columns: use the code <code>.drop(&#39;[column name]&#39;, axis = 1)</code> or <code>del (data_name)[&#39;column name&#39;]</code></li>
-<li>Changing Column name: <code>.rename(columns = &#123;&#39;orginal column name&#39;:&#39;column name to change&#39;&#125;, inplace = True(or False))</code></li>
-</ul>
-<p>If you do not want to use the variable name, use the <code>inplace = True</code>!</p>
-<h1 id="Data-Sampling-and-Analysis"><a href="#Data-Sampling-and-Analysis" class="headerlink" title="Data Sampling and Analysis"></a>Data Sampling and Analysis</h1><ul>
-<li>When using the basic indexing, slicing, the conditional sampling(masking/fancy indexing), the data analysis will be nice!! </li>
-<li>You can also extract the meaningful information in those data.</li>
-</ul>
-<h1 id="Pandas-with-the-high-quality-analysis"><a href="#Pandas-with-the-high-quality-analysis" class="headerlink" title="Pandas with the high-quality analysis"></a>Pandas with the high-quality analysis</h1><ul>
-<li>usage of the <code>apply</code> function with the <code>lambda</code> function</li>
-<li>make the function with <code>def</code> and apply it to columns and <code>apply</code> function</li>
-<li>broad casting and data masking</li>
-</ul>
+        <h1 id="빅분기-실기-시험-후"><a href="#빅분기-실기-시험-후" class="headerlink" title="빅분기 실기 시험 후"></a>빅분기 실기 시험 후</h1><p>오늘 빅분기 실기 시험을 봤다.. 일단은 나쁘지 않았다. 전체적으로 충분히 도전해볼만한 문제들이였던 것 같다. 물론 단답형이랑 작업형 1유형 1번 문제가 고민을 좀 많이 했던 문제였다. </p>
+<p>작업형 2유형 문제는 분류 문제였고 머신러닝으로 xgboost, 랜덤 포레스트, 그래디언트 부스팅, 로지스틱 회귀 모형을 썼는데 그래디언트 부스팅이 성능이 가장 좋게 나와서 최종 예측결과를 이걸로 사용해서 답안을 제출했다.</p>
+<p>결측치가 전혀 없는 깔끔한 데이터여서 의외로 뭐지? 싶었던 것 같다. 스케일링은 수치형 데이터는 robust scaler, 명목형 데이터는 원핫인코딩으로 해서 전처리 해줬다.</p>
+<p>단답형 1번은 어제 전날 밤에 봤던 문제였다. 향상도.. 나오겠다 싶어서 우상향 이렇게 외웠는데 1번에서 바로 나왔다..</p>
+<p>인공신경망 가중치 편향을 포함한 계산 문제는 0.13?으로 적은 것 같다.. 내 기억엔..</p>
+<p>작업형 1유형 1번 문제는 이미 틀린 것 같고 단답형에서도 점수가 좀 깎일 것 같다.. 합격하고 싶다 ㅠㅠㅠ (12/31 발표 실화??? 불합격하면 새해를 우울하게 보내라는 건가요….)</p>
+<p>보면서 나쁘지 않다라고 느꼈는데 과연 점수가 괜찮을런지…</p>
 
     </div>
 
@@ -250,14 +225,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/09/13/python_review/Python-Pandas/" rel="prev" title="Python Pandas">
-                  <i class="fa fa-chevron-left"></i> Python Pandas
+                <a href="https://hesthers.github.io/2021/12/02/Bigdata-Machine-Learning-example/" rel="prev" title="Bigdata Machine Learning example">
+                  <i class="fa fa-chevron-left"></i> Bigdata Machine Learning example
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/09/16/python_review/Data-Visualization/" rel="next" title="Data Visualization">
-                  Data Visualization <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
