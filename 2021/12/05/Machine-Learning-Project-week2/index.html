@@ -20,27 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="Sometimes, everyone needs some breaktime. When you have in trouble, you might want to give up everything, but I think everyday is beautiful! You deserve to be loved. Anne-Marie Beautiful 你敢有勇气，别放弃自己。你">
+<meta name="description" content="데이터 분석 결과 숙박에 대한 별점과 게시확인 수의 상관관계는 보이지 않음 (수치상 -0.15로 나옴 스캐터 플롯을 그려보면 상관관계가 없어보임) 별점은 대체로 9.4에서 10점 이 쪽으로 몰려있으며 전반적으로 9점이상인 점수에 몰려있는 모양을 하고 있다. 가중치 범위로 정할 수 있는 피벗 테이블을 만들어 보면 4가지로 구분될 수 있음 (추천해요 부분이 대">
 <meta property="og:type" content="article">
-<meta property="og:title" content="when you need the breaktime">
-<meta property="og:url" content="https://hesthers.github.io/archives/2021/10/25/when-you-need-the-breaktime/index.html">
+<meta property="og:title" content="Machine Learning Project week2">
+<meta property="og:url" content="https://hesthers.github.io/archives/2021/12/05/Machine-Learning-Project-week2/index.html">
 <meta property="og:site_name" content="blog for python &amp; note">
-<meta property="og:description" content="Sometimes, everyone needs some breaktime. When you have in trouble, you might want to give up everything, but I think everyday is beautiful! You deserve to be loved. Anne-Marie Beautiful 你敢有勇气，别放弃自己。你">
+<meta property="og:description" content="데이터 분석 결과 숙박에 대한 별점과 게시확인 수의 상관관계는 보이지 않음 (수치상 -0.15로 나옴 스캐터 플롯을 그려보면 상관관계가 없어보임) 별점은 대체로 9.4에서 10점 이 쪽으로 몰려있으며 전반적으로 9점이상인 점수에 몰려있는 모양을 하고 있다. 가중치 범위로 정할 수 있는 피벗 테이블을 만들어 보면 4가지로 구분될 수 있음 (추천해요 부분이 대">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-10-25T05:44:43.000Z">
-<meta property="article:modified_time" content="2021-10-25T06:17:14.746Z">
+<meta property="article:published_time" content="2021-12-05T14:03:37.000Z">
+<meta property="article:modified_time" content="2021-12-05T14:48:19.776Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://hesthers.github.io/archives/2021/10/25/when-you-need-the-breaktime/">
+<link rel="canonical" href="https://hesthers.github.io/archives/2021/12/05/Machine-Learning-Project-week2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/10/25/when-you-need-the-breaktime/","path":"2021/10/25/when-you-need-the-breaktime/","title":"when you need the breaktime"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/12/05/Machine-Learning-Project-week2/","path":"2021/12/05/Machine-Learning-Project-week2/","title":"Machine Learning Project week2"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>when you need the breaktime | blog for python & note</title>
+<title>Machine Learning Project week2 | blog for python & note</title>
   
 
 
@@ -95,7 +95,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -108,6 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D-%EA%B2%B0%EA%B3%BC"><span class="nav-number">1.</span> <span class="nav-text">데이터 분석 결과</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%83%9D%EA%B0%81%ED%95%B4%EB%B3%BC-%EB%AC%B8%EC%A0%9C"><span class="nav-number">2.</span> <span class="nav-text">생각해볼 문제</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,7 +167,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/10/25/when-you-need-the-breaktime/">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/12/05/Machine-Learning-Project-week2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
@@ -179,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          when you need the breaktime
+          Machine Learning Project week2
         </h1>
 
         <div class="post-meta-container">
@@ -191,7 +192,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-10-25 14:44:43 / Modified: 15:17:14" itemprop="dateCreated datePublished" datetime="2021-10-25T14:44:43+09:00">2021-10-25</time>
+      <time title="Created: 2021-12-05 23:03:37 / Modified: 23:48:19" itemprop="dateCreated datePublished" datetime="2021-12-05T23:03:37+09:00">2021-12-05</time>
     </span>
 
   
@@ -204,10 +205,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Sometimes, everyone needs some breaktime. When you have in trouble, you might want to give up everything, but I think everyday is beautiful!</p>
-<p>You deserve to be loved.</p>
-<p><a href = "https://www.youtube.com/watch?v=lnJ95tNtl08">Anne-Marie Beautiful</a></p>
-<p>你敢有勇气，别放弃自己。你可以爱自己，能让自身够珍贵吧。</p>
+        <h1 id="데이터-분석-결과"><a href="#데이터-분석-결과" class="headerlink" title="데이터 분석 결과"></a>데이터 분석 결과</h1><ul>
+<li>숙박에 대한 별점과 게시확인 수의 상관관계는 보이지 않음 (수치상 -0.15로 나옴 스캐터 플롯을 그려보면 상관관계가 없어보임)</li>
+<li>별점은 대체로 9.4에서 10점 이 쪽으로 몰려있으며 전반적으로 9점이상인 점수에 몰려있는 모양을 하고 있다.</li>
+<li>가중치 범위로 정할 수 있는 피벗 테이블을 만들어 보면 4가지로 구분될 수 있음 (추천해요 부분이 대체로 많은 편)</li>
+<li>게시확인수는 편차가 큰 편 그래서 MinMaxScaler를 통해 스케일링을 한 번 해주고 가중치 계산을 해줄 필요가 있음. (혹은 RobustScaler를 이용하거나)</li>
+<li>숙박업소에 대한 카테고리별 추천도 여부는 큰 차이는 없어보이나 대체로 호텔/콘도를 더 많이 좋게 추천하는 편.</li>
+<li>호텔/콘도의 경우 대기업에서 운영하는 경우가 많아서 입지도 넗고 상가업소 번호도 많음.</li>
+</ul>
+<h1 id="생각해볼-문제"><a href="#생각해볼-문제" class="headerlink" title="생각해볼 문제"></a>생각해볼 문제</h1><ul>
+<li>이상치로 보여지는 데이터들이 있어보이나 과연 이 데이터들을 삭제하거나 고려사항에서 배제하는 것이 맞는가</li>
+<li>별점에서 보여지는 편차들을 어떻게 고려해서 가중치를 부여할 것인가</li>
+<li>호텔/콘도 쪽 추천도가 높은 이유는 여행 시 대체로 호텔이나 콘도를 많이 선택하며 호캉스 등의 여부로 선택을 하는 것은 아닌가..</li>
+<li>호텔/콘도에 대한 추천도가 높다는 것은  많이 이용했다는 것.. 사람들이 이용했을 때 좋았고 앞으로도 자주 이용할 것. (뇌피셜)</li>
+<li>숙박업소에 경우 평가부분에서 편차가 큰 편..</li>
+<li>기존 추천도의 경우 구간이 4개의 구간으로 나누어지기 때문에 가중치에 대한 구간도 4개로 나누면 되지 않을까</li>
+</ul>
 
     </div>
 
@@ -221,14 +234,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/10/24/algebra-cosine-distance/" rel="prev" title="algebra cosine distance">
-                  <i class="fa fa-chevron-left"></i> algebra cosine distance
+                <a href="https://hesthers.github.io/2021/12/04/After-BigData-Certificate-Exam/" rel="prev" title="After BigData Certificate Exam">
+                  <i class="fa fa-chevron-left"></i> After BigData Certificate Exam
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="https://hesthers.github.io/2021/10/26/basic-statistics/" rel="next" title="basic statistics">
-                  basic statistics <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
