@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-count">91</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,168 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/15/machine-learning-basics-pt-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/11/15/machine-learning-basics-pt-5/" class="post-title-link" itemprop="url">machine learning basics pt.5</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-11-15 17:26:11" itemprop="dateCreated datePublished" datetime="2021-11-15T17:26:11+09:00">2021-11-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-11-16 00:17:43" itemprop="dateModified" datetime="2021-11-16T00:17:43+09:00">2021-11-16</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Machine-Learning-Basics"><a href="#Machine-Learning-Basics" class="headerlink" title="Machine Learning Basics"></a>Machine Learning Basics</h1><h2 id="Linear-Classification-Model-Metrics"><a href="#Linear-Classification-Model-Metrics" class="headerlink" title="Linear Classification Model Metrics"></a>Linear Classification Model Metrics</h2><ul>
+<li>Different from linear regression, Logistics regression and SVM needs the metrics to test their performance.</li>
+<li>the metrics of Linear Regression = $\displaystyle R^2$ score<blockquote>
+<p>Be careful! Do not say $\displaystyle R^2$ score as <code>accuracy</code> score.</p>
+</blockquote>
+</li>
+<li><p>the metrics of Classification model = when the label is imbalanced</p>
+<blockquote>
+<p>the case when the accuracy score is high but is not able to ensure the performance<br>Example: The medical test kit of the accuracy is 99%. Do you trust this score? IF the data is imbalanced, it is difficult to predict accurately the data. (Lower modeling performance)</p>
+</blockquote>
+</li>
+<li><p><code>Confusion Matrix</code></p>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">(Real) Positive</th>
+<th style="text-align:center">(Real) Negative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">(Prediction) Positive</td>
+<td style="text-align:center">TP</td>
+<td style="text-align:center">FP</td>
+</tr>
+<tr>
+<td style="text-align:center">(Prediction) Negative</td>
+<td style="text-align:center">FN</td>
+<td style="text-align:center">TN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><code>Precision</code>(정밀도, evaluation as prediction = positive)  = $\displaystyle \frac{TP}{(TP + FP)}$<br><code>Recall</code>(재현율, evaluation as real = positive) = $\displaystyle \frac{TP}{(TP + FN)}$</p>
+</blockquote>
+<h2 id="Regulation-of-Classification-model"><a href="#Regulation-of-Classification-model" class="headerlink" title="Regulation of Classification model"></a>Regulation of Classification model</h2><ul>
+<li>the case when regulation is necessary: when the number of weight is a lot in order to restrain overfitting problem (the model is complicated = reinforcement of regulation = lowering C)</li>
+<li><p><code>cost</code> function formula of classification model =<br>$\displaystyle error + \frac{1}{C} \times \vert w \vert = \\\\<br>C(error +  \frac{1}{C} \times \vert w \vert) = \\\\<br>C \times error + \vert w \vert$</p>
+<blockquote>
+<p>C = the rate of error tolerance</p>
+</blockquote>
+</li>
+<li><p>SVM &amp; SVC</p>
+<blockquote>
+<p>SVC (Support Vector Classifier)</p>
+<ul>
+<li>linear &amp; non-linear as parameter</li>
+<li>set parameter through kernel to impose the non-linearity</li>
+<li>margin = $\displaystyle \frac{1}{C}$</li>
+<li>To maximize the margin, allow the error by lessening the value of C to lower overfitting problem and the error</li>
+<li>Hard SVM (perform the modeling without allowing the error at all) vs Soft SVM (select the optimized margin with allowing the error and selecting the data that is in the margin)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">prediction value</th>
+<th style="text-align:center">error</th>
+<th style="text-align:center">range of error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Logistic Regression</td>
+<td style="text-align:center">$\displaystyle \frac{1}{(1 + e^{-wx})}$ (the value of probability)</td>
+<td style="text-align:center">log loss</td>
+<td style="text-align:center">$\displaystyle 0 &lt; n &lt; \infty$</td>
+</tr>
+<tr>
+<td style="text-align:center">SVM</td>
+<td style="text-align:center">$\displaystyle \begin{cases} 1 \\ 0 \end{cases}$</td>
+<td style="text-align:center">hinge loss</td>
+<td style="text-align:center">$\displaystyle 0 \leq n &lt; \infty$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<ul>
+<li>Kernel: change non-linear coordinates into linear coordinates<br>$\displaystyle \implies$ MLP classifier (using rbf formula and various ways, find the linear relation) $\displaystyle \rightarrow$ Deep learning and NN(Neural Network)</li>
+<li>Perceptron: 비선형성이 굉장히 복잡한 경우 층을 쌓아가면서 비선형성 문제를 풀릴수 있도록 해줌.</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -571,81 +733,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/09/Today-What-I-Studied-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/11/09/Today-What-I-Studied-0/" class="post-title-link" itemprop="url">Today What I Studied</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-11-09 21:38:32 / Modified: 21:42:41" itemprop="dateCreated datePublished" datetime="2021-11-09T21:38:32+09:00">2021-11-09</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="TIS"><a href="#TIS" class="headerlink" title="TIS"></a>TIS</h1><ul>
-<li><p>Watched online lecture about machine learning</p>
-<blockquote>
-<p>how to treat the missing value<br>variable distribution problem<br>class imbalance<br>curse of dimensionality</p>
-</blockquote>
-</li>
-<li><p>Will practice the machine learning for big data certificate</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="https://hesthers.github.io/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="https://hesthers.github.io/">1</a><span class="space">&hellip;</span><a class="page-number" href="https://hesthers.github.io/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="https://hesthers.github.io/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="https://hesthers.github.io/page/18/">18</a><a class="extend next" rel="next" href="https://hesthers.github.io/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="https://hesthers.github.io/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="https://hesthers.github.io/">1</a><span class="space">&hellip;</span><a class="page-number" href="https://hesthers.github.io/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="https://hesthers.github.io/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="https://hesthers.github.io/page/19/">19</a><a class="extend next" rel="next" href="https://hesthers.github.io/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
