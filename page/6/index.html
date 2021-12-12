@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-count">93</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,120 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/11/machine-learning-pt-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/11/11/machine-learning-pt-2/" class="post-title-link" itemprop="url">machine learning pt.2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-11-11 21:01:19" itemprop="dateCreated datePublished" datetime="2021-11-11T21:01:19+09:00">2021-11-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-11-12 22:01:21" itemprop="dateModified" datetime="2021-11-12T22:01:21+09:00">2021-11-12</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Regression-model-and-regulation"><a href="#Regression-model-and-regulation" class="headerlink" title="Regression model and regulation"></a>Regression model and regulation</h1><p>This post is about linear regression and regulation part.</p>
+<ul>
+<li>전체적인 경향을 판단할 수 있는 지표 혹은 수치는 weight의 크기라 할 수 있다. (the index to identify overall tendency is <code>the size of weight</code> because the overfitting occurs if the data of training test is lessened.)</li>
+<li>using the value of weight, repeat the training of the machine.</li>
+<li>the regulation to restrain the modeling complexity </li>
+</ul>
+<h2 id="Summary-of-this-post"><a href="#Summary-of-this-post" class="headerlink" title="Summary of this post"></a>Summary of this post</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"><code>Linear</code></th>
+<th style="text-align:right"><code>Ridge</code></th>
+<th style="text-align:right"><code>Lasso</code></th>
+<th style="text-align:right"><code>Elastic Net</code> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hypo</td>
+<td style="text-align:center">&lt;—-</td>
+<td style="text-align:right">wx + b</td>
+<td style="text-align:right">—-</td>
+<td style="text-align:right">—-&gt;     </td>
+</tr>
+<tr>
+<td>cost</td>
+<td style="text-align:center">오차항</td>
+<td style="text-align:right">오차항 + L2 Norm</td>
+<td style="text-align:right">오차항 + L1 Norm</td>
+<td style="text-align:right">오차항 + L1 Norm + L2 Norm</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="L1-norm-and-L2-norm-regulation-—-for-model-handling"><a href="#L1-norm-and-L2-norm-regulation-—-for-model-handling" class="headerlink" title="L1 norm and L2 norm regulation — for model handling"></a>L1 norm and L2 norm regulation — for model handling</h3><p>L1 Norm = $\displaystyle \sum |w|$<br>L2 Norm = $\displaystyle \sum w^2$</p>
+<h2 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2><ul>
+<li>relatively simple model</li>
+<li>the hypothesis of linear regression (for the correlation between X and Y) =&gt; wx + b</li>
+<li><code>미지수가 많은 경우, 해가 무수히 많다.</code>라는 말은 새로운 데이터가 입력되었을 때 무엇인지 정확하게 예측하기 어렵다와 같은 말.<blockquote>
+<p>학습데이터는 잘 예측하지만 새로운 데이터가 추가되면 예측도가 떨어지는 것이므로 overfitting이 발생하기 쉽다.<br>when the number of <code>weight</code> in linear regression, the regulation is necessary.<br>the more the number of weight is added, the more complex the model.</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -441,73 +555,6 @@
           <p>I recommend this website to practice coding with various language.<br>만약 코딩 연습하고 싶다면 아래의 웹사이트에서 해보는 것을 추천한다. 물론 일반 주피터노트북, 아니콘다 등 실행환경과는 약간 다르기 때문에 처음 사용하면 불편함을 느낄 수 있으나 익숙해지면 괜찮은 것 같다.</p>
 <p><a href = "https://level.goorm.io/?_ga=2.215648597.394978536.1636199528-444198507.1634960437">Groom IDE</a></p>
 <p>This website is for korean, but you can change the different language, English and Japanese.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/06/EDA-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/11/06/EDA-2/" class="post-title-link" itemprop="url">EDA 2</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-11-06 22:45:15 / Modified: 23:04:25" itemprop="dateCreated datePublished" datetime="2021-11-06T22:45:15+09:00">2021-11-06</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="EDA-pt-2"><a href="#EDA-pt-2" class="headerlink" title="EDA pt.2"></a>EDA pt.2</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">df = pd.pivot_table(data = movie_train, columns=&#x27;screening_rat&#x27;, index = &#x27;genre&#x27;, values= [&#x27;director&#x27;], aggfunc=len, )</span><br><span class="line">df_rate = [i[1] for i in df.columns]</span><br><span class="line"></span><br><span class="line">reset_df = pd.DataFrame(df.values, columns = sorted(movie_train.screening_rat.unique()))</span><br><span class="line">reset_df.fillna(0, inplace=True)</span><br><span class="line">reset_df[&#x27;index&#x27;] = sorted(movie_train.genre.unique())</span><br><span class="line">reset_df = reset_df.set_index(reset_df[&#x27;index&#x27;], drop=True)</span><br><span class="line">reset_df.drop(columns = &#x27;index&#x27;, inplace=True, axis=1)</span><br><span class="line"></span><br><span class="line">from matplotlib import font_manager, rc</span><br><span class="line">rc(&#x27;font&#x27;, family = &#x27;Malgun Gothic&#x27;)</span><br><span class="line">plt.figure(figsize = (20 , 16))</span><br><span class="line">sns.histplot(data = reset_df.T, multiple=&#x27;dodge&#x27;, bins = 3)</span><br><span class="line">plt.xlim([0, 65])</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;] = False</span><br><span class="line">plt.figure(figsize = (12 , 8))</span><br><span class="line">sns.kdeplot(data = reset_df.T, multiple=&#x27;layer&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&amp;id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8" alt="image_1"></p>
-<p><img src="https://drive.google.com/uc?export=view&amp;id=1B-ArRRaXAjC_buB0H1eXgiuQKhThXan3" alt="image_2"></p>
 
       
     </div>
