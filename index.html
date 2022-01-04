@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-01-04 23:07:33 / Modified: 23:39:06" itemprop="dateCreated datePublished" datetime="2022-01-04T23:07:33+09:00">2022-01-04</time>
+      <time title="Created: 2022-01-04 23:07:33 / Modified: 23:40:45" itemprop="dateCreated datePublished" datetime="2022-01-04T23:07:33+09:00">2022-01-04</time>
     </span>
 
   
@@ -215,13 +215,13 @@
 <li>order-2 (FM 모델 쌍별 피쳐의 상호작용은 각각의 피쳐의 잠재 벡터들 간의 내적곱으로 되어 있음. &amp; 데이터 셋이 매우 sparse(드문 드문하게 퍼져있는 형태)일 때 훨씬 더 효과적으로 나타낼 수 있음. </li>
 <li>FM model: 피쳐 i가 데이터에 있을 때마다 잠재 벡터 $V_i$를 훈련시킬 수 있음.</li>
 </ul>
-<p>$\langle formula \rangle$<br>$\hat{y}(x) := w_0 + \sum^n_{i=1}w_i x_i + \sum^n_{i=1}\sum^n_{j=i+1} \langle{v_i,v_j}\rangle x_ix_j \ = \langle{v_i,v_j}\rangle + \sum^n_{i=1}\sum^n_{j=i+1} \langle{v_i,v_j}\rangle x_ix_j $</p>
-<p>$\langle{v_i,v_j}\rangle := \sum^k_{f=1}v_{i,f} \cdot v_{j,f}$</p>
-<p>$\hat{y} = sigmoid(y_{FM} + y_{DNN})\label{1}$</p>
+<p>$\langle formula \rangle $<br>$\hat{y}(x) := w_0 + \sum^n_{i=1}w_i x_i + \sum^n_{i=1}\sum^n_{j=i+1} \langle{v_i,v_j}\rangle x_ix_j  = \langle{v_i,v_j}\rangle + \sum^n_{i=1}\sum^n_{j=i+1} \langle{v_i,v_j}\rangle x_ix_j $<br>$\langle{v_i,v_j}\rangle := \sum^k_{f=1}v_{i,f} \cdot v_{j,f}$<br>$\hat{y} = sigmoid(y_{FM} + y_{DNN})\label{1}$</p>
+<blockquote>
 <ul>
 <li>$\langle{v_i,v_j}\rangle$: order-1 피쳐들의 중요성을 반영.</li>
 <li>$\sum^n_{i=1}\sum^n_{j=i+1} \langle{v_i,v_j}\rangle x_ix_j $: order-2 피쳐 상호작용의 영향력을 나타냄.</li>
 </ul>
+</blockquote>
 
       
     </div>
