@@ -28,7 +28,7 @@
 <meta property="og:description" content="citation of a journal (originate from): Guo, H., TANG, R., Ye, Y., Li, Z., &amp;amp; He, X. (2017). DeepFM: A factorization-machine based neural network for CTR prediction. Proceedings of the Twenty-">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-04T14:07:33.000Z">
-<meta property="article:modified_time" content="2022-01-04T14:37:21.103Z">
+<meta property="article:modified_time" content="2022-01-04T14:39:06.540Z">
 <meta property="article:author" content="hs_h_esther">
 <meta property="article:tag" content="project">
 <meta name="twitter:card" content="summary">
@@ -193,7 +193,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-01-04 23:07:33 / Modified: 23:37:21" itemprop="dateCreated datePublished" datetime="2022-01-04T23:07:33+09:00">2022-01-04</time>
+      <time title="Created: 2022-01-04 23:07:33 / Modified: 23:39:06" itemprop="dateCreated datePublished" datetime="2022-01-04T23:07:33+09:00">2022-01-04</time>
     </span>
 
   
@@ -210,7 +210,7 @@
 <li>citation of a journal (originate from): <code>Guo, H., TANG, R., Ye, Y., Li, Z., &amp;amp; He, X. (2017). DeepFM: A factorization-machine based neural network for CTR prediction. Proceedings of the Twenty-Sixth International Joint Conference on Artificial Intelligence. https://doi.org/10.24963/ijcai.2017/239</code></li>
 </ul>
 <h1 id="DeepFM-modeling"><a href="#DeepFM-modeling" class="headerlink" title="DeepFM modeling"></a>DeepFM modeling</h1><p>DeepFM의 구성: FM component + deep component</p>
-<p>$<FM component>$</p>
+<p>$\langle FM component \rangle $</p>
 <p>피쳐 = i일 때,</p>
 <ul>
 <li><strong>스칼라 값 $w_i$ = order-1 중요도 가중치</strong></li>
@@ -220,7 +220,7 @@
 <li>order-2 (FM 모델 쌍별 피쳐의 상호작용은 각각의 피쳐의 잠재 벡터들 간의 내적곱으로 되어 있음. &amp; 데이터 셋이 매우 sparse(드문 드문하게 퍼져있는 형태)일 때 훨씬 더 효과적으로 나타낼 수 있음. </li>
 <li>FM model: 피쳐 i가 데이터에 있을 때마다 잠재 벡터 $V_i$를 훈련시킬 수 있음.</li>
 </ul>
-<p>$<formula>$<br>$\hat{y}(x) := w_0 + \sum^n_{i=1}w_i x_i + \sum^n_{i=1}\sum^n_{j=i+1} \langle{v_i,v_j}\rangle x_ix_j \ = \langle{v_i,v_j}\rangle + \sum^n_{i=1}\sum^n_{j=i+1} \langle{v_i,v_j}\rangle x_ix_j $</p>
+<p>$\langle formula \rangle$<br>$\hat{y}(x) := w_0 + \sum^n_{i=1}w_i x_i + \sum^n_{i=1}\sum^n_{j=i+1} \langle{v_i,v_j}\rangle x_ix_j \ = \langle{v_i,v_j}\rangle + \sum^n_{i=1}\sum^n_{j=i+1} \langle{v_i,v_j}\rangle x_ix_j $</p>
 <p>$\langle{v_i,v_j}\rangle := \sum^k_{f=1}v_{i,f} \cdot v_{j,f}$</p>
 <p>$\hat{y} = sigmoid(y_{FM} + y_{DNN})\label{1}$</p>
 <ul>
