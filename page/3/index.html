@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">115</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,114 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/12/28/Project-meeting-note-0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/12/28/Project-meeting-note-0/" class="post-title-link" itemprop="url">Project meeting note</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-12-28 18:04:38 / Modified: 19:42:12" itemprop="dateCreated datePublished" datetime="2021-12-28T18:04:38+09:00">2021-12-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="오전-논의-사항"><a href="#오전-논의-사항" class="headerlink" title="오전 논의 사항"></a>오전 논의 사항</h1><ul>
+<li>emergency_cnt 이상치를 삭제해도 무방해보임.</li>
+<li>adver_follower_count 컬럼 삭제</li>
+<li>8% 정도 비율의 데이터들을 완전히 삭제할지 여부</li>
+<li>3~4% 상품이 노출되어 클릭까지 진행한 고객 제외 후 나머지 96%는 단순히 노출되어 서버에 접속한 경우의 결측치 처리 여부</li>
+</ul>
+<h1 id="오후-논의-사항"><a href="#오후-논의-사항" class="headerlink" title="오후 논의 사항"></a>오후 논의 사항</h1><ul>
+<li><strong>imp_id 중복제거한 데이터 셋을 다시 생성 후 전처리 (오늘 할 일!!)</strong><ul>
+<li>데이터 전처리 방법 확인하기</li>
+<li>이상치 삭제 후 데이터 판단</li>
+</ul>
+</li>
+<li>결측치, 이상치 처리 및 질문 사항 논의 (약간의 영향력은 남겨두되 최대한 이상치, 결측치 처리하기)<ul>
+<li>결측치가 8%정도 되는 데이터 컬럼들 삭제</li>
+<li>click_time 컬럼은 절댓값을 씌운 후 다시 컬럼 생성하여 이후 단계 진행 (양수로 만들기)</li>
+<li>emergency_cnt 이상치 부분 처리 문제 질문.</li>
+<li>flag_used 카테고리 질문</li>
+<li>나이는 범주화 (0세를 임의의 값으로 대체할지 아니면 따로 처리가 필요한지 질문)</li>
+<li>click_time 결측치 처리 질문</li>
+</ul>
+</li>
+</ul>
+<h1 id="데이터-전처리"><a href="#데이터-전처리" class="headerlink" title="데이터 전처리"></a>데이터 전처리</h1><p><strong>결측치 처리 판단</strong></p>
+<ol>
+<li><p>device_type_x 컬럼의 경우 데이터 값이 전부 a이므로 무의미한 데이터로 보여짐. adver_follower_count 컬럼 또한 0이라는 데이터 값만 가지고 있으므로 무의미한 데이터.<br> → 처리 방법: 삭제</p>
+</li>
+<li><p><strong>click_time의 경우 <code>- (음수)</code> 값이 존재. (이 부분과 결측치 처리 문제가 발생)</strong></p>
+<ul>
+<li>음수값이 존재하는 이유: impression의 서버 접속 시간이 view 서버 접속시간보다 늦기 때문..</li>
+<li>결측치 값의 비중이 96~7%이므로 삭제는 안됨…</li>
+<li>3~4% 상품이 노출되어 클릭까지 진행한 고객 제외 후 나머지 96%는 단순히 노출되어 서버에 접속한 경우<br>→ 처리 방법: 무조건적인 삭제는 금물.. 절댓값을 씌운 상태에서 click_time을 새로 계산.</li>
+</ul>
+</li>
+<li><p>수치형 데이터 중 이상치 처리 필요해 보이는 컬럼들:<br> → bid_price_x, emergency_cnt, commen_cnt, user_age(나이는 임의로 0을 넣은 건가…..), adver_pay_count, adver_parcel_post_count, adver_transfer_count, adver_chat_count 등…</p>
+<ul>
+<li>눈에 띄는 이상값들은 비율 확인해서 삭제하기</li>
+<li>스케일링 진행할 때 robust_scaler로 진행.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>name, keyword의 경우 텍스트 분석 진행 가능 (카카오 아레나 블로그 참고해서 태그 별 분석도 가능해보임)</li>
+</ul>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=15UftD8hf9Re3yvCZ5gGgZJyoQOhIq7n5" alt="image"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -427,77 +535,6 @@
 <p>DeepFM 모델에 대하여 데이터 셋에 적절한 코드를 작성 (오랜 시간이 필요할 것으로 보여짐.)<br>기타 추가 모델이 필요하므로 이에 대한 추가 코드도 작성하면서 시간이 요구될 것으로 보여짐.<br>딥러닝 모델 코드 구축하기 위한 별도의 공부/학습이 필요함.</p>
 </blockquote>
 </li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/12/21/project-meeting-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/12/21/project-meeting-note/" class="post-title-link" itemprop="url">project meeting note</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-12-21 21:56:09 / Modified: 22:45:11" itemprop="dateCreated datePublished" datetime="2021-12-21T21:56:09+09:00">2021-12-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Today’s-project-meeting-note"><a href="#Today’s-project-meeting-note" class="headerlink" title="Today’s project meeting note"></a>Today’s project meeting note</h1><ul>
-<li>journal/article review with code review<blockquote>
-<p>DeepFM model-based modeling</p>
-</blockquote>
-</li>
-<li>Tomorrow: do code execution with code review using different datasets</li>
 </ul>
 
       

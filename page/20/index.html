@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">115</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,102 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/14/python_review/Pandas-pt-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog for python & note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/09/14/python_review/Pandas-pt-2/" class="post-title-link" itemprop="url">Pandas (pt.2)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-09-14 16:57:15 / Modified: 17:56:24" itemprop="dateCreated datePublished" datetime="2021-09-14T16:57:15+09:00">2021-09-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Fancy-Indexing-Masking-of-Python"><a href="#Fancy-Indexing-Masking-of-Python" class="headerlink" title="Fancy Indexing (Masking) of Python"></a>Fancy Indexing (Masking) of Python</h1><ul>
+<li>Through bool type of array, indexing the multidimensional array</li>
+<li>When extracting some data samples that are needed for the data analysis</li>
+<li>You will use this method a lot for data analysis</li>
+</ul>
+<h1 id="Combining-two-tables"><a href="#Combining-two-tables" class="headerlink" title="Combining two tables"></a>Combining two tables</h1><ul>
+<li>use the code <code>merge</code> or <code>concat</code> and create the pivot table</li>
+<li>based on the <code>key</code>, merge tables (SQL: <code>Join</code>)</li>
+</ul>
+<ol>
+<li>inner/outer join</li>
+<li>left_on/right_on: the different key names</li>
+<li>left/right</li>
+</ol>
+<ul>
+<li>concat: just combine two tables based on <code>axis</code> (axis = 0: concat based on the rows / axis = 1: concat based on the columns)</li>
+</ul>
+<h1 id="Editing-Indexes-Columns"><a href="#Editing-Indexes-Columns" class="headerlink" title="Editing Indexes/Columns"></a>Editing Indexes/Columns</h1><ul>
+<li>Editing Indexes: use the code <code>.reset_index(drop = True(or False), inplace = True(or False))</code></li>
+<li>Editing Columns: use the code <code>.drop(&#39;[column name]&#39;, axis = 1)</code> or <code>del (data_name)[&#39;column name&#39;]</code></li>
+<li>Changing Column name: <code>.rename(columns = &#123;&#39;orginal column name&#39;:&#39;column name to change&#39;&#125;, inplace = True(or False))</code></li>
+</ul>
+<p>If you do not want to use the variable name, use the <code>inplace = True</code>!</p>
+<h1 id="Data-Sampling-and-Analysis"><a href="#Data-Sampling-and-Analysis" class="headerlink" title="Data Sampling and Analysis"></a>Data Sampling and Analysis</h1><ul>
+<li>When using the basic indexing, slicing, the conditional sampling(masking/fancy indexing), the data analysis will be nice!! </li>
+<li>You can also extract the meaningful information in those data.</li>
+</ul>
+<h1 id="Pandas-with-the-high-quality-analysis"><a href="#Pandas-with-the-high-quality-analysis" class="headerlink" title="Pandas with the high-quality analysis"></a>Pandas with the high-quality analysis</h1><ul>
+<li>usage of the <code>apply</code> function with the <code>lambda</code> function</li>
+<li>make the function with <code>def</code> and apply it to columns and <code>apply</code> function</li>
+<li>broad casting and data masking</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -493,104 +589,6 @@ If you are using Mac Book, you do not have to write ‘utf8’ to encode files.<
 <li>Make 5 sets for a lottery.</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">total_lotto = []</span><br><span class="line">for i in range(5):</span><br><span class="line">    lotto_list = []</span><br><span class="line">    index = []</span><br><span class="line">    lotto = []</span><br><span class="line">    for i in range(6):</span><br><span class="line">        index.append(i)</span><br><span class="line">        lotto_list.append(random.randint(1, 45))</span><br><span class="line">    for n, m in zip(index, lotto_list):</span><br><span class="line">        lotto.append(m)</span><br><span class="line">        cnt = lotto.count(lotto[n])</span><br><span class="line">        if cnt &gt;= 2:</span><br><span class="line">            lotto.remove(lotto[n])</span><br><span class="line">            lotto.append(random.randint(1, 45))</span><br><span class="line">        else:</span><br><span class="line">            lotto = lotto</span><br><span class="line"></span><br><span class="line">        if len(lotto) == 6:</span><br><span class="line">            break</span><br><span class="line">    total_lotto.append(lotto)</span><br><span class="line">total_lotto</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/09/08/python_review/Python-conditional-statement-and-iteration-statement/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog for python & note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/09/08/python_review/Python-conditional-statement-and-iteration-statement/" class="post-title-link" itemprop="url">Python pt.2</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-09-08 21:43:32 / Modified: 22:32:57" itemprop="dateCreated datePublished" datetime="2021-09-08T21:43:32+09:00">2021-09-08</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="conditional-statement-and-iteration-statement"><a href="#conditional-statement-and-iteration-statement" class="headerlink" title="conditional statement and iteration statement"></a>conditional statement and iteration statement</h1><h2 id="Python-conditional-statement"><a href="#Python-conditional-statement" class="headerlink" title="Python conditional statement"></a>Python conditional statement</h2><ul>
-<li><p>Literally, the conditional statement can be used in the conditions of data analysis on Python.</p>
-</li>
-<li><p>The reserved word of <code>conditional statement</code> is <code>if/elif/else</code>.</p>
-</li>
-<li><p><code>if</code>: The first condition is true.</p>
-</li>
-<li><code>elif</code>: if not true in the first condition, but other conditions are true.</li>
-<li><p><code>else</code>: when every above conditions are false</p>
-</li>
-<li><p>Format with example:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if a &gt; 15:</span><br><span class="line">	print(&#x27;High&#x27;)</span><br><span class="line">elif a = 15:</span><br><span class="line">	print(&#x27;Yes!&#x27;)</span><br><span class="line">else:</span><br><span class="line">	print(&#x27;Low&#x27;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Conditional statement is useful in various codes. (You’ll use it a lot!!)</p>
-</li>
-</ul>
-<h2 id="Python-iteration-statement"><a href="#Python-iteration-statement" class="headerlink" title="Python iteration statement"></a>Python iteration statement</h2><ol>
-<li>while: </li>
-</ol>
-<ul>
-<li>repeat infinitely not until the reserved word <code>break</code> is used (in other words, repeat until conditions are met)</li>
-<li>format:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while [conditions (able to be without conditions)]:</span><br><span class="line">	statement..</span><br><span class="line">	    ~	   </span><br></pre></td></tr></table></figure></li>
-<li>if you stop the <code>while</code> statement because the conditions are alreay met, you have to use the reserved word <code>break</code>.</li>
-<li>if you execute the statement and move on the next statement by passing only some specific condition, you can use the reserved word <code>continue</code>.</li>
-</ul>
-<ol>
-<li>for:</li>
-</ol>
-<ul>
-<li>repeat during the defined number of times </li>
-<li>use the <code>range</code> function with <code>for</code> loop (the automatically defined number of times)</li>
-<li>format:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for i in [list, tuple ...] (or range(#, #+1):</span><br><span class="line">	statement..</span><br><span class="line">	    ~</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
 
       
     </div>
