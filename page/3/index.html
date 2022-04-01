@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">119</span>
+          <span class="site-state-item-count">120</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -154,6 +154,82 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2022/01/03/preprocessing-code-for-DeepFM-modeling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blog for coding and note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2022/01/03/preprocessing-code-for-DeepFM-modeling/" class="post-title-link" itemprop="url">preprocessing code for DeepFM modeling</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-01-03 21:08:28 / Modified: 21:57:42" itemprop="dateCreated datePublished" datetime="2022-01-03T21:08:28+09:00">2022-01-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li><p>The following code is based on <code>python</code>:</p>
+<ul>
+<li>This code is for preprocessing code of <code>DeepFM modeling</code> to predict CTR.</li>
+<li>X feature of Deep FM model = various fields (nominal, continuous variables) with n-dimensional vector</li>
+<li>Y feature of Deep FM model = 0, 1 labels (whether the user clicked or not)</li>
+<li>nominal field =&gt; one-hot encoding vector</li>
+<li>continuous field =&gt; the value as it is, or discretization (change into categorical data) then one-hot vectorization</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"># preprocessing code</span><br><span class="line">cols = &#123;&#x27;obj&#x27;: [],</span><br><span class="line">        &#x27;cat&#x27;: [],</span><br><span class="line">       &#x27;cont&#x27;: []</span><br><span class="line">        &#125;</span><br><span class="line">file_name = &#x27;final_data.csv&#x27;</span><br><span class="line">file_path = os.getcwd()[:-16]+&#x27;data\\&#x27; #[:-16]는 본인 경로에 맞게 있어도 되고 없어도 됨.</span><br><span class="line">df = pd.read_csv(file_path+file_name, encoding=&#x27;utf-8&#x27;)</span><br><span class="line"></span><br><span class="line">def preprocessing(df):</span><br><span class="line">    # 데이터 유형별 분류하기</span><br><span class="line">    for dt_idx, dt_val in zip(df.dtypes.index, df.dtypes.values):</span><br><span class="line">        if &#x27;category&#x27; in dt_idx:</span><br><span class="line">            df[[&#x27;goods_cat&#x27;]] = LabelEncoder().fit_transform(df[[&#x27;category_id_1&#x27;]])</span><br><span class="line">        </span><br><span class="line">        if dt_val == &#x27;object&#x27;:</span><br><span class="line">            if (&#x27;id&#x27; in dt_idx) | (&#x27;time&#x27; in dt_idx) | (&#x27;name&#x27; in dt_idx) | (&#x27;keyword&#x27; in dt_idx) |(&#x27;url&#x27; in dt_idx):</span><br><span class="line">                df.drop(columns = dt_idx, axis=1, inplace=True)</span><br><span class="line">            else:</span><br><span class="line">                cols[&#x27;obj&#x27;].append(dt_idx)</span><br><span class="line"></span><br><span class="line">        else:</span><br><span class="line">            if (&#x27;id&#x27; in dt_idx) | (&#x27;time&#x27; in dt_idx):</span><br><span class="line">                df.drop(columns = dt_idx, axis=1, inplace=True)</span><br><span class="line">            else:</span><br><span class="line">                if len(df[dt_idx].value_counts()) &lt;= 5: #연속형 데이터 중 5개 내의 범주로 나눌 수 있는 데이터 = category로 구분.</span><br><span class="line">                    cols[&#x27;cat&#x27;].append(dt_idx)</span><br><span class="line">                else:</span><br><span class="line">                    if (&#x27;hour&#x27; in dt_idx) | (&#x27;group&#x27; in dt_idx):</span><br><span class="line">                        pass</span><br><span class="line">                    else:</span><br><span class="line">                        cols[&#x27;cont&#x27;].append(dt_idx) </span><br><span class="line">                 </span><br><span class="line">    for k, v in cols.items(): # 컬럼 전처리 (스케일링, 원핫인코딩)</span><br><span class="line">        if k == &#x27;obj&#x27;:</span><br><span class="line">            obj_data = pd.get_dummies(df[v], drop_first = True)</span><br><span class="line">            df = pd.concat([df, obj_data], axis=1).drop(columns = v, axis=1)</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        elif k == &#x27;cont&#x27;:</span><br><span class="line">            num_data = RobustScaler().fit_transform(df[v])</span><br><span class="line">            num_data = pd.DataFrame(num_data, columns = v)</span><br><span class="line">            df[v] = num_data</span><br><span class="line">        </span><br><span class="line">            print(&#x27;---- Data info ----&#x27;)</span><br><span class="line">            print(&#x27;X shape: &#123;&#125;&#x27;.format(df.shape))</span><br><span class="line">            print(&#x27;# of Feature: &#123;&#125;&#x27;.format(len(df.columns)))</span><br><span class="line">            return df</span><br><span class="line">    </span><br><span class="line">df = preprocessing(df)</span><br><span class="line">df.head(3)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -451,114 +527,6 @@
 <li>논의 후 click_time 계산 관련된 논란 종결!!</li>
 <li>나이/성별 데이터 확인하고 결측치 및 이상값 확인 필요함. (KNN Imputer &amp; Isolation Forest 방법 사용해서 전반적인 이상값의 경향 확인하기)</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/12/28/Project-meeting-note-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Blog for coding and note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/12/28/Project-meeting-note-0/" class="post-title-link" itemprop="url">Project meeting note</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-12-28 18:04:38 / Modified: 19:42:12" itemprop="dateCreated datePublished" datetime="2021-12-28T18:04:38+09:00">2021-12-28</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="오전-논의-사항"><a href="#오전-논의-사항" class="headerlink" title="오전 논의 사항"></a>오전 논의 사항</h1><ul>
-<li>emergency_cnt 이상치를 삭제해도 무방해보임.</li>
-<li>adver_follower_count 컬럼 삭제</li>
-<li>8% 정도 비율의 데이터들을 완전히 삭제할지 여부</li>
-<li>3~4% 상품이 노출되어 클릭까지 진행한 고객 제외 후 나머지 96%는 단순히 노출되어 서버에 접속한 경우의 결측치 처리 여부</li>
-</ul>
-<h1 id="오후-논의-사항"><a href="#오후-논의-사항" class="headerlink" title="오후 논의 사항"></a>오후 논의 사항</h1><ul>
-<li><strong>imp_id 중복제거한 데이터 셋을 다시 생성 후 전처리 (오늘 할 일!!)</strong><ul>
-<li>데이터 전처리 방법 확인하기</li>
-<li>이상치 삭제 후 데이터 판단</li>
-</ul>
-</li>
-<li>결측치, 이상치 처리 및 질문 사항 논의 (약간의 영향력은 남겨두되 최대한 이상치, 결측치 처리하기)<ul>
-<li>결측치가 8%정도 되는 데이터 컬럼들 삭제</li>
-<li>click_time 컬럼은 절댓값을 씌운 후 다시 컬럼 생성하여 이후 단계 진행 (양수로 만들기)</li>
-<li>emergency_cnt 이상치 부분 처리 문제 질문.</li>
-<li>flag_used 카테고리 질문</li>
-<li>나이는 범주화 (0세를 임의의 값으로 대체할지 아니면 따로 처리가 필요한지 질문)</li>
-<li>click_time 결측치 처리 질문</li>
-</ul>
-</li>
-</ul>
-<h1 id="데이터-전처리"><a href="#데이터-전처리" class="headerlink" title="데이터 전처리"></a>데이터 전처리</h1><p><strong>결측치 처리 판단</strong></p>
-<ol>
-<li><p>device_type_x 컬럼의 경우 데이터 값이 전부 a이므로 무의미한 데이터로 보여짐. adver_follower_count 컬럼 또한 0이라는 데이터 값만 가지고 있으므로 무의미한 데이터.<br> → 처리 방법: 삭제</p>
-</li>
-<li><p><strong>click_time의 경우 <code>- (음수)</code> 값이 존재. (이 부분과 결측치 처리 문제가 발생)</strong></p>
-<ul>
-<li>음수값이 존재하는 이유: impression의 서버 접속 시간이 view 서버 접속시간보다 늦기 때문..</li>
-<li>결측치 값의 비중이 96~7%이므로 삭제는 안됨…</li>
-<li>3~4% 상품이 노출되어 클릭까지 진행한 고객 제외 후 나머지 96%는 단순히 노출되어 서버에 접속한 경우<br>→ 처리 방법: 무조건적인 삭제는 금물.. 절댓값을 씌운 상태에서 click_time을 새로 계산.</li>
-</ul>
-</li>
-<li><p>수치형 데이터 중 이상치 처리 필요해 보이는 컬럼들:<br> → bid_price_x, emergency_cnt, commen_cnt, user_age(나이는 임의로 0을 넣은 건가…..), adver_pay_count, adver_parcel_post_count, adver_transfer_count, adver_chat_count 등…</p>
-<ul>
-<li>눈에 띄는 이상값들은 비율 확인해서 삭제하기</li>
-<li>스케일링 진행할 때 robust_scaler로 진행.</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>name, keyword의 경우 텍스트 분석 진행 가능 (카카오 아레나 블로그 참고해서 태그 별 분석도 가능해보임)</li>
-</ul>
-<p><img src="https://drive.google.com/uc?export=view&amp;id=15UftD8hf9Re3yvCZ5gGgZJyoQOhIq7n5" alt="image"></p>
 
       
     </div>
