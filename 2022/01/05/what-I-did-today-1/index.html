@@ -97,19 +97,15 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
+  <div class="search-input-container"></div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
 </div>
 
     </div>
@@ -194,6 +190,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -333,7 +330,8 @@
 <script src="https://hesthers.github.io/js/comments.js"></script><script src="https://hesthers.github.io/js/utils.js"></script><script src="https://hesthers.github.io/js/motion.js"></script><script src="https://hesthers.github.io/js/schemes/muse.js"></script><script src="https://hesthers.github.io/js/next-boot.js"></script>
 
   
-<script src="https://hesthers.github.io/js/third-party/search/local-search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.10.3/dist/algoliasearch-lite.umd.js" integrity="sha256-G3d8uGe8RUBl42fj30KOUgKMV2LpwsJUI3fzfEiuHsY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.25.2/dist/instantsearch.production.min.js" integrity="sha256-h8iRwCCyeIDuVWtR9WwIJ+XJ8Z37SunCvilg+pnImD4=" crossorigin="anonymous"></script><script src="https://hesthers.github.io/js/third-party/search/algolia-search.js"></script>
 
 
 
