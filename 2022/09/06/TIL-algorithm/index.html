@@ -20,15 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
-<meta name="description" content="TIL Algorithm study DFS &amp; BFS  스택 &amp; 큐 Stack  선입후출 형식삽입-삭제 방식 사용   Queue  선입선출 형식삽입-삭제 방식 사용예. 은행의 창구 대기열python from collections import deque 라이브러리 사용   재귀함수 (Recursion)  최대 재귀 깊이 설정 미리 필요함(종료조">
+<meta name="description" content="TIL Algorithm study DFS &amp; BFS  스택 &amp; 큐 Stack  선입후출 형식삽입-삭제 방식 사용   Queue  선입선출 형식삽입-삭제 방식 사용예. 은행의 창구 대기열python from collections import deque 라이브러리 사용    재귀함수 (Recursion) 최대 재귀 깊이 설정 미리 필요함(종료조">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL_algorithm">
 <meta property="og:url" content="https://hesthers.github.io/archives/2022/09/06/TIL-algorithm/index.html">
 <meta property="og:site_name" content="My Blog for coding and note">
-<meta property="og:description" content="TIL Algorithm study DFS &amp; BFS  스택 &amp; 큐 Stack  선입후출 형식삽입-삭제 방식 사용   Queue  선입선출 형식삽입-삭제 방식 사용예. 은행의 창구 대기열python from collections import deque 라이브러리 사용   재귀함수 (Recursion)  최대 재귀 깊이 설정 미리 필요함(종료조">
+<meta property="og:description" content="TIL Algorithm study DFS &amp; BFS  스택 &amp; 큐 Stack  선입후출 형식삽입-삭제 방식 사용   Queue  선입선출 형식삽입-삭제 방식 사용예. 은행의 창구 대기열python from collections import deque 라이브러리 사용    재귀함수 (Recursion) 최대 재귀 깊이 설정 미리 필요함(종료조">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-09-06T13:28:09.000Z">
-<meta property="article:modified_time" content="2022-09-09T00:41:09.902Z">
+<meta property="article:modified_time" content="2022-09-09T09:29:39.403Z">
 <meta property="article:author" content="hs_h_esther">
 <meta name="twitter:card" content="summary">
 
@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TIL-Algorithm-study"><span class="nav-number">1.</span> <span class="nav-text">TIL Algorithm study</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8A%A4%ED%83%9D-amp-%ED%81%90"><span class="nav-number">1.1.</span> <span class="nav-text">스택 &amp; 큐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TIL"><span class="nav-number">1.2.</span> <span class="nav-text">TIL</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TIL-Algorithm-study"><span class="nav-number">1.</span> <span class="nav-text">TIL Algorithm study</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8A%A4%ED%83%9D-amp-%ED%81%90"><span class="nav-number">1.1.</span> <span class="nav-text">스택 &amp; 큐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98-Recursion"><span class="nav-number">1.2.</span> <span class="nav-text">재귀함수 (Recursion)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS-amp-BFS"><span class="nav-number">1.3.</span> <span class="nav-text">DFS &amp; BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TIL"><span class="nav-number">1.4.</span> <span class="nav-text">TIL</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -243,7 +243,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-09-09 09:41:09" itemprop="dateModified" datetime="2022-09-09T09:41:09+09:00">2022-09-09</time>
+        <time title="Modified: 2022-09-09 18:29:39" itemprop="dateModified" datetime="2022-09-09T18:29:39+09:00">2022-09-09</time>
       </span>
 
   
@@ -285,14 +285,14 @@
 from collections import deque</code> 라이브러리 사용</p>
 </blockquote>
 </li>
-<li><p>재귀함수 (Recursion)</p>
-<blockquote>
+</ol>
+<h2 id="재귀함수-Recursion"><a href="#재귀함수-Recursion" class="headerlink" title="재귀함수 (Recursion)"></a>재귀함수 (Recursion)</h2><blockquote>
 <p>최대 재귀 깊이 설정 미리 필요함(종료조건) =&gt; 무한 호출 가능성<br>스택 방식 사용하여 스택 대신 사용<br>예. 팩토리얼 계산<br>예. 유클리드 호제법- 최대공약수 계산</p>
 <blockquote>
 <p>R = A % B; GCD(A, B) = GCD(B, R)<br>복잡한 알고리즘 혹은 반복문 사용을 간결하게 하여 시간의 효율성 보장</p>
 </blockquote>
 </blockquote>
-</li>
+<h2 id="DFS-amp-BFS"><a href="#DFS-amp-BFS" class="headerlink" title="DFS &amp; BFS"></a>DFS &amp; BFS</h2><ol>
 <li><p>DFS(Depth-First Search)</p>
 <blockquote>
 <p>깊이 우선 탐색<br>스택/재귀함수 구조 사용<br>시작노드부터 스택 삽입 후 방문 처리</p>
