@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://hesthers.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://hesthers.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://hesthers.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="https://hesthers.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="https://hesthers.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
+<meta name="description" content="MACHINE LEARNING KNN (K-Nearest Neighbors) 좌표 공간을 기준으로 해당 데이터에서 가장 가까운 데이터의 라벨을 확인하고 해당 라벨로 예측하는 기법K 값에 따라서 학습 결과가 달라짐.    Clustering unsupervised learning   분류 모델인 classification과 비슷해보이나 비교하는 것은 무의미함">
+<meta property="og:type" content="article">
+<meta property="og:title" content="machine learning basics pt.7">
+<meta property="og:url" content="https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/index.html">
+<meta property="og:site_name" content="My Blog for coding and note">
+<meta property="og:description" content="MACHINE LEARNING KNN (K-Nearest Neighbors) 좌표 공간을 기준으로 해당 데이터에서 가장 가까운 데이터의 라벨을 확인하고 해당 라벨로 예측하는 기법K 값에 따라서 학습 결과가 달라짐.    Clustering unsupervised learning   분류 모델인 classification과 비슷해보이나 비교하는 것은 무의미함">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-18T08:10:22.000Z">
+<meta property="article:modified_time" content="2021-11-18T08:54:00.256Z">
+<meta property="article:author" content="hs_h_esther">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/","path":"2021/11/18/machine-learning-basics-pt-7/","title":"machine learning basics pt.7"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>machine learning basics pt.7 | My Blog for coding and note</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="https://hesthers.github.io/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="https://hesthers.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">My Blog for coding and note</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">https://github.com/hesthers</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MACHINE-LEARNING"><span class="nav-number">1.</span> <span class="nav-text">MACHINE LEARNING</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Clustering"><span class="nav-number">1.1.</span> <span class="nav-text">Clustering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-transformation-model"><span class="nav-number">1.2.</span> <span class="nav-text">Unsupervised transformation model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extra-info-about-MACHINE-LEARNING"><span class="nav-number">1.3.</span> <span class="nav-text">Extra info about MACHINE LEARNING</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hs_h_esther</p>
+  <div class="site-description" itemprop="description">python, git/github, data analysis, chinese</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="https://hesthers.github.io/archives/">
+          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hesthers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hesthers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:h2esthers@gmail.com" title="E-Mail → mailto:h2esthers@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/18/machine-learning-basics-pt-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blog for coding and note">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          machine learning basics pt.7
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-11-18 17:10:22 / Modified: 17:54:00" itemprop="dateCreated datePublished" datetime="2021-11-18T17:10:22+09:00">2021-11-18</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="https://hesthers.github.io/2021/11/18/machine-learning-basics-pt-7/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/11/18/machine-learning-basics-pt-7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="MACHINE-LEARNING"><a href="#MACHINE-LEARNING" class="headerlink" title="MACHINE LEARNING"></a>MACHINE LEARNING</h1><ul>
+<li>KNN (K-Nearest Neighbors)<blockquote>
+<p>좌표 공간을 기준으로 해당 데이터에서 가장 가까운 데이터의 라벨을 확인하고 해당 라벨로 예측하는 기법<br>K 값에 따라서 학습 결과가 달라짐.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h2><blockquote>
+<p>unsupervised learning </p>
+<blockquote>
+<p>분류 모델인 classification과 비슷해보이나 비교하는 것은 무의미함. 비지도학습 자체로 모델링 기법으로 바라봐야함.</p>
+<ul>
+<li>x값이 비슷한 그룹들끼리 grouping하는 기법. </li>
+<li>X와 Y의 라벨 혹은 관계를 구분/파악하기 위한 학습방식이 아니라 비슷한 X끼리 라벨을 분류하기 위한 기법</li>
+<li>비슷한 군집들끼리 분석해서 학습시키는 기법으로 inertia value를 기준으로 k값 선별(k의 값 = 변곡점)</li>
+</ul>
+</blockquote>
+</blockquote>
+<pre><code>1. K-Means
+  - 각 군집의 중심값 (혹은 초깃값)을 랜덤으로 설정 및 계산하고 모델 학습 시작.
+  - 임의의 k개 초깃값 선별해서 학습하는 기법.
+  - Expectation: 각각의 군집에서 가장 가까운 군집과 중심을 찾아서 군집화로 분류하는 과정
+  - Maximization: 중심값을 업데이트 하는 과정
+   summary: k개의 임의의 중심값을 업데이트하는 과정을 반복하면서 최적의 군집 중심값을 찾아가는 기법
+
+2. K-Means ++
+  - 임의로 아닌 처음부터 군집간의 거리가 가장 많이 떨어져있는 상태에서 초깃값을 찾는 학습과정을 선택하는 기법
+  - 초기에 군집을 하나만 랜덤으로 선택
+  - 첫번째 초깃값과 가장 먼 거리의 데이터를 중심으로 이 때의 거리를 확률값으로 판단해서 학습.
+</code></pre><h2 id="Unsupervised-transformation-model"><a href="#Unsupervised-transformation-model" class="headerlink" title="Unsupervised transformation model"></a>Unsupervised transformation model</h2><blockquote>
+<p>Dimensional Reduction problem: PCA (Principle Component Analysis)</p>
+<blockquote>
+<p>차원 축소가 필요한 이유: 차원의 저주 문제</p>
+<ul>
+<li>데이터 학습에 도움되지 않은 정보들이 너무 많으면 오히려 학습에 방해가 됨.</li>
+<li>x 피처 데이터들의 분포가 전체적으로 잘 퍼져있어서 보여줄 수 있는 경우 데이터의 특성을 잘 설명해준다고 해석할 수 있음.</li>
+<li>주성분들은 제 1주성분을 제외한 나머지 주성분들은 제1주성분과 수직으로 관계가 존재함. 수직의 관계는 서로 상관관계가 없다는 것을 의미함. (수직인 직선을 그래프를 통해 찾을 때 기울기 곱이 -1임을 생각해본다면 도움되지 않을까??)</li>
+<li>PC: 기존의 피쳐들로 성분을 select하는 것이 아닌 새로운 성분을 만들어 내서 차원을 축소하는 기법.</li>
+<li>PCA code 중 n_components의 값으로 주성분의 개수를 선택해서 모델링</li>
+<li>1st component 가 가장 우선적인 성분으로 모델에서 가장 영향력이 큰 성분이라 할 수 있기 때문에 성분들 중 제거해야하는 경우라면 첫번째 주성분을 살려야함.</li>
+<li>전처리할 때 자주 쓰이는 기법으로 비지도학습은 주로 지도학습 모델링을 support할 때 사용함.</li>
+<li>PCA는 여러 피처들의 조합을 통해 차원을 줄였기 때문에 학습결과가 좋게 나오는 편임.</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="Extra-info-about-MACHINE-LEARNING"><a href="#Extra-info-about-MACHINE-LEARNING" class="headerlink" title="Extra info about MACHINE LEARNING"></a>Extra info about MACHINE LEARNING</h2><ul>
+<li>Grid Search<blockquote>
+<p>파라미터 후보들을 사용자가 지정해주면 알아서 최적의 파라미터 값을 찾아주는 방법<br>딕셔너리 형태로 입력해서 학습</p>
+</blockquote>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="https://hesthers.github.io/2021/11/19/regular-expression-in-python/" rel="prev" title="regular expression in python">
+                  <i class="fa fa-chevron-left"></i> regular expression in python
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="https://hesthers.github.io/2021/11/17/Design-Thinking-with-Figma/" rel="next" title="Design Thinking with Figma">
+                  Design Thinking with Figma <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hs_h_esther</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="https://hesthers.github.io/js/comments.js"></script><script src="https://hesthers.github.io/js/utils.js"></script><script src="https://hesthers.github.io/js/motion.js"></script><script src="https://hesthers.github.io/js/schemes/muse.js"></script><script src="https://hesthers.github.io/js/next-boot.js"></script>
+
+  
+<script src="https://hesthers.github.io/js/third-party/search/local-search.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="https://hesthers.github.io/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"https-hesthers-github-io","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="https://hesthers.github.io/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

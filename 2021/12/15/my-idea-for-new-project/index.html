@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://hesthers.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://hesthers.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://hesthers.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="https://hesthers.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="https://hesthers.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hesthers.github.io","root":"https://hesthers.github.io/","images":"https://hesthers.github.io/images","scheme":"Muse","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="https://hesthers.github.io/js/config.js"></script>
+<meta name="description" content="New project — my idea 문제 정의  머신러닝(지도학습&#x2F;비지도학습): 클러스터링, 분류 모델 주 사용 (KNN, Ensemble Classifier 등…), 연관 분석 기법, GBDT 딥러닝: CIFAR10 이미지 분석 문제:  고객 관점? vs. 서비스 제공자 관점?  상품 - 어떤 도메인인지  협업 &#x2F; 내용기반 필터링 기법: 고객 카테고리">
+<meta property="og:type" content="article">
+<meta property="og:title" content="my idea for new project">
+<meta property="og:url" content="https://hesthers.github.io/archives/2021/12/15/my-idea-for-new-project/index.html">
+<meta property="og:site_name" content="My Blog for coding and note">
+<meta property="og:description" content="New project — my idea 문제 정의  머신러닝(지도학습&#x2F;비지도학습): 클러스터링, 분류 모델 주 사용 (KNN, Ensemble Classifier 등…), 연관 분석 기법, GBDT 딥러닝: CIFAR10 이미지 분석 문제:  고객 관점? vs. 서비스 제공자 관점?  상품 - 어떤 도메인인지  협업 &#x2F; 내용기반 필터링 기법: 고객 카테고리">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-15T12:23:50.000Z">
+<meta property="article:modified_time" content="2021-12-15T12:32:00.642Z">
+<meta property="article:author" content="hs_h_esther">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hesthers.github.io/archives/2021/12/15/my-idea-for-new-project/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://hesthers.github.io/archives/2021/12/15/my-idea-for-new-project/","path":"2021/12/15/my-idea-for-new-project/","title":"my idea for new project"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>my idea for new project | My Blog for coding and note</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="https://hesthers.github.io/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="https://hesthers.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">My Blog for coding and note</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">https://github.com/hesthers</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#New-project-%E2%80%94-my-idea"><span class="nav-number">1.</span> <span class="nav-text">New project — my idea</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hs_h_esther</p>
+  <div class="site-description" itemprop="description">python, git/github, data analysis, chinese</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="https://hesthers.github.io/archives/">
+          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hesthers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hesthers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:h2esthers@gmail.com" title="E-Mail → mailto:h2esthers@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/12/15/my-idea-for-new-project/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blog for coding and note">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          my idea for new project
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-12-15 21:23:50 / Modified: 21:32:00" itemprop="dateCreated datePublished" datetime="2021-12-15T21:23:50+09:00">2021-12-15</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="https://hesthers.github.io/2021/12/15/my-idea-for-new-project/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/12/15/my-idea-for-new-project/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="New-project-—-my-idea"><a href="#New-project-—-my-idea" class="headerlink" title="New project — my idea"></a>New project — my idea</h1><ol>
+<li><p><strong>문제 정의</strong></p>
+<ul>
+<li>머신러닝(지도학습/비지도학습): 클러스터링, 분류 모델 주 사용 (KNN, Ensemble Classifier 등…), 연관 분석 기법, GBDT</li>
+<li>딥러닝: CIFAR10 이미지 분석</li>
+<li>문제:<br>  <strong>고객</strong> 관점? vs. <strong>서비스 제공자</strong> 관점?<br>  상품 - 어떤 도메인인지<br>  협업 / 내용기반 필터링 기법: 고객 카테고리에 맞는 아이템 추천 (클릭수, 구매수, 성별, 나이, 팔로잉 수 등..을 활용한 예측 기법 사용)<br>  광고주 데이터를 통한 연관 상품 추천<br>  고객 군집 분석(clustering) - 특정 고객집단의 특성 추출 및 파악<br>  키워드와 제품명을 기반으로 한 텍스트 분석을 통한 추천시스템<br>  추가: 개인화 상품 추천, 상품 브랜드 자동 추출, 연관 검색어 개발, 거래 위험 (Fraud 위험 탐지 알고리즘)</li>
+</ul>
+</li>
+<li><p><strong>데이터 정의 및 수집</strong></p>
+<ul>
+<li>데이터 셋: ad / advertiser / view_log / impression_log / viewer // dataset</li>
+<li>사용할 컬럼들: 상품 아이디, 상품 입찰가, 키워드, 나이, 성별, 로그 데이터 시간대 등… (device type, 광고 상품 신고수 컬럼 은 제외)</li>
+<li><p>테이블 조인 (SQL 활용), table merge, 이미지 크롤링 혹은 sql 쿼리문 활용, 키워드를 통한 텍스트 분석, user-item matrix (거리 기반 유사도), …</p>
+</li>
+<li><p>URL 크롤링으로 이미지 저장 후 텍스트 분석 및 이미지 분석으로 추천 상품 제공 (가능하다면 번개 장터 홈페이지 후기 등 크롤링으로 긍부정 분석)</p>
+</li>
+<li>EDA: 파이썬과 태블로 활용</li>
+<li>최종 결과물을 UI/UX로 Figma를 활용해서 구현해보기 (번개 장터 추천시스템 앱을 만든다면??)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>해당 문제에 대한 기존 방법론 조사</p>
+<ul>
+<li>논문: 추천시스템 관련 내용들 (예시 논문: 딥러닝 기반 나이 예측과 자연어처리를 활용한 의류추천 시스템)</li>
+<li>캐글 사이트: 추천시스템 모델 코드들에 관한 참고 레퍼런스</li>
+<li>github에서 관련 모델 코드들 참고</li>
+<li>온라인 강의(The Red): 추천시스템에 관한 실습코드를 레퍼런스용으로 사용</li>
+</ul>
+</li>
+<li><p>사용할 협업 툴(환경):<br>  슬랙: 멤버, 강사님과의사소통<br>  github: 프로젝트 코드 공유<br>  notion: 보고서 및 업무 분담 등 기록</p>
+</li>
+<li><p>수행 환경:<br>  Google Colab or Jupyter Notebook<br>  SQL<br>  Tableau<br>  Figma</p>
+</li>
+</ul>
+<ul>
+<li>참고<br>기획서에 반드시 포함되어야 하는 내용들<ol>
+<li><strong>문제 정의</strong></li>
+<li>데이터 정의</li>
+<li>해당 문제에 대한 기존 방법론 조사 (논문, tech review 등)</li>
+<li>사용할 모델 리스트 (rough하게)</li>
+<li>프로젝트를 수행할 환경 (Google Colab, Kaggle Notebook, AWS 등)<br>추가 사항: 프로젝트 계획 (rough하게)</li>
+</ol>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="https://hesthers.github.io/2021/12/16/Machine-Learning-project-1/" rel="prev" title="New project with a company">
+                  <i class="fa fa-chevron-left"></i> New project with a company
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="https://hesthers.github.io/2021/12/14/Deep-Learning/" rel="next" title="Deep Learning">
+                  Deep Learning <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hs_h_esther</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="https://hesthers.github.io/js/comments.js"></script><script src="https://hesthers.github.io/js/utils.js"></script><script src="https://hesthers.github.io/js/motion.js"></script><script src="https://hesthers.github.io/js/schemes/muse.js"></script><script src="https://hesthers.github.io/js/next-boot.js"></script>
+
+  
+<script src="https://hesthers.github.io/js/third-party/search/local-search.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="https://hesthers.github.io/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"https-hesthers-github-io","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="https://hesthers.github.io/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
