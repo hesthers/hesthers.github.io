@@ -146,12 +146,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">123</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -196,6 +196,87 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/11/06/EDA-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blog for coding and note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2021/11/06/EDA-2/" class="post-title-link" itemprop="url">EDA 2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-11-06 22:45:15 / Modified: 23:04:25" itemprop="dateCreated datePublished" datetime="2021-11-06T22:45:15+09:00">2021-11-06</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="https://hesthers.github.io/2021/11/06/EDA-2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/11/06/EDA-2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="EDA-pt-2"><a href="#EDA-pt-2" class="headerlink" title="EDA pt.2"></a>EDA pt.2</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">df = pd.pivot_table(data = movie_train, columns=&#x27;screening_rat&#x27;, index = &#x27;genre&#x27;, values= [&#x27;director&#x27;], aggfunc=len, )</span><br><span class="line">df_rate = [i[1] for i in df.columns]</span><br><span class="line"></span><br><span class="line">reset_df = pd.DataFrame(df.values, columns = sorted(movie_train.screening_rat.unique()))</span><br><span class="line">reset_df.fillna(0, inplace=True)</span><br><span class="line">reset_df[&#x27;index&#x27;] = sorted(movie_train.genre.unique())</span><br><span class="line">reset_df = reset_df.set_index(reset_df[&#x27;index&#x27;], drop=True)</span><br><span class="line">reset_df.drop(columns = &#x27;index&#x27;, inplace=True, axis=1)</span><br><span class="line"></span><br><span class="line">from matplotlib import font_manager, rc</span><br><span class="line">rc(&#x27;font&#x27;, family = &#x27;Malgun Gothic&#x27;)</span><br><span class="line">plt.figure(figsize = (20 , 16))</span><br><span class="line">sns.histplot(data = reset_df.T, multiple=&#x27;dodge&#x27;, bins = 3)</span><br><span class="line">plt.xlim([0, 65])</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;] = False</span><br><span class="line">plt.figure(figsize = (12 , 8))</span><br><span class="line">sns.kdeplot(data = reset_df.T, multiple=&#x27;layer&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1M6lJcmF9ais76xipwNQxTQIprsFNcrG8" alt="image_1"></p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1B-ArRRaXAjC_buB0H1eXgiuQKhThXan3" alt="image_2"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1466,118 +1547,6 @@
 </blockquote>
 </li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2021/10/21/Tableau-pt-6-with-project-feedback/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Blog for coding and note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2021/10/21/Tableau-pt-6-with-project-feedback/" class="post-title-link" itemprop="url">Tableau pt.6 with project feedback</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-10-21 16:17:06 / Modified: 16:25:54" itemprop="dateCreated datePublished" datetime="2021-10-21T16:17:06+09:00">2021-10-21</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="https://hesthers.github.io/2021/10/21/Tableau-pt-6-with-project-feedback/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/21/Tableau-pt-6-with-project-feedback/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Feedback-of-Tableau-project"><a href="#Feedback-of-Tableau-project" class="headerlink" title="Feedback of Tableau project"></a>Feedback of Tableau project</h1><ul>
-<li>내가 가지고 싶어했던 이야기, 주제는 이런 것이였다… 이러한 부분들을 구현하기 위해서 이러한 내용들을 표현하고 싶은 것이였다.</li>
-<li>보여지는 부분과 숫자의 매칭이 되지 않은 경우 혼동이 발생할 수 있음. 다른 그래프 끼리는 색상을 다르게 표현해주면 시각적으로 좋음.</li>
-<li>인사이트 도출 (지도같은 시각화를 통해)</li>
-<li><code>window_max([~]) = [~]</code> =&gt; 특정부분 색상 강조True/False로 구분되어</li>
-<li>대시보드 탭 오른쪽으로 클릭하고 모든 시트 숨기기 기능 및 색상 구분 가능</li>
-<li><p>눈에 띄는 변화를 색상으로 주는 것이 좋음.</p>
-</li>
-<li><p>UI/UX 부분 고려사항임…</p>
-</li>
-<li>부동산에서는 평균보다는 중앙값에 focus..</li>
-<li>거래금액의 평균값..</li>
-<li>년도별은 있는 그대로 표현…</li>
-<li><p>top5 하이라이트 테이블 필터를 거래금액 평균이나 중앙값으로 설정</p>
-</li>
-<li><p>브랜드별 그룹화시켜서…</p>
-</li>
-<li>특정 이슈나 이벤트를 중점을 두고…</li>
-</ul>
-<h1 id="Things-to-know-about-Tableau"><a href="#Things-to-know-about-Tableau" class="headerlink" title="Things to know about Tableau"></a>Things to know about Tableau</h1><ul>
-<li>데이터 셋 =&gt; 무엇에 대한 것인지 정확하게 알고 있어야 함.</li>
-<li>xxx.파일확장자 (카운트): 태블로에서 파일이 정확하게 올려졌는가<br>태블로에서는 데이터를 집계해서 보여주기 때문에 디테일을 보기 어려우므로 하나하나 파악하기 어려움</li>
-<li>데이터를 보여줄 때 보여주고 싶은 단면만 보여줘서는 안됨. </li>
-</ul>
-<h2 id="Data-Literacy"><a href="#Data-Literacy" class="headerlink" title="Data Literacy"></a>Data Literacy</h2><ul>
-<li>어떤 인사이트를 얻을것인가.. 데이터를 잘 읽어낼 수 있는가</li>
-<li>데이터 시각화: graphicacy / 시각자료를 해석하는 능력 </li>
-<li>왜 중요한가?? 디지털로의 전환하는 시대</li>
-<li>data literacy for data-driven decision making</li>
-<li>데이터를 정확하게 이해하고 이를 기반으로 의사결정 할 수 있도록 해야 함.</li>
-<li>보고싶어하는 방향, 가고싶어하는 방향을 지향하는지.. (확증편향 주의)</li>
-<li>부분만 보고 전체인 것처럼 표현하는 것은 안됨. </li>
-<li>본질을 제대로…. 데이터의 신뢰성 (신뢰할만한 자료인가.. reliability) = bias is in??</li>
-</ul>
 
       
     </div>

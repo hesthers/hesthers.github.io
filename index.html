@@ -146,12 +146,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="https://hesthers.github.io/archives/">
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">123</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -205,6 +205,118 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2022/10/25/Algorithm-pt-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
+      <meta itemprop="name" content="hs_h_esther">
+      <meta itemprop="description" content="python, git/github, data analysis, chinese">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blog for coding and note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="https://hesthers.github.io/2022/10/25/Algorithm-pt-2/" class="post-title-link" itemprop="url">Algorithm(pt.2)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-10-25 15:00:28 / Modified: 15:10:02" itemprop="dateCreated datePublished" datetime="2022-10-25T15:00:28+09:00">2022-10-25</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="https://hesthers.github.io/2022/10/25/Algorithm-pt-2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/25/Algorithm-pt-2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="최단-경로-알고리즘"><a href="#최단-경로-알고리즘" class="headerlink" title="최단 경로 알고리즘"></a><strong>최단 경로 알고리즘</strong></h1><ul>
+<li>가장 짧은 경로를 찾는 것<ul>
+<li>한 지점 → 한 지점</li>
+<li>한 지점 → 모든 지점</li>
+<li>모든 지점 → 모든 지점</li>
+</ul>
+</li>
+<li>지점 = 노드 (예. 마을, 국가 등..)</li>
+<li>이동 가능함 = 간선으로 표시</li>
+</ul>
+<h2 id="다익스트라-최단-경로-알고리즘"><a href="#다익스트라-최단-경로-알고리즘" class="headerlink" title="다익스트라 최단 경로 알고리즘"></a>다익스트라 최단 경로 알고리즘</h2><ul>
+<li>특정 한 노드 → 다른 모든 노드 계산</li>
+<li>그리디 알고리즘으로 가장 비용이 적은 노드 선택</li>
+<li>동작 과정<ul>
+<li>출발 노드 설정</li>
+<li>최단 거리 테이블 초기화 (자신의 노드 = 0, 그 외 노드 거리 = $\infty$)</li>
+<li>방문하지 않은 노드에서 최단 거리가 가장 짧은 노드 선택하고 다른 노드로 가는 비용 계산하는 과정 반복<ul>
+<li>동일 비용을 갖는 경우 더 작은 수를 갖는 노드부터 우선 계산</li>
+<li>마지막 노드 정보를 처리하지 않아도 상관없음 (이전의 정보를 활용하여 이미 가장 짧은 노드의 거리를 갱신했기 때문)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>처리 과정 중 더 짧은 노드가 존재하면 해당 노드를 최단 거리 노드로 갱신</li>
+<li>한 번 처리된 노드의 최단 거리는 고정 → 변화 없음</li>
+<li>노드 탐색 시 BFS 이용하는 알고리즘</li>
+</ul>
+<h2 id="우선순위-큐"><a href="#우선순위-큐" class="headerlink" title="우선순위 큐"></a>우선순위 큐</h2><ul>
+<li>우선순위가 높은 데이터를 먼저 삭제</li>
+<li>힙 (최소 힙, 최대 힙)</li>
+<li>다익스트라 알고리즘에서 사용됨. (시간을 개선시키기 위함)</li>
+<li>파이썬: heapq 라이브러리 사용 가능 (min heap 사용) ⇒ 다익스트라 알고리즘에서 사용됨.</li>
+</ul>
+<p>— 참고: 파이썬 알고리즘 인터뷰 책 &amp; 이코테 2021 강의</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2022/09/06/TIL-algorithm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -236,7 +348,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-09-09 18:29:39" itemprop="dateModified" datetime="2022-09-09T18:29:39+09:00">2022-09-09</time>
+        <time title="Modified: 2022-09-09 23:43:02" itemprop="dateModified" datetime="2022-09-09T23:43:02+09:00">2022-09-09</time>
       </span>
 
   
@@ -1450,93 +1562,6 @@ from collections import deque</code> 라이브러리 사용</p>
 <ul>
 <li>모델링을 할 때 데이터 양이 많으면 시간이 오래 걸림 (2~3시간 기본)</li>
 <li>구글 코랩에서 GPU로 돌려도 마찬가지 (딥러닝이 아니면 GPU로 잘 안돌아감.)</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hesthers.github.io/archives/2022/01/01/new-year-plan/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hesthers.github.io/images/avatar.gif">
-      <meta itemprop="name" content="hs_h_esther">
-      <meta itemprop="description" content="python, git/github, data analysis, chinese">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Blog for coding and note">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="https://hesthers.github.io/2022/01/01/new-year-plan/" class="post-title-link" itemprop="url">new year plan</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-01-01 21:10:21 / Modified: 21:18:16" itemprop="dateCreated datePublished" datetime="2022-01-01T21:10:21+09:00">2022-01-01</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="https://hesthers.github.io/2022/01/01/new-year-plan/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/01/01/new-year-plan/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Happy New Year! 新年快乐！！<br>New year 2022 has already come!! </p>
-<p>So, I will post new year plan (perhaps bucket list?? lolol) today.</p>
-<ul>
-<li>2월에 HSK 6급 따기</li>
-<li>지금 하고 있는 프로젝트 1월에 마무리 잘하기</li>
-<li>취업!!!!! 뽀개기 (취뽀 성공 IT 가자!!) —- 올해 꼭꼭!!</li>
-<li>중국어 말하기 (능숙하게 할 수 있게!!)</li>
-<li>책 읽기 (올해는 10권 완독할 수 있도록)</li>
 </ul>
 
       
